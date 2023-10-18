@@ -36,6 +36,11 @@ services:
     image: mariadb:10.11.5
     networks:
       - traefik-matomo
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATBASE: ${MARIADB_DATBASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
     volumes:
       - matomo-data:/var/lib/mysql
     deploy:
