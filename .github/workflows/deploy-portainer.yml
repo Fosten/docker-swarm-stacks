@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "portainer/**"
+      - "portainer.yml"
   workflow_dispatch:
 
 jobs:
