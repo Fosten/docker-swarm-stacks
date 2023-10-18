@@ -18,15 +18,8 @@ services:
       # DNS Resolver
       - "--certificatesresolvers.mydnschallenge.acme.dnschallenge=true"
       - "--certificatesresolvers.mydnschallenge.acme.dnschallenge.provider=linodev4"
-      - "--certificatesresolvers.mydnschallenge.acme.email=info@pimaker.org"
+      - "--certificatesresolvers.mydnschallenge.acme.email=${ACME_EMAIL}"
       - "--certificatesresolvers.mydnschallenge.acme.storage=/le/acme.json"
-      # First Resolver
-      #- --certificatesresolvers.leresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
-      # update your email here
-      #- --certificatesresolvers.leresolver.acme.email=info@pimaker.org
-      # Make sure the this file is available and permission is set correctly
-      #- --certificatesresolvers.leresolver.acme.storage=/le/acme.json
-      #- --certificatesresolvers.leresolver.acme.tlschallenge=true
       # Enable the access log, with HTTP requests
       - --accesslog.bufferingsize=100
       - --accesslog.filepath=/var/log/traefik/traefik-access.log        
@@ -46,6 +39,9 @@ services:
         mode: host
     networks:
       - traefik-public
+    environment:
+      ACME_EMAIL: ${ACME_EMAIL}
+      LINODE_TOKEN: ${LINODE_TOKEN}
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       # Make sure the volume folder is created
@@ -55,7 +51,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.role == manager
+          - node.labels.type == traefikapp
       labels:
         # Dashboard
         - "traefik.enable=true"

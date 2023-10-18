@@ -17,7 +17,8 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role == manager]
+        constraints:
+          - node.labels.type == traefikapp
       labels:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
@@ -46,7 +47,8 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role == manager]
+        constraints:
+          - node.labels.type == traefikapp
 
   mail:
     image: bytemark/smtp
@@ -55,7 +57,8 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role == manager]
+        constraints:
+          - node.labels.type == traefikapp
 
 volumes:
   matomo-data:

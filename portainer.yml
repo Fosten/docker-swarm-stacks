@@ -33,7 +33,8 @@ services:
         - "traefik.http.routers.portainer.tls.certresolver=mydnschallenge"
       mode: replicated
       placement:
-        constraints: [node.role == manager]
+        constraints:
+          - node.labels.type == traefikapp
 
 networks:
   traefik-public:
