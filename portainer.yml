@@ -19,7 +19,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       # make sure the folder is available
-      - ${HOME}/data:/data
+      - ${HOME}/portainer/data:/data
     networks:
       - traefik-public
     deploy:

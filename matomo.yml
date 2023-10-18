@@ -11,9 +11,9 @@ services:
     ports:
       - 9000:80
     volumes:
-      - ${HOME}/config:/var/www/html/config:rw
-      - ${HOME}/logs:/var/www/html/logs
-      - ${HOME}/php.ini:/usr/local/etc/php/php.ini
+      - ${HOME}/matomo/config:/var/www/html/config:rw
+      - ${HOME}/matomo/logs:/var/www/html/logs
+      - ${HOME}/matomo/php.ini:/usr/local/etc/php/php.ini
     deploy:
       replicas: 1
       placement:
