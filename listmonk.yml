@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  listmonk:
+    image: listmonk/listmonk:latest
+    ports:
+      - "9001:9001"
+    networks:
+      - traefik-public
+    environment:
+      - TZ=US/Eastern
+      - LISTMONK_app__address=${LISTMONK_ADDRESS}
+      - LISTMONK_app__admin_username=${LISTMONK_ADMIN_USERNAME}
+      - LISTMONK_app__admin_password=${LISTMONK_ADMIN_PASSWORD}
+      - LISTMONK_db__host=${LISTMONK_DB_HOST}
+      - LISTMONK_db__port=${LISTMONK_DB_PORT}
+      - LISTMONK_db__user=${LISTMONK_DB_USER}
+      - LISTMONK_db__password=${LISTMONK_DB_PASSWORD}
+      - LISTMONK_db__database=${LISTMONK_DB_NAME}
+      - LISTMONK_db__ssl_mode=${LISTMONK_DB_SSL}
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == traefikapp
+      labels:
+        - traefik.enable=true
+        # change the host here
+        - traefik.http.routers.listmonk.rule=(Host(`listmonk.pimaker.org`) || Host(`listmonk.lillymountain.com`) || Host(`listmonk.happybaseball.com`))
+        - traefik.http.services.listmonk.loadbalancer.server.port=9001
+        - traefik.http.routers.listmonk.entrypoints=websecure
+        - traefik.http.routers.listmonk.tls=true
+        - traefik.http.routers.listmonk.tls.certresolver=mydnschallenge
+    command: sh -c "./listmonk --install --yes && ./listmonk"
+
+networks:
+  traefik-public:
+    external: true
