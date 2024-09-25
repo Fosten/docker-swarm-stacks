@@ -50,16 +50,6 @@ services:
         constraints:
           - node.labels.type == traefikapp
 
-  mail:
-    image: bytemark/smtp
-    networks:
-        - traefik-public
-    deploy:
-      replicas: 1
-      placement:
-        constraints:
-          - node.labels.type == traefikapp
-
 volumes:
   matomo-data:
 

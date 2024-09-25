@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  mail:
+    image: bytemark/smtp
+    networks:
+        - traefik-public
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.platform.os == linux]
+
+networks:
+  traefik-public:
+    external: true
