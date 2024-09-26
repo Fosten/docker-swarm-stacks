@@ -29,6 +29,9 @@ services:
         - traefik.http.routers.mailhog.entrypoints=websecure
         - traefik.http.routers.mailhog.tls=true
         - traefik.http.routers.mailhog.tls.certresolver=mydnschallenge
+        - traefik.http.routers.mailhog.middlewares=gzip,authmailhog
+        # Change the auth password here
+        - traefik.http.middlewares.authmailhog.basicauth.users=admin:$$2y$$05$$hGP72w.Rgky4RK7FrN9km.UpdwwHqB8gJNp8TQ4s4qDK8LxjfISl6"
 
 networks:
   traefik-public:
