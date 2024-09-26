@@ -27,4 +27,5 @@ jobs:
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
           stack_file: mailhog.yml
           stack_name: mailhog
+          env_file: ${{ secrets.ENV_FILE }}
           deploy_timeout: 480

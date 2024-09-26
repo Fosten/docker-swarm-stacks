@@ -8,11 +8,27 @@ services:
       - "8025:8025"
     networks:
         - traefik-public
+    volumes:
+      - ${HOME}/mailhog/maildir:/maildir
+      - ${HOME}/mailhog/outgoing_smtp.json:/outgoing_smtp.json
+    environment:
+      MH_HOSTNAME: pimaker.org
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /maildir
+      MH_OUTGOING_SMTP: /outgoing_smtp.json
     deploy:
       replicas: 1
       placement:
         constraints:
           - node.labels.type == traefikapp
+      labels:
+        - traefik.enable=true
+        # change the host here
+        - traefik.http.routers.mailhog.rule=Host(`mailhog.pimaker.org`)
+        - traefik.http.services.mailhog.loadbalancer.server.port=8025
+        - traefik.http.routers.mailhog.entrypoints=websecure
+        - traefik.http.routers.mailhog.tls=true
+        - traefik.http.routers.mailhog.tls.certresolver=mydnschallenge
 
 networks:
   traefik-public:
