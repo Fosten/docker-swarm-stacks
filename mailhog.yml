@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+        - traefik-public
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == traefikapp
+
+networks:
+  traefik-public:
+    external: true
