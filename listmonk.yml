@@ -1,10 +1,10 @@
-version: "3.7"
+version: '3.9'
 
 services:
   listmonk:
     image: listmonk/listmonk:latest
     ports:
-      - "9001:9001"
+      - 9001:9001
     networks:
       - traefik-public
     environment:
@@ -26,12 +26,13 @@ services:
       labels:
         - traefik.enable=true
         # change the host here
-        - traefik.http.routers.listmonk.rule=(Host(`listmonk.pimaker.org`) || Host(`listmonk.lillymountain.com`) || Host(`listmonk.happybaseball.com`))
+        - traefik.http.routers.listmonk.rule=Host(`listmonk.pimaker.org`)
         - traefik.http.services.listmonk.loadbalancer.server.port=9001
         - traefik.http.routers.listmonk.entrypoints=websecure
         - traefik.http.routers.listmonk.tls=true
         - traefik.http.routers.listmonk.tls.certresolver=mydnschallenge
-    command: sh -c "./listmonk --install --yes && ./listmonk"
+        - traefik.http.routers.listmonk.middlewares=gzip
+    command: sh -c './listmonk --install --yes && ./listmonk'
 
 networks:
   traefik-public:
