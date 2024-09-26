@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.9'
 
 services:
   agent:
@@ -24,13 +24,14 @@ services:
       - traefik-public
     deploy:
       labels:
-        - "traefik.enable=true"
+        - traefik.enable=true
         # change the host here
-        - "traefik.http.routers.portainer.rule=Host(`portainer.pimaker.org`)"
-        - "traefik.http.services.portainer.loadbalancer.server.port=9000"
-        - "traefik.http.routers.portainer.entrypoints=websecure"
-        - "traefik.http.routers.portainer.tls=true"
-        - "traefik.http.routers.portainer.tls.certresolver=mydnschallenge"
+        - traefik.http.routers.portainer.rule=Host(`portainer.pimaker.org`)
+        - traefik.http.services.portainer.loadbalancer.server.port=9000
+        - traefik.http.routers.portainer.entrypoints=websecure
+        - traefik.http.routers.portainer.tls=true
+        - traefik.http.routers.portainer.tls.certresolver=mydnschallenge
+        - traefik.http.routers.portainer.middlewares=gzip
       mode: replicated
       placement:
         constraints:
