@@ -12,7 +12,7 @@ services:
       - --providers.docker.exposedbydefault=false
       - --providers.swarm=true
       - --providers.swarm.watch=true
-      - --providers.swarm.network=traefik-public
+      - --providers.docker.network=traefik-public
       - --api
       - --api.dashboard=true
       # DNS Resolver
