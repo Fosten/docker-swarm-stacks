@@ -64,7 +64,7 @@ services:
         - traefik.http.routers.traefik.entrypoints=websecure
         - traefik.http.routers.traefik.middlewares=gzip,authtraefik
         # Change the auth password here
-        - traefik.http.middlewares.authtraefik.basicauth.users=admin:$$2y$$05$$hGP72w.Rgky4RK7FrN9km.UpdwwHqB8gJNp8TQ4s4qDK8LxjfISl6
+        - traefik.http.middlewares.authtraefik.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
 
         # global redirect to https
         - traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)
