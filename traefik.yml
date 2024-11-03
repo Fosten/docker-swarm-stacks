@@ -66,16 +66,17 @@ services:
         # Change the auth password here
         - traefik.http.middlewares.authtraefik.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
 
-        # global redirect to https
-        - traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)
-        - traefik.http.routers.http-catchall.entrypoints=http
-        - traefik.http.routers.http-catchall.middlewares=redirect-to-https
-
-        # middleware redirect
-        - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
-
-        # middleware compress
+        # GENERIC MIDDLEWARES
+        - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+        - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
         - traefik.http.middlewares.gzip.compress=true
+        - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png, image/jpeg, font/woff2
+
+        # GENERIC ROUTERS
+        - traefik.http.routers.generic-https-redirect.entrypoints=http
+        - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`{host:.*}`)
+        - traefik.http.routers.generic-https-redirect.priority=1
+        - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
 
 networks:
   traefik-public:
