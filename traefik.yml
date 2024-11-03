@@ -74,7 +74,7 @@ services:
 
         # GENERIC ROUTERS
         - traefik.http.routers.generic-https-redirect.entrypoints=http
-        - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`{host:.*}`)
+        - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`.*`)
         - traefik.http.routers.generic-https-redirect.priority=1
         - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
 
