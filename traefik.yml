@@ -6,8 +6,8 @@ services:
     command:
       - --log.level=INFO
       - --log.filePath=/var/log/traefik/traefik.log
-      - --entrypoints.web.address=:80
-      - --entrypoints.websecure.address=:443
+      - --entrypoints.http.address=:80
+      - --entrypoints.https.address=:443
       - --providers.docker
       - --providers.docker.exposedbydefault=false
       - --providers.swarm=true
@@ -61,14 +61,14 @@ services:
         - traefik.http.services.traefik.loadbalancer.server.port=8080
         - traefik.http.routers.traefik.tls=true
         - traefik.http.routers.traefik.tls.certresolver=mydnschallenge
-        - traefik.http.routers.traefik.entrypoints=websecure
+        - traefik.http.routers.traefik.entrypoints=https
         - traefik.http.routers.traefik.middlewares=gzip,authtraefik
         # Change the auth password here
         - traefik.http.middlewares.authtraefik.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
 
         # global redirect to https
         - traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)
-        - traefik.http.routers.http-catchall.entrypoints=web
+        - traefik.http.routers.http-catchall.entrypoints=http
         - traefik.http.routers.http-catchall.middlewares=redirect-to-https
 
         # middleware redirect

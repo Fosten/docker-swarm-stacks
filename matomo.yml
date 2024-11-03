@@ -27,7 +27,7 @@ services:
         - traefik.http.services.matomo.loadbalancer.server.port=80
         # HOSTS: Main
         - traefik.http.routers.matomo.rule=(Host(`stats.pimaker.org`) || Host(`stats.lillymountain.com`) || Host(`stats.happybaseball.com`))
-        - traefik.http.routers.matomo.entrypoints=websecure
+        - traefik.http.routers.matomo.entrypoints=https
         - traefik.http.routers.matomo.tls=true
         - traefik.http.routers.matomo.tls.certresolver=mydnschallenge
         - traefik.http.routers.matomo.service=matomo
@@ -54,7 +54,7 @@ services:
         - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
         - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
         - traefik.http.routers.traefikRouter.service=api@internal
-        - traefik.http.routers.traefikRouter.entrypoints=web
+        - traefik.http.routers.traefikRouter.entrypoints=http
 
 volumes:
   matomo-data:

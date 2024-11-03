@@ -26,7 +26,7 @@ services:
         # Change the host here
         - traefik.http.routers.mailhog.rule=Host(`mailhog.pimaker.org`)
         - traefik.http.services.mailhog.loadbalancer.server.port=8025
-        - traefik.http.routers.mailhog.entrypoints=web
+        - traefik.http.routers.mailhog.entrypoints=http
         - traefik.http.routers.mailhog.middlewares=gzip,mailhog-auth
         # Change the auth password here
         - traefik.http.middlewares.mailhog-auth.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}"
