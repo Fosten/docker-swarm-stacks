@@ -22,7 +22,7 @@ services:
         - traefik.docker.network=traefik-public
         - traefik.constraint-label=traefik-public
         # SERVICES: Main
-        - traefik.http.services.matomo.loadbalancer.server.port=9000
+        - traefik.http.services.matomo.loadbalancer.server.port=80
         # HOSTS: Main
         - traefik.http.routers.matomo.rule=(Host(`stats.pimaker.org`) || Host(`stats.lillymountain.com`) || Host(`stats.happybaseball.com`))
         - traefik.http.routers.matomo.entrypoints=https
