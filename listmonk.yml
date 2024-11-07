@@ -10,8 +10,6 @@ services:
     environment:
       - TZ=US/Eastern
       - LISTMONK_app__address=${LISTMONK_ADDRESS}
-      - LISTMONK_app__admin_username=${LISTMONK_ADMIN_USERNAME}
-      - LISTMONK_app__admin_password=${LISTMONK_ADMIN_PASSWORD}
       - LISTMONK_db__host=${LISTMONK_DB_HOST}
       - LISTMONK_db__port=${LISTMONK_DB_PORT}
       - LISTMONK_db__user=${LISTMONK_DB_USER}
