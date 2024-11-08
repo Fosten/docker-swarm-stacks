@@ -29,6 +29,12 @@ services:
         constraints:
         - node.platform.os == linux
         - node.labels.type != traefikapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
+        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
+        - traefik.http.routers.traefikRouter.service=api@internal
+        - traefik.http.routers.traefikRouter.entrypoints=http
 
   netdata-central:
     image: netdata/netdata:v2.0.0
