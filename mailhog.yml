@@ -29,7 +29,7 @@ services:
         - traefik.http.routers.mailhog.entrypoints=http
         - traefik.http.routers.mailhog.middlewares=gzip,mailhog-auth
         # Change the auth password here
-        - traefik.http.middlewares.mailhog-auth.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}"
+        - traefik.http.middlewares.mailhog-auth.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
 
 networks:
   traefik-public:
