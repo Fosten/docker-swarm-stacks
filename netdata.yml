@@ -1,9 +1,5 @@
 version: '3.9'
-configs:
-  netdata_stream_master:
-    file: $PWD/stream-master.conf
-  netdata_stream_client:
-    file: $PWD/stream-client.conf
+
 services:
   netdata-client:
     image: netdata/netdata:v2.0.0
@@ -12,11 +8,6 @@ services:
       - SYS_PTRACE
     depends_on:
       - netdata-central
-    configs:
-        -
-          mode: 444
-          source: netdata_stream_client
-          target: /etc/netdata/stream.conf
     networks:
       - netdata
     environment:
@@ -24,6 +15,7 @@ services:
     volumes:
       - ./msmtprc:/etc/msmtprc
       - ./health_alarm_notify.conf:/etc/health_alarm_notify.conf
+      - ./stream-client.conf:/etc/netdata/stream.conf
       - netdataconfig:/etc/netdata
       - netdatalib:/var/lib/netdata
       - netdatacache:/var/cache/netdata
@@ -42,11 +34,6 @@ services:
   netdata-central:
     image: netdata/netdata:v2.0.0
     hostname: control
-    configs:
-      -
-        mode: 444
-        source: netdata_stream_master
-        target: /etc/netdata/stream.conf
     networks:
       - netdata
       - traefik-public
@@ -55,6 +42,7 @@ services:
     volumes:
       - ./msmtprc:/etc/msmtprc
       - ./health_alarm_notify.conf:/etc/health_alarm_notify.conf
+      - ./stream-master.conf:/etc/netdata/stream.conf
       - netdataconfig:/etc/netdata
       - netdatalib:/var/lib/netdata
       - netdatacache:/var/cache/netdata
