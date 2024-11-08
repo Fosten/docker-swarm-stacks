@@ -14,9 +14,7 @@ services:
       - PGID=999
     volumes:
       - ${HOME}/netdatafiles/msmtprc:/etc/msmtprc
-      - ${HOME}/netdatafiles/health_alarm_notify.conf:/etc/health_alarm_notify.conf
-      - ${HOME}/netdatafiles/stream-client.conf:/etc/netdata/stream.conf
-      - netdataconfig:/etc/netdata
+      - ${HOME}/netdataconfig:/etc/netdata
       - netdatalib:/var/lib/netdata
       - netdatacache:/var/cache/netdata
       - /etc/passwd:/host/etc/passwd:ro
@@ -41,9 +39,7 @@ services:
       - PGID=999
     volumes:
       - ${HOME}/netdatafiles/msmtprc:/etc/msmtprc
-      - ${HOME}/netdatafiles/health_alarm_notify.conf:/etc/health_alarm_notify.conf
-      - ${HOME}/netdatafiles/stream-master.conf:/etc/netdata/stream.conf
-      - netdataconfig:/etc/netdata
+      - ${HOME}/netdataconfig:/etc/netdata
       - netdatalib:/var/lib/netdata
       - netdatacache:/var/cache/netdata
       - /etc/passwd:/host/etc/passwd:ro
@@ -69,7 +65,6 @@ services:
         - traefik.http.middlewares.netdata-auth.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
 
 volumes:
-  netdataconfig:
   netdatalib:
   netdatacache:
 
