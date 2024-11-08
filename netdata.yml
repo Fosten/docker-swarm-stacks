@@ -13,9 +13,9 @@ services:
     environment:
       - PGID=999
     volumes:
-      - ./msmtprc:/etc/msmtprc
-      - ./health_alarm_notify.conf:/etc/health_alarm_notify.conf
-      - ./stream-client.conf:/etc/netdata/stream.conf
+      - ${HOME}/msmtprc:/etc/msmtprc
+      - ${HOME}/health_alarm_notify.conf:/etc/health_alarm_notify.conf
+      - ${HOME}/stream-client.conf:/etc/netdata/stream.conf
       - netdataconfig:/etc/netdata
       - netdatalib:/var/lib/netdata
       - netdatacache:/var/cache/netdata
@@ -40,9 +40,9 @@ services:
     environment:
       - PGID=999
     volumes:
-      - ./msmtprc:/etc/msmtprc
-      - ./health_alarm_notify.conf:/etc/health_alarm_notify.conf
-      - ./stream-master.conf:/etc/netdata/stream.conf
+      - ${HOME}/msmtprc:/etc/msmtprc
+      - ${HOME}/health_alarm_notify.conf:/etc/health_alarm_notify.conf
+      - ${HOME}/stream-master.conf:/etc/netdata/stream.conf
       - netdataconfig:/etc/netdata
       - netdatalib:/var/lib/netdata
       - netdatacache:/var/cache/netdata
