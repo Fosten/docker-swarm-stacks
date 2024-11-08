@@ -10,6 +10,7 @@ services:
       - netdata-central
     networks:
       - netdata
+      - traefik-public
     environment:
       - PGID=999
     volumes:
