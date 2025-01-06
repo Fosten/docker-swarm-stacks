@@ -8,6 +8,7 @@ services:
       - --log.filePath=/var/log/traefik/traefik.log
       - --entrypoints.http.address=:80
       - --entrypoints.https.address=:443
+      - --entrypoints.https.http.middlewares=gzip@swarm
       - --providers.docker
       - --providers.docker.exposedbydefault=false
       - --providers.swarm=true
