@@ -19,7 +19,7 @@ services:
           - node.labels.type == traefikapp
       labels:
         - traefik.enable=true
-        - traefik.docker.network=traefik-public
+        - traefik.swarm.network=traefik-public
         - traefik.constraint-label=traefik-public
         # SERVICES: Main
         - traefik.http.services.matomo.loadbalancer.server.port=80
