@@ -18,6 +18,8 @@ services:
       - LISTMONK_db__max_open=25
       - LISTMONK_db__max_idle=25
       - LISTMONK_db__max_lifetime=300s
+    volumes:
+      - ${HOME}/listmonk/uploads:/listmonk/uploads
     deploy:
       replicas: 1
       placement:
