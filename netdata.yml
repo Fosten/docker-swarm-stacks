@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   netdata-client:
-    image: netdata/netdata:v2.0.0
+    image: netdata/netdata:v2.1.1
     hostname: "{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"
     cap_add:
       - SYS_PTRACE
