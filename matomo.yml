@@ -30,6 +30,12 @@ services:
         - traefik.http.routers.matomo.tls.certresolver=mydnschallenge
         - traefik.http.routers.matomo.service=matomo
         - traefik.http.routers.matomo.middlewares=gzip
+        # HOSTS: Main
+        - traefik.http.routers.matomo-blockpath.rule=(Host(`stats.pimaker.org`) || Host(`stats.lillymountain.com`) || Host(`stats.happybaseball.com`)) && (PathPrefix(`/.git`) || PathPrefix(`/core`) || PathPrefix(`/config`) || PathPrefix(`/lang`) || PathPrefix(`/tmp`))
+        - traefik.http.routers.matomo-blockpath.entrypoints=https
+        - traefik.http.routers.matomo-blockpath.tls=true
+        - traefik.http.routers.matomo-blockpath.tls.certresolver=mydnschallenge
+        - traefik.http.routers.matomo-blockpath.service=noop@internal
 
   matomo-db:
     image: mariadb:10.11.5
