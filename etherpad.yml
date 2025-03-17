@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  etherpad:
+    image: etherpad/etherpad:latest
+    networks:
+      - traefik-public
+    environment:
+      - NODE_ENV=production
+      - DB_TYPE=${ETHERPAD_DB_TYPE}
+      - DB_HOST=${ETHERPAD_DB_HOST}
+      - DB_PORT=${ETHERPAD_DB_PORT}
+      - DB_USER=${ETHERPAD_DB_USER}
+      - DB_PASS=${ETHERPAD_DB_PASS}
+      - DB_NAME=${ETHERPAD_DB_NAME}
+      - ADMIN_PASSWORD=${ETHERPAD_ADMIN_PASSWORD}
+    volumes:
+      - ${HOME}/etherpad/plugins:/opt/etherpad-lite/src/plugin_packages
+      - ${HOME}/etherpad/var:/opt/etherpad-lite/var
+      - ${HOME}/etherpad/settings.json:/opt/etherpad-lite/settings.json
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == traefikapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.ethercalc.rule=Host(`etherpad.pimaker.org`)
+        - traefik.http.routers.ethercalc.entrypoints=https
+        - traefik.http.routers.ethercalc.service=ethercalc
+        - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
+        - traefik.http.services.ethercalc.loadbalancer.server.port=9001
+
+networks:
+  traefik-public:
+    external: true
