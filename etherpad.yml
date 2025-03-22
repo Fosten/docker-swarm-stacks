@@ -25,11 +25,15 @@ services:
           - node.labels.type == dispatchapp
       labels:
         - traefik.enable=true
-        - traefik.http.routers.ethercalc.rule=Host(`etherpad.pimaker.org`)
-        - traefik.http.routers.ethercalc.entrypoints=https
-        - traefik.http.routers.ethercalc.service=ethercalc
-        - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
-        - traefik.http.services.ethercalc.loadbalancer.server.port=9001
+        - traefik.http.routers.etherpad.rule=Host(`etherpad.pimaker.org`)
+        - traefik.http.routers.etherpad.entrypoints=https
+        - traefik.http.routers.etherpad.service=etherpad
+        - traefik.http.routers.etherpad.tls.certresolver=mydnschallenge
+        - traefik.http.services.etherpad.loadbalancer.server.port=9001
+        - traefik.http.routers.etherpad.middlewares=gzip,etherpad-auth
+        # Change the auth password here
+        - traefik.http.middlewares.etherpad-auth.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
+
 
 networks:
   traefik-public:
