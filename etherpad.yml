@@ -32,7 +32,7 @@ services:
         - traefik.http.services.etherpad.loadbalancer.server.port=9001
         - traefik.http.routers.etherpad.middlewares=gzip,etherpad-auth
         # Change the auth password here
-        - traefik.http.middlewares.etherpad-auth.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
+        - traefik.http.middlewares.etherpad-auth.basicauth.users=user:${ETHERPAD_USER_HASHED_PASSWORD}
 
 
 networks:
