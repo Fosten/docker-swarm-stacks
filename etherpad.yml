@@ -13,6 +13,7 @@ services:
       - DB_USER=${ETHERPAD_DB_USER}
       - DB_PASS=${ETHERPAD_DB_PASS}
       - DB_NAME=${ETHERPAD_DB_NAME}
+      - TRUST_PROXY=${ETHERPAD_TRUST_PROXY}
       - ADMIN_PASSWORD=${ETHERPAD_ADMIN_PASSWORD}
     volumes:
       - ${HOME}/etherpad/plugins:/opt/etherpad-lite/src/plugin_packages
