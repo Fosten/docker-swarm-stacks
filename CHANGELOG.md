@@ -19,8 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Etherpad
 - Add CHANGELOG.md
 - Add README.md
-- Bump traefik from v3.3.1 to v3.3.4
-- Bump netdata from v2.1.1 to v2.3.0
+- Bump traefik from v3.3.1 to v3.3.5
+- Bump netdata from v2.1.1 to v2.4.0
 
 # 1.4.0 (2025-01-10)
 - Add motomo-blockpath router

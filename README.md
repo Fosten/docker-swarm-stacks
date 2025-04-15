@@ -9,7 +9,9 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Matomo
 - Netdata
 - Listmonk
+- Mailhog
 - SMTP
+- Etherpad
 
 ## Deployment via CI/CD 🔧
 
