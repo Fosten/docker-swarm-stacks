@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   traefik:
-    image: traefik:v3.4.0-rc2
+    image: traefik:v3.4.0
     command:
       - --log.level=INFO
       - --log.filePath=/var/log/traefik/traefik.log
