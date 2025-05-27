@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Etherpad
 - Add CHANGELOG.md
 - Add README.md
-- Bump traefik from v3.3.1 to v3.4.0
+- Bump traefik from v3.3.1 to v3.4.1
 - Bump netdata from v2.1.1 to v2.5.2
 
 # 1.4.0 (2025-01-10)
