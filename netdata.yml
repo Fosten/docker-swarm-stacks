@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   netdata-client:
-    image: netdata/netdata:v2.5.2
+    image: netdata/netdata:v2.5.3
     hostname: "{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"
     cap_add:
       - SYS_PTRACE
@@ -37,7 +37,7 @@ services:
         - traefik.http.routers.traefikRouter.entrypoints=http
 
   netdata-central:
-    image: netdata/netdata:v2.5.2
+    image: netdata/netdata:v2.5.3
     hostname: control
     networks:
       - netdata
