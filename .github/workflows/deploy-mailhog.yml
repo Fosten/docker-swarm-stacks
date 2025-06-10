@@ -1,4 +1,4 @@
-name: Deploy MailHog
+name: Deploy MailHog CD
 
 on:
   push:
