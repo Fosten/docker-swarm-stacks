@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    networks:
+      - traefik-public
+    privileged: true
+    user: root
+    volumes:
+      - ${HOME}/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == dispatchapp
+      labels:
+        - traefik.http.routers.jenkins.rule=Host(`jenkins.pimaker.org`)
+        - traefik.http.services.jenkins.loadbalancer.server.port=8080
+        - traefik.http.routers.jenkins.entrypoints=https
+        - traefik.http.routers.jenkins.tls=true
+        - traefik.http.routers.jenkins.tls.certresolver=mydnschallenge
+        - traefik.http.routers.jenkins.middlewares=gzip
+
+  agent:
+    image: jenkins/ssh-agent:jdk21
+    networks:
+      - traefik-public
+    privileged: true
+    user: root
+    expose:
+      - 22
+    environment:
+      - JENKINS_AGENT_SSH_PUBKEY=${JENKINS_AGENT_SSH_TYPE} ${JENKINS_AGENT_SSH_KEY} ${JENKINS_AGENT_SSH_USER}
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == dispatchapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
+        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
+        - traefik.http.routers.traefikRouter.service=api@internal
+        - traefik.http.routers.traefikRouter.entrypoints=http
+
+networks:
+  traefik-public:
+    external: true

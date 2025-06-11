@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Add Jenkins
 - Add Postfix
 - Enable basicauth on etherpad
 - Change node.label.type for listmonk, mailhog, smtp, etherpad

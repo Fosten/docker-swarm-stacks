@@ -13,6 +13,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Mailhog
 - SMTP
 - Etherpad
+- Jenkins
 
 ## Deployment via CI/CD 🔧
 
@@ -62,6 +63,9 @@ ETHERPAD_DB_NAME=
 ETHERPAD_TRUST_PROXY=
 ETHERPAD_ADMIN_PASSWORD=
 ETHERPAD_USER_HASHED_PASSWORD=
+JENKINS_AGENT_SSH_TYPE=
+JENKINS_AGENT_SSH_KEY=
+JENKINS_AGENT_SSH_USER=
 ```
 
 ### Deploy to Docker Swarm
