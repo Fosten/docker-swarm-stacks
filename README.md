@@ -15,6 +15,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Etherpad
 - Jenkins
 - Keycloak
+- GitLab
 
 ## Deployment via CI/CD 🔧
 
@@ -70,6 +71,9 @@ JENKINS_AGENT_SSH_USER=
 KC_HOSTNAME=
 KC_BOOTSTRAP_ADMIN_USERNAME=
 KC_BOOTSTRAP_ADMIN_PASSWORD=
+GITLAB_HOSTNAME=
+GITLAB_ROOT_EMAIL=
+GITLAB_ROOT_PASSWORD=
 ```
 
 ### Deploy to Docker Swarm

@@ -1,0 +1,82 @@
+version: '3.9'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    networks:
+      - traefik-public
+    hostname: '${GITLAB_HOSTNAME}'
+    environment:
+      GITLAB_ROOT_EMAIL: ${GITLAB_ROOT_EMAIL}
+      GITLAB_ROOT_PASSWORD: ${GITLAB_ROOT_PASSWORD}
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url "https://${GITLAB_HOSTNAME}"
+        letsencrypt['enable'] = false
+        nginx['listen_port'] = 80
+        nginx['listen_https'] = false
+        puma['worker_processes'] = 0
+        sidekiq['concurrency'] = 10
+        prometheus_monitoring['enable'] = false
+        gitlab_rails['env'] = {
+          'MALLOC_CONF' => 'dirty_decay_ms:1000,muzzy_decay_ms:1000'
+        }
+        gitaly['configuration'] = {
+          concurrency: [
+            {
+              'rpc' => "/gitaly.SmartHTTPService/PostReceivePack",
+              'max_per_repo' => 3,
+            }, {
+              'rpc' => "/gitaly.SSHService/SSHUploadPack",
+              'max_per_repo' => 3,
+            },
+          ],
+          cgroups: {
+            repositories: {
+              count: 2,
+            },
+            mountpoint: '/sys/fs/cgroup',
+            hierarchy_root: 'gitaly',
+            memory_bytes: 500000,
+            cpu_shares: 512,
+          },
+        }
+        gitaly['env'] = {
+          'MALLOC_CONF' => 'dirty_decay_ms:1000,muzzy_decay_ms:1000',
+          'GITALY_COMMAND_SPAWN_MAX_PARALLEL' => '2'
+        }
+    volumes:
+      - ${HOME}/gitlab/config:/etc/gitlab
+      - ${HOME}/gitlab/logs:/var/log/gitlab
+      - ${HOME}/gitlab/data:/var/opt/gitlab
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.http.routers.gitlab.rule=Host(`${GITLAB_HOSTNAME}`)
+        - traefik.http.services.gitlab.loadbalancer.server.port=80
+        - traefik.http.routers.gitlab.entrypoints=https
+        - traefik.http.routers.gitlab.tls=true
+        - traefik.http.routers.gitlab.tls.certresolver=mydnschallenge
+        - traefik.http.routers.gitlab.middlewares=gzip
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:alpine
+    networks:
+      - traefik-public
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == dispatchapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
+        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
+        - traefik.http.routers.traefikRouter.service=api@internal
+        - traefik.http.routers.traefikRouter.entrypoints=http
+
+networks:
+  traefik-public:
+    external: true
