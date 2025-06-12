@@ -14,6 +14,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - SMTP
 - Etherpad
 - Jenkins
+- Keycloak
 
 ## Deployment via CI/CD 🔧
 
@@ -66,6 +67,9 @@ ETHERPAD_USER_HASHED_PASSWORD=
 JENKINS_AGENT_SSH_TYPE=
 JENKINS_AGENT_SSH_KEY=
 JENKINS_AGENT_SSH_USER=
+KC_HOSTNAME=
+KC_BOOTSTRAP_ADMIN_USERNAME=
+KC_BOOTSTRAP_ADMIN_PASSWORD=
 ```
 
 ### Deploy to Docker Swarm
