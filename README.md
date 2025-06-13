@@ -17,6 +17,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Keycloak
 - GitLab
 - Graylog
+- Grafana
 
 ## Deployment via CI/CD 🔧
 
@@ -78,6 +79,8 @@ GITLAB_ROOT_PASSWORD=
 GRAYLOG_HOSTNAME=
 GRAYLOG_PASSWORD_SECRET=
 GRAYLOG_ROOT_PASSWORD_SHA2=
+GRAFANA_HOSTNAME=
+GF_SECURITY_ADMIN_PASSWORD=
 ```
 
 ### Deploy to Docker Swarm
