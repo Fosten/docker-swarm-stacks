@@ -16,6 +16,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Jenkins
 - Keycloak
 - GitLab
+- Graylog
 
 ## Deployment via CI/CD 🔧
 
@@ -74,6 +75,9 @@ KC_BOOTSTRAP_ADMIN_PASSWORD=
 GITLAB_HOSTNAME=
 GITLAB_ROOT_EMAIL=
 GITLAB_ROOT_PASSWORD=
+GRAYLOG_HOSTNAME=
+GRAYLOG_PASSWORD_SECRET=
+GRAYLOG_ROOT_PASSWORD_SHA2=
 ```
 
 ### Deploy to Docker Swarm
