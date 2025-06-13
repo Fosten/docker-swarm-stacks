@@ -4,7 +4,7 @@ services:
   mongodb:
     image: mongo:6.0
     networks:
-      - traefik-public
+      - traefik-graylog
     volumes:
       - ${HOME}/mongodb/data:/data/db
       - ${HOME}/mongodb/config:/data/configdb
@@ -13,6 +13,12 @@ services:
       placement:
         constraints:
           - node.labels.type == dispatchapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
+        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
+        - traefik.http.routers.traefikRouter.service=api@internal
+        - traefik.http.routers.traefikRouter.entrypoints=http
 
   datanode:
     image: ${DATANODE_IMAGE:-graylog/graylog-datanode:6.1}
@@ -30,7 +36,7 @@ services:
         soft: 65536
         hard: 65536
     networks:
-      - traefik-public
+      - traefik-graylog
     volumes:
       - ${HOME}/graylog/datanode:/var/lib/graylog-datanode
     deploy:
@@ -38,6 +44,12 @@ services:
       placement:
         constraints:
           - node.labels.type == dispatchapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
+        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
+        - traefik.http.routers.traefikRouter.service=api@internal
+        - traefik.http.routers.traefikRouter.entrypoints=http
 
   graylog:
     hostname: graylog
@@ -55,6 +67,7 @@ services:
       GRAYLOG_HTTP_ENABLE_CORS: "true"
     networks:
       - traefik-public
+      - traefik-graylog
     volumes:
       - ${HOME}/graylog/data:/usr/share/graylog/data/data
     healthcheck:
@@ -77,13 +90,16 @@ services:
           - node.labels.type == dispatchapp
       labels:
         - traefik.enable=true
+        - traefik.swarm.network=traefik-public
+        - traefik.constraint-label=traefik-public
         - traefik.http.routers.graylog.rule=Host(`${GRAYLOG_HOSTNAME}`)
         - traefik.http.services.graylog.loadbalancer.server.port=9000
         - traefik.http.routers.graylog.entrypoints=https
         - traefik.http.routers.graylog.tls=true
         - traefik.http.routers.graylog.tls.certresolver=mydnschallenge
-        - traefik.docker.network=traefik-public
 
 networks:
   traefik-public:
     external: true
+  traefik-graylog:
+    driver: overlay
