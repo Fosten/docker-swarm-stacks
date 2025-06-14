@@ -17,6 +17,13 @@ services:
         puma['worker_processes'] = 0
         sidekiq['concurrency'] = 10
         prometheus_monitoring['enable'] = false
+        gitlab_rails['db_adapter'] = "postgresql"
+        gitlab_rails['db_encoding'] = "unicode"
+        gitlab_rails['db_database'] = "${GITLAB_DB_NAME}"
+        gitlab_rails['db_username'] = "${GITLAB_DB_USER}"
+        gitlab_rails['db_password'] = "${GITLAB_DB_PASSWORD}"
+        gitlab_rails['db_host'] = "${GITLAB_DB_HOST}"
+        gitlab_rails['db_port'] = ${GITLAB_DB_PORT}
         gitlab_rails['env'] = {
           'MALLOC_CONF' => 'dirty_decay_ms:1000,muzzy_decay_ms:1000'
         }
