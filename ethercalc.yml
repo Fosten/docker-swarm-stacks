@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+  ethercalc:
+    image: audreyt/ethercalc:${VERSION:-latest}
+    networks:
+      - traefik-public
+      - traefik-ethercalc
+    environment:
+      - REDIS_PORT_6379_TCP_ADDR=redis
+      - REDIS_PORT_6379_TCP_PORT=6379
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == dispatchapp
+      labels:
+        - traefik.enable=true
+        - traefik.swarm.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        - traefik.http.routers.ethercalc.rule=Host(`${ETHERCALC_HOSTNAME}`)
+        - traefik.http.routers.ethercalc.entrypoints=https
+        - traefik.http.routers.ethercalc.service=ethercalc
+        - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
+        - traefik.http.services.ethercalc.loadbalancer.server.port=8000
+        - traefik.http.routers.ethercalc.middlewares=gzip,ethercalc-auth
+        # Change the auth password here
+        - traefik.http.middlewares.ethercalc-auth.basicauth.users=user:${ETHERPAD_USER_HASHED_PASSWORD}
+
+  redis:
+    image: redis:6-alpine
+    volumes:
+      - ${HOME}/redis:/data
+    networks:
+      - traefik-ethercalc
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == dispatchapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
+        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
+        - traefik.http.routers.traefikRouter.service=api@internal
+        - traefik.http.routers.traefikRouter.entrypoints=http
+
+networks:
+  traefik-public:
+    external: true
+  traefik-ethercalc:
+    driver: overlay

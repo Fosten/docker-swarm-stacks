@@ -18,6 +18,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - GitLab
 - Graylog
 - Grafana
+- Ethercalc
 
 ## Deployment via CI/CD 🔧
 
@@ -81,6 +82,7 @@ GRAYLOG_PASSWORD_SECRET=
 GRAYLOG_ROOT_PASSWORD_SHA2=
 GRAFANA_HOSTNAME=
 GF_SECURITY_ADMIN_PASSWORD=
+ETHERCALC_HOSTNAME=
 ```
 
 ### Deploy to Docker Swarm
