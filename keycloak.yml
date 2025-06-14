@@ -12,6 +12,12 @@ services:
       - KC_BOOTSTRAP_ADMIN_USERNAME=${KC_BOOTSTRAP_ADMIN_USERNAME}
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KC_BOOTSTRAP_ADMIN_PASSWORD}
       - KC_LOG_LEVEL=info
+      - KC_HEALTH_ENABLED=false
+      - KC_METRICS_ENABLED=false
+      - KC_DB=${KC_DB_TYPE}
+      - KC_DB_URL=${KC_DB_URL}
+      - KC_DB_USERNAME=${KC_DB_USERNAME}
+      - KC_DB_PASSWORD=${KC_DB_PASSWORD}
     command: ["start"]
     deploy:
       replicas: 1
