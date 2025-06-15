@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Pin Keycloak to 25.0.6 for redirect_uri deprecation
 - Add Ethercalc
 - Add Grafana
 - Add Graylog

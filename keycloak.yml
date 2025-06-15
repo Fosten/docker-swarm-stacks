@@ -2,15 +2,15 @@ version: '3.8'
 
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:latest
+    image: quay.io/keycloak/keycloak:25.0.6
     networks:
       - traefik-public
     environment:
       - KC_HOSTNAME=${KC_HOSTNAME}
       - KC_HTTP_ENABLED=true
       - KC_PROXY_HEADERS=xforwarded
-      - KC_BOOTSTRAP_ADMIN_USERNAME=${KC_BOOTSTRAP_ADMIN_USERNAME}
-      - KC_BOOTSTRAP_ADMIN_PASSWORD=${KC_BOOTSTRAP_ADMIN_PASSWORD}
+      - KEYCLOAK_ADMIN=${KC_BOOTSTRAP_ADMIN_USERNAME}
+      - KEYCLOAK_ADMIN_PASSWORD=${KC_BOOTSTRAP_ADMIN_PASSWORD}
       - KC_LOG_LEVEL=info
       - KC_HEALTH_ENABLED=false
       - KC_METRICS_ENABLED=false
@@ -18,7 +18,7 @@ services:
       - KC_DB_URL=${KC_DB_URL}
       - KC_DB_USERNAME=${KC_DB_USERNAME}
       - KC_DB_PASSWORD=${KC_DB_PASSWORD}
-    command: ["start"]
+    command: ["start", "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true"]
     deploy:
       replicas: 1
       placement:
