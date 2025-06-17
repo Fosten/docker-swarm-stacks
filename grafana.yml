@@ -6,7 +6,13 @@ services:
     networks:
       - traefik-public
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+      GF_SECURITY_ADMIN_PASSWORD: ${GF_SECURITY_ADMIN_PASSWORD}
+      GF_DATABASE_TYPE: ${GF_DATABASE_TYPE}
+      GF_DATABASE_HOST: ${GF_DATABASE_HOST}
+      GF_DATABASE_NAME: ${GF_DATABASE_NAME}
+      GF_DATABASE_USER: ${GF_DATABASE_USE}
+      GF_DATABASE_PASSWORD: ${GF_DATABASE_PASSWORD}
+      GF_DATABASE_SSL_MODE: ${GF_DATABASE_SSL_MODE}
     volumes:
       - ${HOME}/grafana/data:/var/lib/grafana
       - ${HOME}/grafana/provisioning/:/etc/grafana/provisioning

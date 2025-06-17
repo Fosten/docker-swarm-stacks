@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik
 - Add traefik plugin keycloakopenid
 - Pin Keycloak to 25.0.6 for redirect_uri deprecation
+- Configure psql for Keycloak, Gitlab Grafana
 - Add Ethercalc
 - Add Grafana
 - Add Graylog
