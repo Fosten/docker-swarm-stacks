@@ -5,9 +5,8 @@ services:
     image: mailhog/mailhog:latest
     ports:
       - 1025:1025
-      - 8025:8025
     networks:
-        - traefik-public
+      - traefik-public
     volumes:
       - ${HOME}/mailhog/maildir:/maildir
       - ${HOME}/mailhog/outgoing_smtp.json:/outgoing_smtp.json
@@ -23,13 +22,15 @@ services:
           - node.labels.type == dispatchapp
       labels:
         - traefik.enable=true
+        - traefik.swarm.network=traefik-public
+        - traefik.constraint-label=traefik-public
         # Change the host here
         - traefik.http.routers.mailhog.rule=Host(`mailhog.pimaker.org`)
         - traefik.http.services.mailhog.loadbalancer.server.port=8025
-        - traefik.http.routers.mailhog.entrypoints=http
-        - traefik.http.routers.mailhog.middlewares=gzip,mailhog-auth
-        # Change the auth password here
-        - traefik.http.middlewares.mailhog-auth.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
+        - traefik.http.routers.mailhog.entrypoints=https
+        - traefik.http.routers.mailhog.service=mailhog
+        - traefik.http.routers.mailhog.tls.certresolver=mydnschallenge
+        - traefik.http.routers.mailhog.middlewares=gzip,my-keycloakopenid
 
 networks:
   traefik-public:
