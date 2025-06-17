@@ -70,9 +70,7 @@ services:
         - traefik.http.routers.traefik.tls=true
         - traefik.http.routers.traefik.tls.certresolver=mydnschallenge
         - traefik.http.routers.traefik.entrypoints=https
-        - traefik.http.routers.traefik.middlewares=gzip,authtraefik
-        # Change the auth password here
-        - traefik.http.middlewares.authtraefik.basicauth.users=admin:${TRAEFIK_HASHED_PASSWORD}
+        - traefik.http.routers.traefik.middlewares=gzip,my-keycloakopenid
 
         # GENERIC MIDDLEWARES
         - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
