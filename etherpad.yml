@@ -31,10 +31,7 @@ services:
         - traefik.http.routers.etherpad.service=etherpad
         - traefik.http.routers.etherpad.tls.certresolver=mydnschallenge
         - traefik.http.services.etherpad.loadbalancer.server.port=9001
-        - traefik.http.routers.etherpad.middlewares=gzip,etherpad-auth
-        # Change the auth password here
-        - traefik.http.middlewares.etherpad-auth.basicauth.users=user:${ETHERPAD_USER_HASHED_PASSWORD}
-
+        - traefik.http.routers.etherpad.middlewares=gzip,my-keycloakopenid
 
 networks:
   traefik-public:
