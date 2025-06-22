@@ -19,6 +19,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Graylog
 - Grafana
 - Ethercalc
+- Nextcloud
 
 ## Deployment via CI/CD 🔧
 
@@ -102,7 +103,14 @@ GF_DATABASE_NAME=
 GF_DATABASE_USER=
 GF_DATABASE_PASSWORD=
 GF_DATABASE_SSL_MODE=
-
+NEXTCLOUD_HOSTNAME=
+NEXTCLOUD_ADMIN_USER=
+NEXTCLOUD_ADMIN_PASSWORD=
+NEXTCLOUD_TRUSTED_PROXIES=
+NEXTCLOUD_POSTGRES_HOST=
+NEXTCLOUD_POSTGRES_DB=
+NEXTCLOUD_POSTGRES_USER=
+NEXTCLOUD_POSTGRES_PASSWORD=
 ```
 
 ### Deploy to Docker Swarm

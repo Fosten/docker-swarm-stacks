@@ -1,0 +1,50 @@
+version: '3.9'
+
+services:
+  nextcloud:
+    image: nextcloud:latest
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/nextcloud/data:/var/www/html:z
+      - ${HOME}/nextcloud/php-fpm-www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${HOME}/nextcloud/setup-config.sh:/usr/local/bin/setup-config.sh
+    entrypoint: /usr/local/bin/setup-config.sh
+    environment:
+      - NEXTCLOUD_HOSTNAME=${NEXTCLOUD_HOSTNAME}
+      - NEXTCLOUD_ADMIN_USER=${NEXTCLOUD_ADMIN_USER}
+      - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_ADMIN_PASSWORD}
+      - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_HOSTNAME}
+      - TRUSTED_PROXIES=${NEXTCLOUD_TRUSTED_PROXIES}
+      - OVERWRITEHOST=${NEXTCLOUD_HOSTNAME}
+      - OVERWRITEPROTOCOL=https
+      - OVERWRITECLIURL=https://${NEXTCLOUD_HOSTNAME}
+      - POSTGRES_HOST=${NEXTCLOUD_POSTGRES_HOST}
+      - POSTGRES_DB=${NEXTCLOUD_POSTGRES_DB}
+      - POSTGRES_USER=${NEXTCLOUD_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${NEXTCLOUD_POSTGRES_PASSWORD}
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == dispatchapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.nextcloud.rule=Host(`${NEXTCLOUD_HOSTNAME}`)
+        - traefik.http.services.nextcloud.loadbalancer.server.port=80
+        - traefik.http.routers.nextcloud.entrypoints=https
+        - traefik.http.routers.nextcloud.service=nextcloud
+        - traefik.http.routers.nextcloud.tls=true
+        - traefik.http.routers.nextcloud.tls.certresolver=mydnschallenge
+        - traefik.http.middlewares.my-nextcloud-header.headers.customRequestHeaders.X-Forwarded-Proto=https
+        - traefik.http.middlewares.my-nextcloud-header.headers.customRequestHeaders.X-Forwarded-For=${NEXTCLOUD_TRUSTED_PROXIES}
+        - traefik.http.middlewares.my-nextcloud-header.headers.customResponseHeaders.X-Robots-Tag=noindex,nofollow
+        - traefik.http.middlewares.my-nextcloud-header.headers.stsSeconds=15552000
+        - traefik.http.middlewares.my-nextcloud-header.headers.stsIncludeSubdomains=true
+        - traefik.http.middlewares.my-nextcloud-header.headers.stsPreload=true
+        - traefik.http.middlewares.my-nextcloud-header.headers.forceSTSHeader=true
+        - traefik.http.routers.nextcloud.middlewares=my-nextcloud-header,https-redirect
+
+networks:
+  traefik-public:
+    external: true
