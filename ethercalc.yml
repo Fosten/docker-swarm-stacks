@@ -7,8 +7,8 @@ services:
       - traefik-public
       - traefik-ethercalc
     environment:
-      - REDIS_PORT_6379_TCP_ADDR=redis
-      - REDIS_PORT_6379_TCP_PORT=6379
+      REDIS_PORT_6379_TCP_ADDR: redis
+      REDIS_PORT_6379_TCP_PORT: 6379
     deploy:
       replicas: 1
       placement:

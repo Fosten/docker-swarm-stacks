@@ -6,18 +6,18 @@ services:
     networks:
       - traefik-public
     environment:
-      - KC_HOSTNAME=${KC_HOSTNAME}
-      - KC_HTTP_ENABLED=true
-      - KC_PROXY_HEADERS=xforwarded
-      - KEYCLOAK_ADMIN=${KC_BOOTSTRAP_ADMIN_USERNAME}
-      - KEYCLOAK_ADMIN_PASSWORD=${KC_BOOTSTRAP_ADMIN_PASSWORD}
-      - KC_LOG_LEVEL=info
-      - KC_HEALTH_ENABLED=false
-      - KC_METRICS_ENABLED=false
-      - KC_DB=${KC_DB_TYPE}
-      - KC_DB_URL=${KC_DB_URL}
-      - KC_DB_USERNAME=${KC_DB_USERNAME}
-      - KC_DB_PASSWORD=${KC_DB_PASSWORD}
+      KC_HOSTNAME: ${KC_HOSTNAME}
+      KC_HTTP_ENABLED: "true"
+      KC_PROXY_HEADERS: xforwarded
+      KEYCLOAK_ADMIN: ${KC_BOOTSTRAP_ADMIN_USERNAME}
+      KEYCLOAK_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD}
+      KC_LOG_LEVEL: info
+      KC_HEALTH_ENABLED: "false"
+      KC_METRICS_ENABLED: "false"
+      KC_DB: ${KC_DB_TYPE}
+      KC_DB_URL: ${KC_DB_URL}
+      KC_DB_USERNAME: ${KC_DB_USERNAME}
+      KC_DB_PASSWORD: ${KC_DB_PASSWORD}
     command: ["start", "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true"]
     deploy:
       replicas: 1

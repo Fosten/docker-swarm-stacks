@@ -7,17 +7,17 @@ services:
       - traefik-public
     hostname: ${LISTMONK_FQDN}
     environment:
-      - TZ=US/Eastern
-      - LISTMONK_app__address=${LISTMONK_ADDRESS}
-      - LISTMONK_db__host=${LISTMONK_DB_HOST}
-      - LISTMONK_db__port=${LISTMONK_DB_PORT}
-      - LISTMONK_db__user=${LISTMONK_DB_USER}
-      - LISTMONK_db__password=${LISTMONK_DB_PASSWORD}
-      - LISTMONK_db__database=${LISTMONK_DB_NAME}
-      - LISTMONK_db__ssl_mode=require
-      - LISTMONK_db__max_open=25
-      - LISTMONK_db__max_idle=25
-      - LISTMONK_db__max_lifetime=300s
+      TZ: "US/Eastern"
+      LISTMONK_app__address: ${LISTMONK_ADDRESS}
+      LISTMONK_db__host: ${LISTMONK_DB_HOST}
+      LISTMONK_db__port: ${LISTMONK_DB_PORT}
+      LISTMONK_db__user: ${LISTMONK_DB_USER}
+      LISTMONK_db__password: ${LISTMONK_DB_PASSWORD}
+      LISTMONK_db__database: ${LISTMONK_DB_NAME}
+      LISTMONK_db__ssl_mode: require
+      LISTMONK_db__max_open: 25
+      LISTMONK_db__max_idle: 25
+      LISTMONK_db__max_lifetime: 300s
     volumes:
       - ${HOME}/listmonk/uploads:/listmonk/uploads
     deploy:

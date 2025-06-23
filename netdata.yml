@@ -12,7 +12,7 @@ services:
       - netdata
       - traefik-public
     environment:
-      - PGID=999
+      PGID: 999
     volumes:
       - ${HOME}/netdatafiles/msmtprc:/etc/msmtprc
       - ${HOME}/netdataconfig:/etc/netdata
@@ -43,7 +43,7 @@ services:
       - netdata
       - traefik-public
     environment:
-      - PGID=999
+      PGID: 999
     volumes:
       - ${HOME}/netdatafiles/msmtprc:/etc/msmtprc
       - ${HOME}/netdataconfig:/etc/netdata

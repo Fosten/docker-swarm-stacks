@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Use Key-Value (Dictionary) Format for docker-compose environment [fosten]
 - Use docker-compose version 3.9 in jenkins and keycloak [fosten]
 - Cleanup postfix and mailhog [fosten]
 - Insert blank line at the end of source files [fosten]
