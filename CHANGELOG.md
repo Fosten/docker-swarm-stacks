@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Add new releases to CHANGELOG.md [fosten]
 - Remove unused Docker image env vars [fosten]
 - Use Key-Value (Dictionary) Format for docker-compose environment [fosten]
 - Use docker-compose version 3.9 in jenkins and keycloak [fosten]
@@ -23,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implement more HOSTNAME env vars [fosten]
 - Rename SMTP to Exim [fosten]
 - Add .env.example [fosten]
+
+# 1.6.0 (2025-06-22)
 - Add Nextcloud [fosten]
 - Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik [fosten]
 - Add traefik plugin keycloakopenid [fosten]
@@ -35,13 +38,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Keycloak [fosten]
 - Add Jenkins [fosten]
 - Add Postfix [fosten]
+- Bump traefik from v3.3.4 to v3.4.1 [fosten]
+- Bump netdata from v2.3.0 to v2.5.3 [fosten]
+
+# 1.5.0 (2025-04-04)
+- Add ETHERPAD_TRUST_PROXY env var [fosten]
 - Enable basicauth on etherpad [fosten]
 - Change node.label.type for listmonk, mailhog, exim, etherpad [fosten]
 - Add Etherpad [fosten]
 - Add CHANGELOG.md [fosten]
 - Add README.md [fosten]
-- Bump traefik from v3.3.1 to v3.4.1 [fosten]
-- Bump netdata from v2.1.1 to v2.5.3 [fosten]
+- Bump traefik from v3.3.1 to v3.3.4 [fosten]
+- Bump netdata from v2.1.1 to v2.3.0 [fosten]
 
 # 1.4.0 (2025-01-10)
 - Add motomo-blockpath router [fosten]
