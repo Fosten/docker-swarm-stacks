@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   ethercalc:
-    image: audreyt/ethercalc:${VERSION:-latest}
+    image: audreyt/ethercalc:latest
     networks:
       - traefik-public
       - traefik-ethercalc

@@ -21,7 +21,7 @@ services:
         - traefik.http.routers.traefikRouter.entrypoints=http
 
   datanode:
-    image: ${DATANODE_IMAGE:-graylog/graylog-datanode:6.1}
+    image: graylog/graylog-datanode:6.1
     hostname: datanode
     environment:
       GRAYLOG_DATANODE_NODE_ID_FILE: /var/lib/graylog-datanode/node-id
@@ -53,7 +53,7 @@ services:
 
   graylog:
     hostname: graylog
-    image: ${GRAYLOG_IMAGE:-graylog/graylog:6.1}
+    image: graylog/graylog:6.1
     entrypoint: /usr/bin/tini --  /docker-entrypoint.sh
     environment:
       GRAYLOG_NODE_ID_FILE: /usr/share/graylog/data/data/node-id
