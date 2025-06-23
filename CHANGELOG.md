@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Rename SMTP to Exim
 - Add .env.example
 - Add Nextcloud
 - Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik
@@ -28,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Jenkins
 - Add Postfix
 - Enable basicauth on etherpad
-- Change node.label.type for listmonk, mailhog, smtp, etherpad
+- Change node.label.type for listmonk, mailhog, exim, etherpad
 - Add Etherpad
 - Add CHANGELOG.md
 - Add README.md
@@ -53,12 +54,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # 1.2.0 (2024-10-07)
 - Add hashed pw var
 - Bump traefik from v2.10.4 to v3.1.5
-- Add dummy services for portainer, smtp, matomo-db
+- Add dummy services for portainer, exim, matomo-db
 - Change portainer to portainer-ce
 
 # 1.1.0 (2024-09-24)
 - Add mailhog
-- Move SMTP to separate stack
+- Move Exim to separate stack
 - Add listmonk
 - Add dependabot
 

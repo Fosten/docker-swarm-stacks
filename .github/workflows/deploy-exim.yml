@@ -1,11 +1,11 @@
-name: Deploy SMTP CD
+name: Deploy Exim CD
 
 on:
   push:
     branches:
       - main
     paths:
-      - "smtp.yml"
+      - "exim.yml"
   workflow_dispatch:
 
 jobs:
@@ -25,6 +25,6 @@ jobs:
           remote_port: ${{ vars.DEPLOY_PORT }}
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: smtp.yml
-          stack_name: smtp
+          stack_file: exim.yml
+          stack_name: exim
           deploy_timeout: 480
