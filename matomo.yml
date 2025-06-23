@@ -24,14 +24,14 @@ services:
         # SERVICES: Main
         - traefik.http.services.matomo.loadbalancer.server.port=80
         # HOSTS: Main
-        - traefik.http.routers.matomo.rule=(Host(`stats.pimaker.org`) || Host(`stats.lillymountain.com`) || Host(`stats.happybaseball.com`))
+        - traefik.http.routers.matomo.rule=(Host(`${MATOMO_HOSTNAME_1}`) || Host(`${MATOMO_HOSTNAME_2}`) || Host(`${MATOMO_HOSTNAME_3}`))
         - traefik.http.routers.matomo.entrypoints=https
         - traefik.http.routers.matomo.tls=true
         - traefik.http.routers.matomo.tls.certresolver=mydnschallenge
         - traefik.http.routers.matomo.service=matomo
         - traefik.http.routers.matomo.middlewares=gzip
         # HOSTS: Main
-        - traefik.http.routers.matomo-blockpath.rule=(Host(`stats.pimaker.org`) || Host(`stats.lillymountain.com`) || Host(`stats.happybaseball.com`)) && (PathPrefix(`/.git`) || PathPrefix(`/core`) || PathPrefix(`/config`) || PathPrefix(`/lang`) || PathPrefix(`/tmp`))
+        - traefik.http.routers.matomo-blockpath.rule=(Host(`${MATOMO_HOSTNAME_1}`) || Host(`${MATOMO_HOSTNAME_2}`) || Host(`${MATOMO_HOSTNAME_3}`)) && (PathPrefix(`/.git`) || PathPrefix(`/core`) || PathPrefix(`/config`) || PathPrefix(`/lang`) || PathPrefix(`/tmp`))
         - traefik.http.routers.matomo-blockpath.entrypoints=https
         - traefik.http.routers.matomo-blockpath.tls=true
         - traefik.http.routers.matomo-blockpath.tls.certresolver=mydnschallenge

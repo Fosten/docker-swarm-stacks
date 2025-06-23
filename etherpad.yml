@@ -26,7 +26,7 @@ services:
           - node.labels.type == dispatchapp
       labels:
         - traefik.enable=true
-        - traefik.http.routers.etherpad.rule=Host(`etherpad.pimaker.org`)
+        - traefik.http.routers.etherpad.rule=Host(`${ETHERPAD_HOSTNAME}`)
         - traefik.http.routers.etherpad.entrypoints=https
         - traefik.http.routers.etherpad.service=etherpad
         - traefik.http.routers.etherpad.tls.certresolver=mydnschallenge

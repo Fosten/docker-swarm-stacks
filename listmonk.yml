@@ -28,7 +28,7 @@ services:
       labels:
         - traefik.enable=true
         # change the host here
-        - traefik.http.routers.listmonk.rule=Host(`listmonk.pimaker.org`)
+        - traefik.http.routers.listmonk.rule=Host(`${LISTMONK_FQDN}`)
         - traefik.http.services.listmonk.loadbalancer.server.port=9000
         - traefik.http.routers.listmonk.entrypoints=https
         - traefik.http.routers.listmonk.tls=true

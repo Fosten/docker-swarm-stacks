@@ -63,7 +63,7 @@ services:
         - traefik.enable=true
         - traefik.swarm.network=traefik-public
         - traefik.constraint-label=traefik-public
-        - traefik.http.routers.netdata.rule=Host(`netdata.pimaker.org`)
+        - traefik.http.routers.netdata.rule=Host(`${NETDATA_HOSTNAME}`)
         - traefik.http.routers.netdata.entrypoints=https
         - traefik.http.routers.netdata.tls.certresolver=mydnschallenge
         - traefik.http.services.web.loadbalancer.server.port=19999

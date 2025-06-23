@@ -11,7 +11,7 @@ services:
       - ${HOME}/mailhog/maildir:/maildir
       - ${HOME}/mailhog/outgoing_smtp.json:/outgoing_smtp.json
     environment:
-      MH_HOSTNAME: pimaker.org
+      MH_HOSTNAME: ${MH_ROOT_DOMAIN}
       MH_STORAGE: maildir
       MH_MAILDIR_PATH: /maildir
       MH_OUTGOING_SMTP: /outgoing_smtp.json
@@ -25,7 +25,7 @@ services:
         - traefik.swarm.network=traefik-public
         - traefik.constraint-label=traefik-public
         # Change the host here
-        - traefik.http.routers.mailhog.rule=Host(`mailhog.pimaker.org`)
+        - traefik.http.routers.mailhog.rule=Host(`${MAILHOG_HOSTNAME}`)
         - traefik.http.services.mailhog.loadbalancer.server.port=8025
         - traefik.http.routers.mailhog.entrypoints=https
         - traefik.http.routers.mailhog.service=mailhog

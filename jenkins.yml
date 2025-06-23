@@ -16,7 +16,7 @@ services:
         constraints:
           - node.labels.type == dispatchapp
       labels:
-        - traefik.http.routers.jenkins.rule=Host(`jenkins.pimaker.org`)
+        - traefik.http.routers.jenkins.rule=Host(`${JENKINS_HOSTNAME}`)
         - traefik.http.services.jenkins.loadbalancer.server.port=8080
         - traefik.http.routers.jenkins.entrypoints=https
         - traefik.http.routers.jenkins.tls=true
