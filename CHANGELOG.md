@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Add .env.example
 - Add Nextcloud
 - Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik
 - Add traefik plugin keycloakopenid
