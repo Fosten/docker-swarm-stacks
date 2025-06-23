@@ -2,9 +2,7 @@ version: '3.9'
 
 services:
   mail:
-    image: boky/postfix
-    ports:
-      - $POSTFIX_PORT:587
+    image: boky/postfix:latest
     volumes:
       - ${HOME}/postfix/dkim-keys:/etc/opendkim/keys
     networks:

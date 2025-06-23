@@ -3,8 +3,6 @@ version: '3.9'
 services:
   mailhog:
     image: mailhog/mailhog:latest
-    ports:
-      - 1025:1025
     networks:
       - traefik-public
     volumes:
