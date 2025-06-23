@@ -14,60 +14,61 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
-- Implement more HOSTNAME env vars
-- Rename SMTP to Exim
-- Add .env.example
-- Add Nextcloud
-- Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik
-- Add traefik plugin keycloakopenid
-- Pin Keycloak to 25.0.6 for redirect_uri deprecation
-- Configure psql for Keycloak, Gitlab Grafana
-- Add Ethercalc
-- Add Grafana
-- Add Graylog
-- Add GitLab
-- Add Keycloak
-- Add Jenkins
-- Add Postfix
-- Enable basicauth on etherpad
-- Change node.label.type for listmonk, mailhog, exim, etherpad
-- Add Etherpad
-- Add CHANGELOG.md
-- Add README.md
-- Bump traefik from v3.3.1 to v3.4.1
-- Bump netdata from v2.1.1 to v2.5.3
+- Add author username to CHANGELOG entries [fosten]
+- Implement more HOSTNAME env vars [fosten]
+- Rename SMTP to Exim [fosten]
+- Add .env.example [fosten]
+- Add Nextcloud [fosten]
+- Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik [fosten]
+- Add traefik plugin keycloakopenid [fosten]
+- Pin Keycloak to 25.0.6 for redirect_uri deprecation [fosten]
+- Configure psql for Keycloak, Gitlab Grafana [fosten]
+- Add Ethercalc [fosten]
+- Add Grafana [fosten]
+- Add Graylog [fosten]
+- Add GitLab [fosten]
+- Add Keycloak [fosten]
+- Add Jenkins [fosten]
+- Add Postfix [fosten]
+- Enable basicauth on etherpad [fosten]
+- Change node.label.type for listmonk, mailhog, exim, etherpad [fosten]
+- Add Etherpad [fosten]
+- Add CHANGELOG.md [fosten]
+- Add README.md [fosten]
+- Bump traefik from v3.3.1 to v3.4.1 [fosten]
+- Bump netdata from v2.1.1 to v2.5.3 [fosten]
 
 # 1.4.0 (2025-01-10)
-- Add motomo-blockpath router
-- Add listmonk uploads volume
-- Bump netdata from v2.0.0 to v2.2.1
-- Bump traefik from v3.2.0 to v3.3.1
-- Change traefik.docker to traefik.swarm
-- Add entrypoint for gzip global middleware
+- Add motomo-blockpath router [fosten]
+- Add listmonk uploads volume [fosten]
+- Bump netdata from v2.0.0 to v2.2.1 [fosten]
+- Bump traefik from v3.2.0 to v3.3.1 [fosten]
+- Change traefik.docker to traefik.swarm [fosten]
+- Add entrypoint for gzip global middleware [fosten]
 
 # 1.3.0 (2024-11-08)
-- Add dummyservice for netdata-client
-- Add netdata
-- Use simple HostRegexp for traefik v3
-- Fix https-redirect middleware
-- Pin portainer-ce to 2.19.5 for legacy browsers
+- Add dummyservice for netdata-client [fosten]
+- Add netdata [fosten]
+- Use simple HostRegexp for traefik v3 [fosten]
+- Fix https-redirect middleware [fosten]
+- Pin portainer-ce to 2.19.5 for legacy browsers [fosten]
 
 # 1.2.0 (2024-10-07)
-- Add hashed pw var
-- Bump traefik from v2.10.4 to v3.1.5
-- Add dummy services for portainer, exim, matomo-db
-- Change portainer to portainer-ce
+- Add hashed pw var [fosten]
+- Bump traefik from v2.10.4 to v3.1.5 [fosten]
+- Add dummy services for portainer, exim, matomo-db [fosten]
+- Change portainer to portainer-ce [fosten]
 
 # 1.1.0 (2024-09-24)
-- Add mailhog
-- Move Exim to separate stack
-- Add listmonk
-- Add dependabot
+- Add mailhog [fosten]
+- Move Exim to separate stack [fosten]
+- Add listmonk [fosten]
+- Add dependabot [fosten]
 
 # 1.0.0 (2023-10-18)
-- Add matomo
-- Add portainer
-- Add traefik
+- Add matomo [fosten]
+- Add portainer [fosten]
+- Add traefik [fosten]
 
 # 0.1.0 (2023-10-18)
-- Initial commit
+- Initial commit [fosten]
