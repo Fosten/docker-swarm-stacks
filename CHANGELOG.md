@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Insert blank line at the end of source files [fosten]
 - Add author username to CHANGELOG entries [fosten]
 - Implement more HOSTNAME env vars [fosten]
 - Rename SMTP to Exim [fosten]
