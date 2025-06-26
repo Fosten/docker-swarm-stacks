@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Bump netdata from v2.5.3 to v2.5.4 [fosten]
 - Add new releases to CHANGELOG.md [fosten]
 - Remove unused Docker image env vars [fosten]
 - Use Key-Value (Dictionary) Format for docker-compose environment [fosten]
