@@ -28,7 +28,7 @@ services:
         - traefik.http.routers.mailhog.entrypoints=https
         - traefik.http.routers.mailhog.service=mailhog
         - traefik.http.routers.mailhog.tls.certresolver=mydnschallenge
-        - traefik.http.routers.mailhog.middlewares=gzip,my-keycloakopenid
+        - traefik.http.routers.mailhog.middlewares=my-keycloakopenid
 
 networks:
   traefik-public:

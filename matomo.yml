@@ -29,7 +29,6 @@ services:
         - traefik.http.routers.matomo.tls=true
         - traefik.http.routers.matomo.tls.certresolver=mydnschallenge
         - traefik.http.routers.matomo.service=matomo
-        - traefik.http.routers.matomo.middlewares=gzip
         # HOSTS: Main
         - traefik.http.routers.matomo-blockpath.rule=(Host(`${MATOMO_HOSTNAME_1}`) || Host(`${MATOMO_HOSTNAME_2}`) || Host(`${MATOMO_HOSTNAME_3}`)) && (PathPrefix(`/.git`) || PathPrefix(`/core`) || PathPrefix(`/config`) || PathPrefix(`/lang`) || PathPrefix(`/tmp`))
         - traefik.http.routers.matomo-blockpath.entrypoints=https

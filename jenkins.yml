@@ -22,7 +22,6 @@ services:
         - traefik.http.routers.jenkins.entrypoints=https
         - traefik.http.routers.jenkins.tls=true
         - traefik.http.routers.jenkins.tls.certresolver=mydnschallenge
-        - traefik.http.routers.jenkins.middlewares=gzip
 
   agent:
     image: jenkins/ssh-agent:jdk21

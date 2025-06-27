@@ -30,7 +30,6 @@ services:
         - traefik.http.routers.keycloak.entrypoints=https
         - traefik.http.routers.keycloak.tls=true
         - traefik.http.routers.keycloak.tls.certresolver=mydnschallenge
-        - traefik.http.routers.keycloak.middlewares=gzip
 
 networks:
   traefik-public:

@@ -37,7 +37,6 @@ services:
         - traefik.http.routers.portainer.entrypoints=https
         - traefik.http.routers.portainer.tls=true
         - traefik.http.routers.portainer.tls.certresolver=mydnschallenge
-        - traefik.http.routers.portainer.middlewares=gzip
       mode: replicated
       placement:
         constraints:

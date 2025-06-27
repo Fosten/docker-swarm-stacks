@@ -67,7 +67,6 @@ services:
         - traefik.http.routers.gitlab.entrypoints=https
         - traefik.http.routers.gitlab.tls=true
         - traefik.http.routers.gitlab.tls.certresolver=mydnschallenge
-        - traefik.http.routers.gitlab.middlewares=gzip
 
   gitlab-runner:
     image: gitlab/gitlab-runner:alpine

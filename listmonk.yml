@@ -33,7 +33,6 @@ services:
         - traefik.http.routers.listmonk.entrypoints=https
         - traefik.http.routers.listmonk.tls=true
         - traefik.http.routers.listmonk.tls.certresolver=mydnschallenge
-        - traefik.http.routers.listmonk.middlewares=gzip
     command: [sh, -c, "./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''"]
 
 networks:
