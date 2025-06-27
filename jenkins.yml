@@ -15,7 +15,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == dispatchapp
+          - node.labels.type == happyapp
       labels:
         - traefik.http.routers.jenkins.rule=Host(`${JENKINS_HOSTNAME}`)
         - traefik.http.services.jenkins.loadbalancer.server.port=8080
