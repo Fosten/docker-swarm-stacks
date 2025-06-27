@@ -25,7 +25,7 @@ services:
         - traefik.http.services.ethercalc.loadbalancer.server.port=8000
         - traefik.http.routers.ethercalc.middlewares=my-keycloakopenid
   redis:
-    image: redis:6-alpine
+    image: redis:8.0.2
     volumes:
       - ${HOME}/redis:/data
     networks:
