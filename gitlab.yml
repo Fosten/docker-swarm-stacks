@@ -69,9 +69,12 @@ services:
         - traefik.http.routers.gitlab.tls.certresolver=mydnschallenge
 
   gitlab-runner:
-    image: gitlab/gitlab-runner:alpine
+    image: gitlab/gitlab-runner:latest
     networks:
       - traefik-gitlab
+    volumes:
+      - ${HOME}/gitlab-runner:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
     deploy:
       replicas: 1
       placement:

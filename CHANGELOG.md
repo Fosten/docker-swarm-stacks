@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Bump gitlab-runner from alpine to latest, add volumes [fosten]
 - Bump ethercalc redis from 6-alpine to 8.0.2 [fosten]
 - Bump portainer-ce from 2.19.5 to latest [fosten]
 - Remove duplicate gzip middleware declarations [fosten]
