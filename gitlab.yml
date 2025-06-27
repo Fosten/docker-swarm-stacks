@@ -5,6 +5,7 @@ services:
     image: gitlab/gitlab-ce:latest
     networks:
       - traefik-public
+      - traefik-gitlab
     hostname: '${GITLAB_HOSTNAME}'
     environment:
       GITLAB_ROOT_EMAIL: ${GITLAB_ROOT_EMAIL}
@@ -71,7 +72,7 @@ services:
   gitlab-runner:
     image: gitlab/gitlab-runner:alpine
     networks:
-      - traefik-public
+      - traefik-gitlab
     deploy:
       replicas: 1
       placement:
@@ -87,3 +88,5 @@ services:
 networks:
   traefik-public:
     external: true
+  traefik-gitlab:
+    driver: overlay

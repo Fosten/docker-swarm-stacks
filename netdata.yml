@@ -1,47 +1,12 @@
 version: '3.9'
 
 services:
-  netdata-client:
-    image: netdata/netdata:v2.5.4
-    hostname: "{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"
-    cap_add:
-      - SYS_PTRACE
-    depends_on:
-      - netdata-central
-    networks:
-      - netdata
-      - traefik-public
-    environment:
-      PGID: 999
-    volumes:
-      - ${HOME}/netdatafiles/msmtprc:/etc/msmtprc
-      - ${HOME}/netdataconfig:/etc/netdata
-      - netdatalib:/var/lib/netdata
-      - netdatacache:/var/cache/netdata
-      - /etc/passwd:/host/etc/passwd:ro
-      - /etc/group:/host/etc/group:ro
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-    deploy:
-      mode: global
-      placement:
-        constraints:
-        - node.platform.os == linux
-        - node.labels.type != traefikapp
-      labels:
-        - traefik.enable=true
-        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
-        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
-        - traefik.http.routers.traefikRouter.service=api@internal
-        - traefik.http.routers.traefikRouter.entrypoints=http
-
   netdata-central:
     image: netdata/netdata:v2.5.4
     hostname: control
     networks:
-      - netdata
       - traefik-public
+      - traefik-netdata
     environment:
       PGID: 999
     volumes:
@@ -69,6 +34,40 @@ services:
         - traefik.http.services.web.loadbalancer.server.port=19999
         - traefik.http.routers.netdata.middlewares=my-keycloakopenid
 
+  netdata-client:
+    image: netdata/netdata:v2.5.4
+    hostname: "{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"
+    cap_add:
+      - SYS_PTRACE
+    depends_on:
+      - netdata-central
+    networks:
+      - traefik-netdata
+    environment:
+      PGID: 999
+    volumes:
+      - ${HOME}/netdatafiles/msmtprc:/etc/msmtprc
+      - ${HOME}/netdataconfig:/etc/netdata
+      - netdatalib:/var/lib/netdata
+      - netdatacache:/var/cache/netdata
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      mode: global
+      placement:
+        constraints:
+        - node.platform.os == linux
+        - node.labels.type != traefikapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
+        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
+        - traefik.http.routers.traefikRouter.service=api@internal
+        - traefik.http.routers.traefikRouter.entrypoints=http
+
 volumes:
   netdatalib:
   netdatacache:
@@ -76,6 +75,5 @@ volumes:
 networks:
   traefik-public:
     external: true
-  netdata:
+  traefik-netdata:
     driver: overlay
-    attachable: true

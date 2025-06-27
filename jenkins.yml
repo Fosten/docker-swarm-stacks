@@ -5,6 +5,7 @@ services:
     image: jenkins/jenkins:lts
     networks:
       - traefik-public
+      - traefik-jenkins
     privileged: true
     user: root
     volumes:
@@ -26,7 +27,7 @@ services:
   agent:
     image: jenkins/ssh-agent:jdk21
     networks:
-      - traefik-public
+      - traefik-jenkins
     privileged: true
     user: root
     expose:
@@ -48,3 +49,5 @@ services:
 networks:
   traefik-public:
     external: true
+  traefik-jenkins:
+    driver: overlay
