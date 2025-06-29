@@ -9,11 +9,9 @@ services:
       - --entrypoints.http.address=:80
       - --entrypoints.https.address=:443
       - --entrypoints.https.http.middlewares=gzip
-      - --providers.docker
-      - --providers.docker.exposedbydefault=false
       - --providers.swarm=true
       - --providers.swarm.watch=true
-      - --providers.docker.network=traefik-public
+      - --providers.swarm.network=traefik-public
       - --api
       - --api.dashboard=true
       # Plugins

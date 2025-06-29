@@ -25,6 +25,7 @@ services:
         constraints:
           - node.labels.type == dispatchapp
       labels:
+        - traefik.enable=true
         - traefik.http.routers.keycloak.rule=Host(`${KC_HOSTNAME}`)
         - traefik.http.services.keycloak.loadbalancer.server.port=8080
         - traefik.http.routers.keycloak.entrypoints=https
