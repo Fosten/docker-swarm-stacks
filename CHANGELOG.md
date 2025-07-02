@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+
+- Fix env var typo, remove dummy service in matomo_db [fosten]
 - Remove providers.docker references [fosten]
 - Bump gitlab-runner from alpine to latest, add volumes [fosten]
 - Bump ethercalc redis from 6-alpine to 8.0.2 [fosten]
@@ -34,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add .env.example [fosten]
 
 # 1.6.0 (2025-06-22)
+
 - Add Nextcloud [fosten]
 - Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik [fosten]
 - Add traefik plugin keycloakopenid [fosten]
@@ -50,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump netdata from v2.3.0 to v2.5.3 [fosten]
 
 # 1.5.0 (2025-04-04)
+
 - Add ETHERPAD_TRUST_PROXY env var [fosten]
 - Enable basicauth on etherpad [fosten]
 - Change node.label.type for listmonk, mailhog, exim, etherpad [fosten]
@@ -60,6 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump netdata from v2.1.1 to v2.3.0 [fosten]
 
 # 1.4.0 (2025-01-10)
+
 - Add motomo-blockpath router [fosten]
 - Add listmonk uploads volume [fosten]
 - Bump netdata from v2.0.0 to v2.2.1 [fosten]
@@ -68,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add entrypoint for gzip global middleware [fosten]
 
 # 1.3.0 (2024-11-08)
+
 - Add dummyservice for netdata-client [fosten]
 - Add netdata [fosten]
 - Use simple HostRegexp for traefik v3 [fosten]
@@ -75,21 +81,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pin portainer-ce to 2.19.5 for legacy browsers [fosten]
 
 # 1.2.0 (2024-10-07)
+
 - Add hashed pw var [fosten]
 - Bump traefik from v2.10.4 to v3.1.5 [fosten]
 - Add dummy services for portainer, exim, matomo-db [fosten]
 - Change portainer to portainer-ce [fosten]
 
 # 1.1.0 (2024-09-24)
+
 - Add mailhog [fosten]
 - Move Exim to separate stack [fosten]
 - Add listmonk [fosten]
 - Add dependabot [fosten]
 
 # 1.0.0 (2023-10-18)
+
 - Add matomo [fosten]
 - Add portainer [fosten]
 - Add traefik [fosten]
 
 # 0.1.0 (2023-10-18)
+
 - Initial commit [fosten]

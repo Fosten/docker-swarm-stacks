@@ -42,7 +42,7 @@ services:
       - traefik-matomo
     environment:
       MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
-      MARIADB_DATBASE: ${MARIADB_DATBASE}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
       MARIADB_USER: ${MARIADB_USER}
       MARIADB_PASSWORD: ${MARIADB_PASSWORD}
     volumes:
@@ -53,11 +53,7 @@ services:
         constraints:
           - node.labels.type == traefikapp
       labels:
-        - traefik.enable=true
-        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
-        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
-        - traefik.http.routers.traefikRouter.service=api@internal
-        - traefik.http.routers.traefikRouter.entrypoints=http
+        - traefik.enable=false
 
 volumes:
   matomo-data:
