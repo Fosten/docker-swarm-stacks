@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Bump keycloak from 25.0.6 to 26.3.0 [fosten]
 - Enable keycloak persistent user sessions [fosten]
 - Fix env var typo, remove dummy service in matomo_db [fosten]
 - Remove providers.docker references [fosten]
