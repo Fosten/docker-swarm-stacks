@@ -7,11 +7,12 @@ services:
       - traefik-public
     environment:
       KC_HOSTNAME: ${KC_HOSTNAME}
-      KC_HTTP_ENABLED: "true"
-      KC_PROXY_HEADERS: xforwarded
       KEYCLOAK_ADMIN: ${KC_BOOTSTRAP_ADMIN_USERNAME}
       KEYCLOAK_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD}
       KC_LOG_LEVEL: info
+      KC_FEATURES: persistent-user-sessions
+      KC_PROXY_HEADERS: xforwarded
+      KC_HTTP_ENABLED: "true"
       KC_HEALTH_ENABLED: "false"
       KC_METRICS_ENABLED: "false"
       KC_DB: ${KC_DB_TYPE}

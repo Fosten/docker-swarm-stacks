@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Enable keycloak persistent user sessions [fosten]
 - Fix env var typo, remove dummy service in matomo_db [fosten]
 - Remove providers.docker references [fosten]
 - Bump gitlab-runner from alpine to latest, add volumes [fosten]
