@@ -19,7 +19,14 @@ services:
       KC_DB_URL: ${KC_DB_URL}
       KC_DB_USERNAME: ${KC_DB_USERNAME}
       KC_DB_PASSWORD: ${KC_DB_PASSWORD}
-    command: ["start", "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true"]
+    command: ["start",
+      "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true",
+      "--spi-theme-static-max-age=-1",
+      "--spi-theme-cache-themes=false",
+      "--spi-theme--cache-templates=false"]
+    volumes:
+      - ${HOME}/keycloak/providers:/opt/keycloak/providers
+      - ${HOME}/keycloak/themes:/opt/keycloak/themes
     deploy:
       replicas: 1
       placement:
