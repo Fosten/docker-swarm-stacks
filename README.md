@@ -17,6 +17,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Matomo
 - Netdata
 - Nextcloud
+- Nginx
 - Portainer
 - Postfix
 - Traefik
