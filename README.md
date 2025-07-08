@@ -21,6 +21,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Paperless-ngx
 - Portainer
 - Postfix
+- Tailscale
 - Traefik
 
 ## Deployment via CI/CD 🔧

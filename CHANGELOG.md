@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Add Tailscale [fosten]
 - Remove dummy service for ethercalc-redis, gitlab-runner, graylog-mongodb, graylog-datanode, jenkins-ssh-agent, netdata-client, portainer-agent [fosten]
 - Add Paperless-ngx [fosten]
 - Add Nginx [fosten]
