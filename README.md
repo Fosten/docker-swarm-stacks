@@ -23,6 +23,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Postfix
 - Tailscale
 - Traefik
+- Vaultwarden
 
 ## Deployment via CI/CD 🔧
 
