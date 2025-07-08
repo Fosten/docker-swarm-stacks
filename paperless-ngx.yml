@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:
+  paperless-ngx:
+    image: paperlessngx/paperless-ngx:latest
+    networks:
+      - traefik-public
+      - traefik-paperless-ngx
+    environment:
+      PAPERLESS_URL: https://${PAPERLESS_NGX_HOSTNAME}
+      PAPERLESS_ADMIN_USER: ${PAPERLESS_ADMIN_USER}
+      PAPERLESS_ADMIN_EMAIL: ${PAPERLESS_ADMIN_EMAIL}
+      PAPERLESS_ADMIN_PASSWORD: ${PAPERLESS_ADMIN_PASSWORD}
+      PAPERLESS_REDIS: redis://redis-paperless-ngx:6379
+      PAPERLESS_DBHOST: ${PAPERLESS_DBHOST}
+      PAPERLESS_DBENGINE: ${PAPERLESS_DBENGINE}
+      PAPERLESS_DBPORT: ${PAPERLESS_DBPORT}
+      PAPERLESS_DBNAME: ${PAPERLESS_DBNAME}
+      PAPERLESS_DBUSER: ${PAPERLESS_DBUSER}
+      PAPERLESS_DBPASS: ${PAPERLESS_DBPASS}
+      PAPERLESS_DBSSLMODE: ${PAPERLESS_DBSSLMODE}
+    volumes:
+      - ${HOME}/paperless-ngx/consume:/usr/src/paperless/consume
+      - ${HOME}/paperless-ngx/data:/usr/src/paperless/data
+      - ${HOME}/paperless-ngx/export:/usr/src/paperless/export
+      - ${HOME}/paperless-ngx/media:/usr/src/paperless/media
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.paperless-ngx.rule=Host(`${PAPERLESS_NGX_HOSTNAME}`)
+        - traefik.http.services.paperless-ngx.loadbalancer.server.port=8000
+        - traefik.http.routers.paperless-ngx.entrypoints=https
+        - traefik.http.routers.paperless-ngx.tls=true
+        - traefik.http.routers.paperless-ngx.tls.certresolver=mydnschallenge
+
+  redis-paperless-ngx:
+    image: redis:8.0.2
+    networks:
+      - traefik-paperless-ngx
+    volumes:
+      - ${HOME}/paperless-ngx/redis:/data
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.enable=false
+
+networks:
+  traefik-public:
+    external: true
+  traefik-paperless-ngx:
+    driver: overlay
