@@ -3,7 +3,7 @@ version: '3.9'
 services:
   tailscale:
     image: tailscale/tailscale:stable
-    hostname: tailscale-happy
+    hostname: '{{.Node.Hostname}}'
     networks:
       - traefik-tailscale
     cap_add:
@@ -28,6 +28,35 @@ services:
       labels:
         - traefik.enable=false
 
+  tsdproxy:
+    image: almeidapaulopt/tsdproxy:2
+    networks:
+      - traefik-public
+      - traefik-tailscale
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${HOME}/tsdproxy/data:/data
+      - ${HOME}/tsdproxy/config:/config
+    environment:
+      - TSDPROXY_AUTHKEY=${TSDPROXY_AUTHKEY}
+      - TSDPROXY_HOSTNAME=${TSDPROXY_HOSTNAME}
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.tsdproxy.rule=Host(`${TSDPROXY_FQDN}`)
+        - traefik.http.routers.tsdproxy.entrypoints=https
+        - traefik.http.routers.tsdproxy.service=tsdproxy
+        - traefik.http.routers.tsdproxy.tls.certresolver=mydnschallenge
+        - traefik.http.services.tsdproxy.loadbalancer.server.port=8080
+        - traefik.http.routers.tsdproxy.middlewares=my-keycloakopenid
+
 networks:
+  traefik-public:
+    external: true
   traefik-tailscale:
-    driver: overlay
+    external: true

@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:latest
+    networks:
+      - traefik-tailscale
+    ports:
+      - ${STIRLING_EXTERNAL_PORT}:${STIRLING_SERVER_PORT}
+    environment:
+      - SERVER_PORT=${STIRLING_SERVER_PORT}
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.enable=false
+    labels:
+        - tsdproxy.enable=true
+        - tsdproxy.name=pdf
+        - tsdproxy.port.1=${STIRLING_SERVER_PORT}/http->http://${STIRLING_PDF_HOSTNAME}:${STIRLING_EXTERNAL_PORT}
+        - tsdproxy.scheme=http
+        - tsdproxy.tlsvalidate=false
+        - tsdproxy.ephemeral=true
+        - tsdproxy.autodetect=false
+
+networks:
+  traefik-tailscale:
+    external: true
