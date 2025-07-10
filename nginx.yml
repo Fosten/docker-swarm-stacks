@@ -7,6 +7,7 @@ services:
       - traefik-public
     volumes:
       - ${HOME}/nginx1/html:/usr/share/nginx/html
+      - ${HOME}/nginx1/logs:/var/log/nginx
     deploy:
       replicas: 1
       placement:
@@ -26,6 +27,7 @@ services:
       - traefik-public
     volumes:
       - ${HOME}/nginx2/html:/usr/share/nginx/html
+      - ${HOME}/nginx2/logs:/var/log/nginx
     deploy:
       replicas: 1
       placement:
