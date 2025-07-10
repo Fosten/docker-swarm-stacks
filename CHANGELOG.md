@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Add Fail2ban [fosten]
 - Add nginx logs volumes [fosten]
 - Add TSDProxy and Stirling-PDF [fosten]
 - Rename ethercalc-redis [fosten]

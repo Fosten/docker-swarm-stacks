@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  fail2ban:
+    image: lscr.io/linuxserver/fail2ban:latest
+    cap_add:
+      - NET_ADMIN
+    networks:
+      - fail2ban_network
+    volumes:
+      - /var/log:/var/log:ro
+      - ${HOME}/fail2ban/config:/config
+      - ${HOME}/nginx1/logs/access.log:/remotelogs/nginx1-access.log:ro
+      - ${HOME}/nginx2/logs/access.log:/remotelogs/nginx2-access.log:ro
+    environment:
+      - DBUS_SYSTEM_BUS_ADDRESS=/dev/null
+      - PUID=${FAIL2BAN_PUID}
+      - PGID=${FAIL2BAN_PGID}
+      - TZ=${FAIL2BAN_TZ}
+      - VERBOSITY=-vv
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.enable=false
+
+networks:
+  fail2ban_network:
+    external: true

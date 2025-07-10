@@ -7,6 +7,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Ethercalc
 - Etherpad
 - Exim
+- Fail2ban
 - GitLab
 - Grafana
 - Graylog
@@ -21,6 +22,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Paperless-ngx
 - Portainer
 - Postfix
+- Stirling-PDF
 - Tailscale
 - Traefik
 - Vaultwarden
