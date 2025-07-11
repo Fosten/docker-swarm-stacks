@@ -23,7 +23,7 @@ services:
       "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true",
       "--spi-theme-static-max-age=-1",
       "--spi-theme-cache-themes=false",
-      "--spi-theme--cache-templates=false"]
+      "--spi-theme-cache-templates=false"]
     volumes:
       - ${HOME}/keycloak/providers:/opt/keycloak/providers
       - ${HOME}/keycloak/themes:/opt/keycloak/themes
