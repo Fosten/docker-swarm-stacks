@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Add basic and trusted keycloakopenid middlewares [fosten]
 - Add Fail2ban [fosten]
 - Add nginx logs volumes [fosten]
 - Add TSDProxy and Stirling-PDF [fosten]
@@ -50,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # 1.6.0 (2025-06-22)
 
 - Add Nextcloud [fosten]
-- Add my-keycloakopenid to ethercalc, mailhog, etherpad, netdata, traefik [fosten]
+- Add keycloakopenid middleware to ethercalc, mailhog, etherpad, netdata, traefik [fosten]
 - Add traefik plugin keycloakopenid [fosten]
 - Pin Keycloak to 25.0.6 for redirect_uri deprecation [fosten]
 - Configure psql for Keycloak, Gitlab Grafana [fosten]

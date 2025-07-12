@@ -31,7 +31,7 @@ services:
         - traefik.http.routers.etherpad.service=etherpad
         - traefik.http.routers.etherpad.tls.certresolver=mydnschallenge
         - traefik.http.services.etherpad.loadbalancer.server.port=9001
-        - traefik.http.routers.etherpad.middlewares=my-keycloakopenid
+        - traefik.http.routers.etherpad.middlewares=keycloakopenid-basic-client
 
 networks:
   traefik-public:

@@ -32,7 +32,7 @@ services:
         - traefik.http.routers.netdata.entrypoints=https
         - traefik.http.routers.netdata.tls.certresolver=mydnschallenge
         - traefik.http.services.web.loadbalancer.server.port=19999
-        - traefik.http.routers.netdata.middlewares=my-keycloakopenid
+        - traefik.http.routers.netdata.middlewares=keycloakopenid-trusted-client
 
   netdata-client:
     image: netdata/netdata:v2.5.4

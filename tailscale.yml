@@ -53,7 +53,7 @@ services:
         - traefik.http.routers.tsdproxy.service=tsdproxy
         - traefik.http.routers.tsdproxy.tls.certresolver=mydnschallenge
         - traefik.http.services.tsdproxy.loadbalancer.server.port=8080
-        - traefik.http.routers.tsdproxy.middlewares=my-keycloakopenid
+        - traefik.http.routers.tsdproxy.middlewares=keycloakopenid-trusted-client
 
 networks:
   traefik-public:

@@ -45,8 +45,10 @@ services:
       ACME_EMAIL: ${ACME_EMAIL}
       LINODE_TOKEN: ${LINODE_TOKEN}
       TRAEFIK_KEYCLOAK_URL: ${TRAEFIK_KEYCLOAK_URL}
-      TRAEFIK_KEYCLOAK_CLIENT_ID: ${TRAEFIK_KEYCLOAK_CLIENT_ID}
-      TRAEFIK_KEYCLOAK_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_CLIENT_SECRET}
+      TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID}
+      TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET}
+      TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID}
+      TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET}
       TRAEFIK_KEYCLOAK_REALM: ${TRAEFIK_KEYCLOAK_REALM}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -68,7 +70,7 @@ services:
         - traefik.http.routers.traefik.tls=true
         - traefik.http.routers.traefik.tls.certresolver=mydnschallenge
         - traefik.http.routers.traefik.entrypoints=https
-        - traefik.http.routers.traefik.middlewares=my-keycloakopenid
+        - traefik.http.routers.traefik.middlewares=keycloakopenid-trusted-client
 
         # GENERIC MIDDLEWARES
         - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
@@ -76,14 +78,23 @@ services:
         - traefik.http.middlewares.gzip.compress=true
         - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png,image/jpeg,font/woff2
 
-        # KEYCLOAK MIDDLEWARE
-        - traefik.http.middlewares.my-keycloakopenid.plugin.keycloakopenid.KeycloakURLEnv=TRAEFIK_KEYCLOAK_URL
-        - traefik.http.middlewares.my-keycloakopenid.plugin.keycloakopenid.InsecureSkipVerify=false
-        - traefik.http.middlewares.my-keycloakopenid.plugin.keycloakopenid.ClientIDEnv=TRAEFIK_KEYCLOAK_CLIENT_ID
-        - traefik.http.middlewares.my-keycloakopenid.plugin.keycloakopenid.ClientSecretEnv=TRAEFIK_KEYCLOAK_CLIENT_SECRET
-        - traefik.http.middlewares.my-keycloakopenid.plugin.keycloakopenid.KeycloakRealmEnv=TRAEFIK_KEYCLOAK_REALM
-        - traefik.http.middlewares.my-keycloakopenid.plugin.keycloakopenid.Scope=openid
-        - traefik.http.middlewares.my-keycloakopenid.plugin.keycloakopenid.UseAuthHeader=false
+        # KEYCLOAK BASIC CLIENT MIDDLEWARE
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.KeycloakURLEnv=TRAEFIK_KEYCLOAK_URL
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.InsecureSkipVerify=false
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.ClientIDEnv=TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.ClientSecretEnv=TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.KeycloakRealmEnv=TRAEFIK_KEYCLOAK_REALM
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.Scope=openid
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.UseAuthHeader=false
+
+        # KEYCLOAK TRUSTED CLIENT MIDDLEWARE
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.KeycloakURLEnv=TRAEFIK_KEYCLOAK_URL
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.InsecureSkipVerify=false
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.ClientIDEnv=TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.ClientSecretEnv=TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.KeycloakRealmEnv=TRAEFIK_KEYCLOAK_REALM
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.Scope=openid
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.UseAuthHeader=false
 
         # GENERIC ROUTERS
         - traefik.http.routers.generic-https-redirect.entrypoints=http

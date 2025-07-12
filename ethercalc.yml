@@ -23,7 +23,7 @@ services:
         - traefik.http.routers.ethercalc.service=ethercalc
         - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
         - traefik.http.services.ethercalc.loadbalancer.server.port=8000
-        - traefik.http.routers.ethercalc.middlewares=my-keycloakopenid
+        - traefik.http.routers.ethercalc.middlewares=keycloakopenid-basic-client
   ethercalc-redis:
     image: redis:8.0.2
     volumes:

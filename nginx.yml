@@ -40,7 +40,7 @@ services:
         - traefik.http.routers.nginx2.entrypoints=https
         - traefik.http.routers.nginx2.tls=true
         - traefik.http.routers.nginx2.tls.certresolver=mydnschallenge
-        - traefik.http.routers.nginx2.middlewares=my-keycloakopenid
+        - traefik.http.routers.nginx2.middlewares=keycloakopenid-basic-client
 
 networks:
   traefik-public:
