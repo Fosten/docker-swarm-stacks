@@ -38,7 +38,7 @@ services:
         - traefik.http.routers.paperless-ngx.tls.certresolver=mydnschallenge
 
   redis-paperless-ngx:
-    image: redis:8.0.2
+    image: redis:8.0.3
     networks:
       - traefik-paperless-ngx
     volumes:
