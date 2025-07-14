@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Change portainer-ce and portainer/agent image tags from latest to sts [fosten]
 - Change jenkins image tag from lts to jdk21 [fosten]
 - Bump graylog and graylog-datanode from 6.1 to 6.3.1
 - Add basic and trusted keycloakopenid middlewares [fosten]
