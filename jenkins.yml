@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    image: jenkins/jenkins:jdk21
     networks:
       - traefik-public
       - traefik-jenkins
