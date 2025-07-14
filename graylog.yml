@@ -3,7 +3,7 @@ version: '3.9'
 services:
   graylog:
     hostname: graylog
-    image: graylog/graylog:6.1
+    image: graylog/graylog:6.3.1
     entrypoint: /usr/bin/tini --  /docker-entrypoint.sh
     environment:
       GRAYLOG_NODE_ID_FILE: /usr/share/graylog/data/data/node-id
@@ -64,7 +64,7 @@ services:
         - traefik.enable=false
 
   datanode:
-    image: graylog/graylog-datanode:6.1
+    image: graylog/graylog-datanode:6.3.1
     hostname: datanode
     environment:
       GRAYLOG_DATANODE_NODE_ID_FILE: /var/lib/graylog-datanode/node-id

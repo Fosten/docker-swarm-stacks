@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Bump graylog and graylog-datanode from 6.1 to 6.3.1
 - Add basic and trusted keycloakopenid middlewares [fosten]
 - Add Fail2ban [fosten]
 - Add nginx logs volumes [fosten]
