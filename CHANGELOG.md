@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix env var typo, remove dummy service in matomo_db [fosten]
 - Remove providers.docker references [fosten]
 - Bump gitlab-runner from alpine to latest, add volumes [fosten]
-- Bump ethercalc redis from 6-alpine to 8.0.2 [fosten]
+- Bump ethercalc redis from 6-alpine to 8.0.3 [fosten]
 - Bump portainer-ce from 2.19.5 to latest [fosten]
 - Remove duplicate gzip middleware declarations [fosten]
 - Add internal docker networks to gitlab, jenkins, netdata [fosten]
