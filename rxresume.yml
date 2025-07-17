@@ -1,0 +1,96 @@
+version: '3.9'
+
+services:
+  rxresume:
+    image: amruthpillai/reactive-resume:latest
+    networks:
+      - traefik-public
+      - traefik-rxresume
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      PUBLIC_URL: http://${RXRESUME_HOSTNAME}
+      STORAGE_URL: https://${MINIO_HOSTNAME}:/default
+      CHROME_TOKEN: chrome_token
+      CHROME_URL: ws://chrome:3000
+      DATABASE_URL: ${RXRESUME_DATABASE_URL}
+      ACCESS_TOKEN_SECRET: ${RXRESUME_ACCESS_TOKEN_SECRET}
+      REFRESH_TOKEN_SECRET: ${RXRESUME_REFRESH_TOKEN_SECRET}
+      MAIL_FROM: ${RXRESUME_MAIL_FROM}
+      STORAGE_ENDPOINT: minio
+      STORAGE_PORT: 9000
+      STORAGE_REGION: us-east-1
+      STORAGE_BUCKET: default
+      STORAGE_ACCESS_KEY: ${MINIO_ROOT_USER}
+      STORAGE_SECRET_KEY: ${MINIO_ROOT_USER}
+      STORAGE_USE_SSL: "false"
+      STORAGE_SKIP_BUCKET_CHECK: "false"
+      VITE_OPENID_NAME: Keycloak
+      OPENID_AUTHORIZATION_URL: ${RXRESUME_OPENID_AUTHORIZATION_URL}
+      OPENID_CALLBACK_URL: ${RXRESUME_OPENID_CALLBACK_URL}
+      OPENID_CLIENT_ID: ${RXRESUME_OPENID_CLIENT_ID}
+      OPENID_CLIENT_SECRET: ${RXRESUME_OPENID_CLIENT_SECRET}
+      OPENID_ISSUER: ${RXRESUME_OPENID_ISSUER}
+      OPENID_SCOPE: openid profile email
+      OPENID_TOKEN_URL: ${RXRESUME_OPENID_TOKEN_URL}
+      OPENID_USER_INFO_URL: ${RXRESUME_OPENID_USER_INFO_URL}
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.http.routers.rxresume.rule=Host(`${RXRESUME_HOSTNAME}`)
+        - traefik.http.services.rxresume.loadbalancer.server.port=3000
+        - traefik.http.routers.rxresume.entrypoints=https
+        - traefik.http.routers.rxresume.tls=true
+        - traefik.http.routers.rxresume.tls.certresolver=mydnschallenge
+
+  minio:
+    image: minio/minio:latest
+    networks:
+      - traefik-public
+      - traefik-rxresume
+    command: server /data
+    volumes:
+      - ${HOME}/minio/data:/data
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.http.routers.minio.rule=Host(`${MINIO_HOSTNAME}`)
+        - traefik.http.services.minio.loadbalancer.server.port=9000
+        - traefik.http.routers.minio.entrypoints=https
+        - traefik.http.routers.minio.tls=true
+        - traefik.http.routers.minio.tls.certresolver=mydnschallenge
+
+  chrome:
+    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
+    networks:
+      - traefik-rxresume
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      TIMEOUT: 10000
+      CONCURRENT: 10
+      TOKEN: chrome_token
+      EXIT_ON_HEALTH_FAILURE: "true"
+      PRE_REQUEST_HEALTH_CHECK: "true"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == happyapp
+      labels:
+        - traefik.enable=false
+
+networks:
+  traefik-public:
+    external: true
+  traefik-rxresume:
+    driver: overlay
