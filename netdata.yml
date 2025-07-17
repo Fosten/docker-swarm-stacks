@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   netdata-central:
-    image: netdata/netdata:v2.5.4
+    image: netdata/netdata:v2.6
     hostname: control
     networks:
       - traefik-public
@@ -35,7 +35,7 @@ services:
         - traefik.http.routers.netdata.middlewares=keycloakopenid-trusted-client
 
   netdata-client:
-    image: netdata/netdata:v2.5.4
+    image: netdata/netdata:v2.6
     hostname: "{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"
     cap_add:
       - SYS_PTRACE

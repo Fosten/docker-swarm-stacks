@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove duplicate gzip middleware declarations [fosten]
 - Add internal docker networks to gitlab, jenkins, netdata [fosten]
 - Bump traefik from v3.4.1 to v3.5.0-rc2 [fosten]
-- Bump netdata from v2.5.3 to v2.5.4 [fosten]
+- Bump netdata from v2.5.3 to v2.6 [fosten]
 - Add new releases to CHANGELOG.md [fosten]
 - Remove unused Docker image env vars [fosten]
 - Use Key-Value (Dictionary) Format for docker-compose environment [fosten]
