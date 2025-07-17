@@ -10,7 +10,7 @@ services:
       PORT: 3000
       NODE_ENV: production
       PUBLIC_URL: http://${RXRESUME_HOSTNAME}
-      STORAGE_URL: https://${MINIO_HOSTNAME}:/default
+      STORAGE_URL: https://${MINIO_HOSTNAME}/api/default
       CHROME_TOKEN: chrome_token
       CHROME_URL: ws://chrome:3000
       DATABASE_URL: ${RXRESUME_DATABASE_URL}
@@ -22,7 +22,7 @@ services:
       STORAGE_REGION: us-east-1
       STORAGE_BUCKET: default
       STORAGE_ACCESS_KEY: ${MINIO_ROOT_USER}
-      STORAGE_SECRET_KEY: ${MINIO_ROOT_USER}
+      STORAGE_SECRET_KEY: ${MINIO_ROOT_PASSWORD}
       STORAGE_USE_SSL: "false"
       STORAGE_SKIP_BUCKET_CHECK: "false"
       VITE_OPENID_NAME: Keycloak
@@ -51,23 +51,32 @@ services:
     networks:
       - traefik-public
       - traefik-rxresume
-    command: server /data
+    command: server /data --console-address :9001
     volumes:
       - ${HOME}/minio/data:/data
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_SERVER_URL: https://${MINIO_API_HOSTNAME}
+      MINIO_BROWSER_REDIRECT_URL: https://${MINIO_GUI_HOSTNAME}
     deploy:
       replicas: 1
       placement:
         constraints:
           - node.labels.type == happyapp
       labels:
-        - traefik.http.routers.minio.rule=Host(`${MINIO_HOSTNAME}`)
-        - traefik.http.services.minio.loadbalancer.server.port=9000
-        - traefik.http.routers.minio.entrypoints=https
-        - traefik.http.routers.minio.tls=true
-        - traefik.http.routers.minio.tls.certresolver=mydnschallenge
+        - traefik.http.routers.minio-api.rule=Host(`${MINIO_API_HOSTNAME}`)
+        - traefik.http.services.minio-api.loadbalancer.server.port=9000
+        - traefik.http.routers.minio-api.entrypoints=https
+        - traefik.http.routers.minio-api.service=minio-api
+        - traefik.http.routers.minio-api.tls=true
+        - traefik.http.routers.minio-api.tls.certresolver=mydnschallenge
+        - traefik.http.routers.minio-gui.rule=Host(`${MINIO_GUI_HOSTNAME}`)
+        - traefik.http.services.minio-gui.loadbalancer.server.port=9001
+        - traefik.http.routers.minio-gui.entrypoints=https
+        - traefik.http.routers.minio-gui.service=minio-gui
+        - traefik.http.routers.minio-gui.tls=true
+        - traefik.http.routers.minio-gui.tls.certresolver=mydnschallenge
 
   chrome:
     image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
