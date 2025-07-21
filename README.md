@@ -11,6 +11,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - GitLab
 - Grafana
 - Graylog
+- Invoice Ninja
 - Jenkins
 - Keycloak
 - Listmonk

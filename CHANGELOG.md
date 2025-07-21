@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Add Invoice Ninja [fosten]
 - Configure Minio API path [fosten]
 - Add RxResume [fosten]
 - Bump paperless-ngx redis from 8.0.2 to 8.0.3 [fosten]
