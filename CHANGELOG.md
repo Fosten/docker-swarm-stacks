@@ -42,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump portainer-ce from 2.19.5 to latest [fosten]
 - Remove duplicate gzip middleware declarations [fosten]
 - Add internal docker networks to gitlab, jenkins, netdata [fosten]
-- Bump traefik from v3.4.1 to v3.5.0-rc2 [fosten]
+- Bump traefik from v3.4.1 to v3.5 [fosten]
 - Bump netdata from v2.5.3 to v2.6 [fosten]
 - Add new releases to CHANGELOG.md [fosten]
 - Remove unused Docker image env vars [fosten]
