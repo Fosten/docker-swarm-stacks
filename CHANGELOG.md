@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Remove minor GHA releases from dependabot [fosten]
 - Add Invoice Ninja [fosten]
 - Configure Minio API path [fosten]
 - Add RxResume [fosten]
