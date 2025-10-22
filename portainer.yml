@@ -22,7 +22,7 @@ services:
       mode: replicated
       placement:
         constraints:
-          - node.labels.type == traefikapp
+          - node.labels.type == proxy13
 
   agent:
     image: portainer/agent:sts
