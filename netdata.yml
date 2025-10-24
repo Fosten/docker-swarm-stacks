@@ -23,7 +23,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == traefikapp
+          - node.labels.type == proxy13
       labels:
         - traefik.enable=true
         - traefik.swarm.network=traefik-public
@@ -60,7 +60,7 @@ services:
       placement:
         constraints:
         - node.platform.os == linux
-        - node.labels.type != traefikapp
+        - node.labels.type != proxy13
       labels:
         - traefik.enable=false
 
