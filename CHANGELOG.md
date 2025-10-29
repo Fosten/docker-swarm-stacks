@@ -15,7 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+- Bump netdata from v2.6 to v2.7 [fosten]
 - Remove minor GHA releases from dependabot [fosten]
+
+# 1.8.0 (2025-08-06)
+
 - Add Invoice Ninja [fosten]
 - Configure Minio API path [fosten]
 - Add RxResume [fosten]
@@ -23,6 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change portainer-ce and portainer/agent image tags from latest to sts [fosten]
 - Change jenkins image tag from lts to jdk21 [fosten]
 - Bump graylog and graylog-datanode from 6.1 to 6.3.1
+- Bump traefik from v3.5.0-rc1 to v3.5 [fosten]
+- Bump netdata from v2.5.4 to v2.6 [fosten]
 - Add basic and trusted keycloakopenid middlewares [fosten]
 - Add Fail2ban [fosten]
 - Add nginx logs volumes [fosten]
@@ -33,6 +39,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove dummy service for ethercalc-redis, gitlab-runner, graylog-mongodb, graylog-datanode, jenkins-ssh-agent, netdata-client, portainer-agent [fosten]
 - Add Paperless-ngx [fosten]
 - Add Nginx [fosten]
+
+# 1.7.0 (2025-07-05)
+
 - Configure keycloak commands and volumes [fosten]
 - Bump keycloak from 25.0.6 to 26.3.0 [fosten]
 - Enable keycloak persistent user sessions [fosten]
@@ -43,8 +52,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump portainer-ce from 2.19.5 to latest [fosten]
 - Remove duplicate gzip middleware declarations [fosten]
 - Add internal docker networks to gitlab, jenkins, netdata [fosten]
-- Bump traefik from v3.4.1 to v3.5 [fosten]
-- Bump netdata from v2.5.3 to v2.7 [fosten]
+- Bump traefik from v3.4.1 to v3.5.0-rc1 [fosten]
+- Bump netdata from v2.5.3 to v2.5.4 [fosten]
 - Add new releases to CHANGELOG.md [fosten]
 - Remove unused Docker image env vars [fosten]
 - Use Key-Value (Dictionary) Format for docker-compose environment [fosten]
