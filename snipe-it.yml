@@ -39,6 +39,7 @@ services:
         - traefik.http.routers.snipeit.entrypoints=https
         - traefik.http.routers.snipeit.tls=true
         - traefik.http.routers.snipeit.tls.certresolver=mydnschallenge
+        - traefik.http.routers.snipeit.middlewares=add-x-forwarded-header
     command: [sh, -c, "echo 'Sleep for 10 sec to wait for mariadb to come up...' && sleep 10 && /startup.sh"]
 
   snipe-it-mariadb:

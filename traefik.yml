@@ -9,6 +9,7 @@ services:
       - --entrypoints.http.address=:80
       - --entrypoints.https.address=:443
       - --entrypoints.https.http.middlewares=gzip
+      - --entrypoints.https.forwardedHeaders.trustedIPs=${TRAEFIK_TRUSTED_PROXIES}
       - --providers.swarm=true
       - --providers.swarm.watch=true
       - --providers.swarm.network=traefik-public
@@ -77,6 +78,10 @@ services:
         - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
         - traefik.http.middlewares.gzip.compress=true
         - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png,image/jpeg,font/woff2
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Host=${SNIPEIT_HOSTNAME}
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Port=443
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-For=172.17.0.0/12
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Proto=https
 
         # KEYCLOAK BASIC CLIENT MIDDLEWARE
         - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.KeycloakURLEnv=TRAEFIK_KEYCLOAK_URL

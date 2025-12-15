@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Configure traefik forwardedHeaders [fosten]
 - Add Snipe-IT [fosten]
 - Bump traefik from v3.5 to v3.6 [fosten]
 - Bump netdata from v2.6 to stable [fosten]
