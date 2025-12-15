@@ -8,6 +8,7 @@ services:
       - --log.filePath=/var/log/traefik/traefik.log
       - --entrypoints.http.address=:80
       - --entrypoints.https.address=:443
+      - --entrypoints.https.http.tls=true
       - --entrypoints.https.http.middlewares=gzip
       - --entrypoints.https.forwardedHeaders.trustedIPs=${TRAEFIK_TRUSTED_PROXIES}
       - --providers.swarm=true
