@@ -13,7 +13,6 @@ services:
       PRINTER_APP_URL: http://${RXRESUME_HOSTNAME}
       PRINTER_ENDPOINT: ws://chrome:3000
       AUTH_SECRET: ${RXRESUME_AUTH_SECRET}
-      PUBLIC_URL: http://${RXRESUME_HOSTNAME}
       STORAGE_URL: https://${MINIO_HOSTNAME}/api/default
       CHROME_TOKEN: chrome_token
       CHROME_URL: ws://chrome:3000
