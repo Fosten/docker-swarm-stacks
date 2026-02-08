@@ -9,8 +9,8 @@ services:
     environment:
       PORT: 3000
       NODE_ENV: production
-      APP_URL: http://${RXRESUME_HOSTNAME}
-      PRINTER_APP_URL: http://${RXRESUME_HOSTNAME}
+      APP_URL: https://${RXRESUME_HOSTNAME}
+      PRINTER_APP_URL: https://${RXRESUME_HOSTNAME}
       PRINTER_ENDPOINT: ws://chrome:3000
       AUTH_SECRET: ${RXRESUME_AUTH_SECRET}
       STORAGE_URL: https://${MINIO_HOSTNAME}/api/default
