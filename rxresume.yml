@@ -37,6 +37,11 @@ services:
       OPENID_SCOPE: openid profile email
       OPENID_TOKEN_URL: ${RXRESUME_OPENID_TOKEN_URL}
       OPENID_USER_INFO_URL: ${RXRESUME_OPENID_USER_INFO_URL}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     deploy:
       replicas: 1
       placement:
