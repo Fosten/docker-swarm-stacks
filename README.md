@@ -24,6 +24,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Portainer
 - Postfix
 - RxResume
+- Snipe-IT
 - Stirling-PDF
 - Tailscale
 - Traefik
