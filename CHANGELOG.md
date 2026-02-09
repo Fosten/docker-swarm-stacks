@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- towncrier release notes start -->
 
 # Unreleased
+- Use networks fail2ban-public tailscale-public [fosten]
+- Change APP_URL in rxresume to https [fosten]
+- Change rxresume env vars from OPENID to OAUTH [fosten]
+- Add healthcheck for rxresume [fosten]
 - Add env vars for rxresume 5.x [fosten]
 - Configure traefik forwardedHeaders [fosten]
 - Add Snipe-IT [fosten]

@@ -6,7 +6,7 @@ services:
     cap_add:
       - NET_ADMIN
     networks:
-      - fail2ban_network
+      - fail2ban-public
     volumes:
       - /var/log:/var/log:ro
       - ${HOME}/fail2ban/config:/config
@@ -27,5 +27,5 @@ services:
         - traefik.enable=false
 
 networks:
-  fail2ban_network:
+  fail2ban-public:
     external: true

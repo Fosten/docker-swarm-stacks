@@ -4,7 +4,7 @@ services:
   stirling-pdf:
     image: stirlingtools/stirling-pdf:latest
     networks:
-      - traefik-tailscale
+      - tailscale-public
     ports:
       - ${STIRLING_EXTERNAL_PORT}:${STIRLING_SERVER_PORT}
     environment:
@@ -26,5 +26,5 @@ services:
         - tsdproxy.autodetect=false
 
 networks:
-  traefik-tailscale:
+  tailscale-public:
     external: true

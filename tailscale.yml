@@ -5,7 +5,7 @@ services:
     image: tailscale/tailscale:stable
     hostname: '{{.Node.Hostname}}'
     networks:
-      - traefik-tailscale
+      - tailscale-public
     cap_add:
       - NET_ADMIN
       - NET_RAW
@@ -32,7 +32,7 @@ services:
     image: almeidapaulopt/tsdproxy:2
     networks:
       - traefik-public
-      - traefik-tailscale
+      - tailscale-public
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${HOME}/tsdproxy/data:/data
@@ -58,5 +58,5 @@ services:
 networks:
   traefik-public:
     external: true
-  traefik-tailscale:
+  tailscale-public:
     external: true
