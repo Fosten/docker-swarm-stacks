@@ -25,11 +25,10 @@ services:
       - SMTP_SECURITY=${VAULTWARDEN_SMTP_SECURITY}
       - SMTP_PORT=${VAULTWARDEN_SMTP_PORT}
       - SMTP_AUTH_MECHANISM=${VAULTWARDEN_SMTP_AUTH_MECHANISM}
-#      - SSO_ENABLED=${VAULTWARDEN_SSO_ENABLED}	 # Set to true to enable OIDC functionality.
-#      - SSO_AUTHORITY=${VAULTWARDEN_SSO_AUTHORITY}	 # URL of the OIDC provider (e.g., your IdP).
-#      - SSO_CLIENT_ID=${VAULTWARDEN_SSO_CLIENT_ID}	 # Unique identifier for the OIDC client.
-#      - SSO_CLIENT_SECRET=${VAULTWARDEN_SSO_CLIENT_SECRET}	 # Secret used to authenticate the client with the IdP.
-#      - SSO_SCOPES=${VAULTWARDEN_SSO_SCOPES}	 # Scopes required for the OIDC authentication.
+      - SSO_ENABLED=${VAULTWARDEN_SSO_ENABLED}
+      - SSO_AUTHORITY=${VAULTWARDEN_SSO_AUTHORITY}
+      - SSO_CLIENT_ID=${VAULTWARDEN_SSO_CLIENT_ID}
+      - SSO_CLIENT_SECRET=${VAULTWARDEN_SSO_CLIENT_SECRET}
     deploy:
       replicas: 1
       placement:
