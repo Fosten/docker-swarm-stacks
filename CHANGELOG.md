@@ -13,8 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- towncrier release notes start -->
 
-# Unreleased
-- Use networks fail2ban-public tailscale-public [fosten]
+## [Unreleased]
+
+- Add footer links to CHANGELOG.md [fosten]
+- Enable Vaultwarden SSO [fosten]
+- Use fail2ban-public tailscale-public networks [fosten]
 - Change APP_URL in rxresume to https [fosten]
 - Change rxresume env vars from OPENID to OAUTH [fosten]
 - Add healthcheck for rxresume [fosten]
@@ -25,8 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump netdata from v2.6 to stable [fosten]
 - Remove minor GHA releases from dependabot [fosten]
 
-# 1.8.0 (2025-08-06)
+## [1.6.0] (2025-08-06)
 
+- Bump traefik from v3.5.0-rc1 to v3.5 [fosten]
 - Add Invoice Ninja [fosten]
 - Configure Minio API path [fosten]
 - Add RxResume [fosten]
@@ -34,7 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change portainer-ce and portainer/agent image tags from latest to sts [fosten]
 - Change jenkins image tag from lts to jdk21 [fosten]
 - Bump graylog and graylog-datanode from 6.1 to 6.3.1
-- Bump traefik from v3.5.0-rc1 to v3.5 [fosten]
 - Bump netdata from v2.5.4 to v2.6 [fosten]
 - Add basic and trusted keycloakopenid middlewares [fosten]
 - Add Fail2ban [fosten]
@@ -47,7 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Paperless-ngx [fosten]
 - Add Nginx [fosten]
 
-# 1.7.0 (2025-07-05)
+## [1.5.0] (2025-07-05)
 
 - Configure keycloak commands and volumes [fosten]
 - Bump keycloak from 25.0.6 to 26.3.0 [fosten]
@@ -72,7 +75,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rename SMTP to Exim [fosten]
 - Add .env.example [fosten]
 
-# 1.6.0 (2025-06-22)
+## [1.4.0] (2025-06-22)
 
 - Add Nextcloud [fosten]
 - Add keycloakopenid middleware to ethercalc, mailhog, etherpad, netdata, traefik [fosten]
@@ -89,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump traefik from v3.3.4 to v3.4.1 [fosten]
 - Bump netdata from v2.3.0 to v2.5.3 [fosten]
 
-# 1.5.0 (2025-04-04)
+## [1.3.0] (2025-04-04)
 
 - Add ETHERPAD_TRUST_PROXY env var [fosten]
 - Enable basicauth on etherpad [fosten]
@@ -100,7 +103,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump traefik from v3.3.1 to v3.3.4 [fosten]
 - Bump netdata from v2.1.1 to v2.3.0 [fosten]
 
-# 1.4.0 (2025-01-10)
+## [1.2.0] (2025-01-10)
 
 - Add motomo-blockpath router [fosten]
 - Add listmonk uploads volume [fosten]
@@ -108,35 +111,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump traefik from v3.2.0 to v3.3.1 [fosten]
 - Change traefik.docker to traefik.swarm [fosten]
 - Add entrypoint for gzip global middleware [fosten]
-
-# 1.3.0 (2024-11-08)
-
-- Add dummyservice for netdata-client [fosten]
+- Add dummy services [fosten]
 - Add netdata [fosten]
 - Use simple HostRegexp for traefik v3 [fosten]
 - Fix https-redirect middleware [fosten]
 - Pin portainer-ce to 2.19.5 for legacy browsers [fosten]
 
-# 1.2.0 (2024-10-07)
+## [1.1.0] (2024-10-07)
 
-- Add hashed pw var [fosten]
+- Update mailhog entrypoints and add hashed pw var [fosten]
 - Bump traefik from v2.10.4 to v3.1.5 [fosten]
 - Add dummy services for portainer, exim, matomo-db [fosten]
+- Bump docker-compose to 3.9 [fosten]
 - Change portainer to portainer-ce [fosten]
-
-# 1.1.0 (2024-09-24)
-
 - Add mailhog [fosten]
 - Move Exim to separate stack [fosten]
 - Add listmonk [fosten]
 - Add dependabot [fosten]
 
-# 1.0.0 (2023-10-18)
+## [1.0.0] (2023-10-18)
 
+- Update deployments workflow [fosten]
 - Add matomo [fosten]
 - Add portainer [fosten]
 - Add traefik [fosten]
 
-# 0.1.0 (2023-10-18)
+## [0.1.0] (2023-10-18)
 
 - Initial commit [fosten]
+
+[Unreleased]: https://github.com/Fosten/docker-swarm-stacks/compare/1.6.0...main
+[1.6.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.6.0
+[1.5.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.5.0
+[1.4.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.4.0
+[1.3.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.3.0
+[1.2.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.2.0
+[1.1.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.1.0
+[1.0.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.0.0
+[0.1.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/0.1.0
+[fosten]: https://github.com/Fosten
