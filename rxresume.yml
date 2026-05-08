@@ -6,6 +6,8 @@ services:
     networks:
       - traefik-public
       - traefik-rxresume
+    volumes:
+      - ${HOME}/rxresume/data:/app/apps/web/data
     environment:
       PORT: 3000
       NODE_ENV: production

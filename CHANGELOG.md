@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add rxresume data volume bind mount [fosten]
 - Remove rxresume healthcheck [fosten]
 - Add footer links to CHANGELOG.md [fosten]
 - Enable Vaultwarden SSO [fosten]
