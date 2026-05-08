@@ -32,11 +32,6 @@ services:
       OAUTH_CLIENT_ID: ${RXRESUME_OAUTH_CLIENT_ID}
       OAUTH_CLIENT_SECRET: ${RXRESUME_OAUTH_CLIENT_SECRET}
       OAUTH_DISCOVERY_URL: ${RXRESUME_OAUTH_DISCOVERY_URL}
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
     deploy:
       replicas: 1
       placement:
