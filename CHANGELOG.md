@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Disable gitlab internal postgres [fosten]
 - Disable gitlab gitaly cgropus [fosten]
+- Disable gitlab rake_cache_clear [fosten]
 - Add rxresume data volume bind mount [fosten]
 - Remove rxresume healthcheck [fosten]
 - Add footer links to CHANGELOG.md [fosten]
