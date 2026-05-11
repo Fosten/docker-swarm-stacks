@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   gitlab:
-    image: gitlab/gitlab-ce:latest
+    image: gitlab/gitlab-ce:18.2.8-ce.0
     networks:
       - traefik-public
       - traefik-gitlab
