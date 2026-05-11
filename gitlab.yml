@@ -19,6 +19,7 @@ services:
         sidekiq['concurrency'] = 10
         prometheus_monitoring['enable'] = false
         gitlab_rails['rake_cache_clear'] = false
+        postgresql['enable'] = false
         gitlab_rails['db_adapter'] = "postgresql"
         gitlab_rails['db_encoding'] = "unicode"
         gitlab_rails['db_database'] = "${GITLAB_DB_NAME}"
