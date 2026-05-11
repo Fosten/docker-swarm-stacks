@@ -3,7 +3,7 @@ version: '3.9'
 services:
   graylog:
     hostname: graylog
-    image: graylog/graylog:6.3.1
+    image: graylog/graylog:7.1
     entrypoint: /usr/bin/tini --  /docker-entrypoint.sh
     environment:
       GRAYLOG_NODE_ID_FILE: /usr/share/graylog/data/data/node-id
@@ -13,7 +13,7 @@ services:
       GRAYLOG_HTTP_BIND_ADDRESS: 0.0.0.0:9000
       GRAYLOG_HTTP_EXTERNAL_URI: https://${GRAYLOG_HOSTNAME}/
       GRAYLOG_HTTP_PUBLISH_URI: https://${GRAYLOG_HOSTNAME}
-      GRAYLOG_MONGODB_URI: mongodb://mongodb:27017/graylog
+      GRAYLOG_MONGODB_URI: mongodb://graylog-mongodb:27017/graylog
       GRAYLOG_HTTP_ENABLE_CORS: "true"
     networks:
       - traefik-public
@@ -48,8 +48,8 @@ services:
         - traefik.http.routers.graylog.tls=true
         - traefik.http.routers.graylog.tls.certresolver=mydnschallenge
 
-  mongodb:
-    image: mongo:6.0
+  graylog-mongodb:
+    image: mongo:8.2
     networks:
       - traefik-graylog
     volumes:
@@ -59,18 +59,18 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == dispatchapp
+          - node.labels.type == happyapp
       labels:
         - traefik.enable=false
 
   datanode:
-    image: graylog/graylog-datanode:6.3.1
+    image: graylog/graylog-datanode:7.1
     hostname: datanode
     environment:
       GRAYLOG_DATANODE_NODE_ID_FILE: /var/lib/graylog-datanode/node-id
       # GRAYLOG_DATANODE_PASSWORD_SECRET and GRAYLOG_PASSWORD_SECRET MUST be the same value
       GRAYLOG_DATANODE_PASSWORD_SECRET: ${GRAYLOG_PASSWORD_SECRET}:?Please configure GRAYLOG_PASSWORD_SECRET in the .env file}
-      GRAYLOG_DATANODE_MONGODB_URI: mongodb://mongodb:27017/graylog
+      GRAYLOG_DATANODE_MONGODB_URI: mongodb://graylog-mongodb:27017/graylog
     ulimits:
       memlock:
         hard: -1
