@@ -5,10 +5,8 @@ services:
     image: audreyt/ethercalc:latest
     networks:
       - traefik-public
-      - traefik-ethercalc
-    environment:
-      REDIS_PORT_6379_TCP_ADDR: ethercalc-redis
-      REDIS_PORT_6379_TCP_PORT: 6379
+    volumes:
+      - ${HOME}/ethercalc-data:/data
     deploy:
       replicas: 1
       placement:
@@ -24,22 +22,7 @@ services:
         - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
         - traefik.http.services.ethercalc.loadbalancer.server.port=8000
         - traefik.http.routers.ethercalc.middlewares=keycloakopenid-basic-client
-  ethercalc-redis:
-    image: redis:8.0.3
-    volumes:
-      - ${HOME}/ethercalc-redis:/data
-    networks:
-      - traefik-ethercalc
-    deploy:
-      replicas: 1
-      placement:
-        constraints:
-          - node.labels.type == dispatchapp
-      labels:
-        - traefik.enable=false
 
 networks:
   traefik-public:
     external: true
-  traefik-ethercalc:
-    driver: overlay
