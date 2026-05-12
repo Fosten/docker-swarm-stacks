@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Bump keycloak from 26.3.0 to 26.6.1 [fosten]
 - Remove keycloak env var KC_FEATURES: persistent-user-sessions [fosten]
 - Set keycloak path normalization flag [fosten]
 - Set nextcloud PGSSLMODE env var to require [fosten]
