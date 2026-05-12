@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Set keycloak path normalization flag [fosten]
 - Set nextcloud PGSSLMODE env var to require [fosten]
 - Bump nextcloud from v32 to v33 [fosten]
 - Reattach nextcloud volumes after v32 Engine is unpacked [fosten]
