@@ -24,6 +24,7 @@ services:
       POSTGRES_DB: ${NEXTCLOUD_POSTGRES_DB}
       POSTGRES_USER: ${NEXTCLOUD_POSTGRES_USER}
       POSTGRES_PASSWORD: ${NEXTCLOUD_POSTGRES_PASSWORD}
+      PGSSLMODE: require
     deploy:
       replicas: 1
       placement:

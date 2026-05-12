@@ -15,9 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Bump Nextcloud from v32 to v33 [fosten]
+- Set nextcloud PGSSLMODE env var to require [fosten]
+- Bump nextcloud from v32 to v33 [fosten]
 - Reattach nextcloud volumes after v32 Engine is unpacked [fosten]
-- Bump Nextcloud from v31 to v32 [fosten]
+- Bump nextcloud from v31 to v32 [fosten]
 - Add graylog config bind mount volume [fosten]
 - Bump graylog from 6.3.1 to 7.1, Bump mongodb from 6.0 to 8.2 [fosten]
 - Disable gitlab internal postgres [fosten]
