@@ -7,9 +7,9 @@ services:
       - traefik-public
     volumes:
       - nextcloud_system:/var/www/html
-#      - ${HOME}/nextcloud/data:/var/www/html/data:z
-#      - ${HOME}/nextcloud/config:/var/www/html/config:z
-#      - ${HOME}/nextcloud/apps:/var/www/html/custom_apps:z
+      - ${HOME}/nextcloud/data:/var/www/html/data:z
+      - ${HOME}/nextcloud/config:/var/www/html/config:z
+      - ${HOME}/nextcloud/apps:/var/www/html/custom_apps:z
       - ${HOME}/nextcloud/php-fpm-www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
     environment:
       NEXTCLOUD_HOSTNAME: ${NEXTCLOUD_HOSTNAME}
