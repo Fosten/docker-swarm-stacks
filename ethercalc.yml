@@ -5,6 +5,10 @@ services:
     image: audreyt/ethercalc:latest
     networks:
       - traefik-public
+    environment:
+      ETHERCALC_BASEPATH: "https://${ETHERCALC_HOSTNAME}/"
+      ETHERCALC_HOSTNAME: "${ETHERCALC_HOSTNAME}"
+      NODE_ENV: production
     volumes:
       - ${HOME}/ethercalc-data:/data
     deploy:
@@ -21,7 +25,9 @@ services:
         - traefik.http.routers.ethercalc.service=ethercalc
         - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
         - traefik.http.services.ethercalc.loadbalancer.server.port=8000
-        - traefik.http.routers.ethercalc.middlewares=keycloakopenid-basic-client
+        - traefik.http.services.ethercalc.loadbalancer.passhostheader=true
+        - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
+        - traefik.http.routers.ethercalc.middlewares=keycloakopenid-basic-client,sslheader
 
 networks:
   traefik-public:
