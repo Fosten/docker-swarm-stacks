@@ -2,14 +2,15 @@ version: '3.9'
 
 services:
   nextcloud:
-    image: nextcloud:latest
+    image: nextcloud:32
     networks:
       - traefik-public
     volumes:
-      - ${HOME}/nextcloud/data:/var/www/html:z
+      - nextcloud_system:/var/www/html
+#      - ${HOME}/nextcloud/data:/var/www/html/data:z
+#      - ${HOME}/nextcloud/config:/var/www/html/config:z
+#      - ${HOME}/nextcloud/apps:/var/www/html/custom_apps:z
       - ${HOME}/nextcloud/php-fpm-www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-      - ${HOME}/nextcloud/setup-config.sh:/usr/local/bin/setup-config.sh
-    entrypoint: /usr/local/bin/setup-config.sh
     environment:
       NEXTCLOUD_HOSTNAME: ${NEXTCLOUD_HOSTNAME}
       NEXTCLOUD_ADMIN_USER: ${NEXTCLOUD_ADMIN_USER}
@@ -48,3 +49,6 @@ services:
 networks:
   traefik-public:
     external: true
+
+volumes:
+  nextcloud_system:
