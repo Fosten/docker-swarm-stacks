@@ -20,13 +20,24 @@ services:
         - traefik.enable=true
         - traefik.swarm.network=traefik-public
         - traefik.constraint-label=traefik-public
-        - traefik.http.routers.ethercalc.rule=Host(`${ETHERCALC_HOSTNAME}`)
-        - traefik.http.routers.ethercalc.entrypoints=https
-        - traefik.http.routers.ethercalc.service=ethercalc
-        - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
         - traefik.http.services.ethercalc.loadbalancer.server.port=8000
         - traefik.http.services.ethercalc.loadbalancer.passhostheader=true
+
+        # --- Middlewares ---
         - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
+
+        # --- Router 1: Public Assets (Needed for the button to work) ---
+        - traefik.http.routers.ethercalc-static.rule=Host(`${ETHERCALC_HOSTNAME}`) && (Path(`/manifest.json`) || PathPrefix(`/static`))
+        - traefik.http.routers.ethercalc-static.entrypoints=https
+        - traefik.http.routers.ethercalc-static.tls.certresolver=mydnschallenge
+        - traefik.http.routers.ethercalc-static.service=ethercalc
+        - traefik.http.routers.ethercalc-static.middlewares=sslheader
+
+        # --- Router 2: Private Content (Keycloak Protected) ---
+        - traefik.http.routers.ethercalc.rule=Host(`${ETHERCALC_HOSTNAME}`)
+        - traefik.http.routers.ethercalc.entrypoints=https
+        - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
+        - traefik.http.routers.ethercalc.service=ethercalc
         - traefik.http.routers.ethercalc.middlewares=keycloakopenid-basic-client,sslheader
 
 networks:

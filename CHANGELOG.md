@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure ethercalc-static router [fosten]
 - Set ethercalc passhostheader flag, env vars, and sslheader middleware [fosten]
 - Bump ethercalc from 0.20170704.0 to 0.20260424.0 and remove redis [fosten]
 - Bump keycloak from 26.3.0 to 26.6.1 [fosten]
