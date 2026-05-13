@@ -5,6 +5,7 @@ services:
     image: audreyt/ethercalc:latest
     networks:
       - traefik-public
+      - traefik-ethercalc
     environment:
       ETHERCALC_BASEPATH: "https://${ETHERCALC_HOSTNAME}/"
       ETHERCALC_HOSTNAME: "${ETHERCALC_HOSTNAME}"
@@ -22,24 +23,73 @@ services:
         - traefik.constraint-label=traefik-public
         - traefik.http.services.ethercalc.loadbalancer.server.port=8000
         - traefik.http.services.ethercalc.loadbalancer.passhostheader=true
-
-        # --- Middlewares ---
         - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
-
-        # --- Router 1: Public Assets (Needed for the button to work) ---
         - traefik.http.routers.ethercalc-static.rule=Host(`${ETHERCALC_HOSTNAME}`) && (Path(`/manifest.json`) || PathPrefix(`/static`))
         - traefik.http.routers.ethercalc-static.entrypoints=https
         - traefik.http.routers.ethercalc-static.tls.certresolver=mydnschallenge
         - traefik.http.routers.ethercalc-static.service=ethercalc
         - traefik.http.routers.ethercalc-static.middlewares=sslheader
-
-        # --- Router 2: Private Content (Keycloak Protected) ---
+        - traefik.http.routers.ethercalc-static.priority=100
         - traefik.http.routers.ethercalc.rule=Host(`${ETHERCALC_HOSTNAME}`)
         - traefik.http.routers.ethercalc.entrypoints=https
         - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
         - traefik.http.routers.ethercalc.service=ethercalc
         - traefik.http.routers.ethercalc.middlewares=keycloakopenid-basic-client,sslheader
+        - traefik.http.routers.ethercalc.priority=1
+
+  ethercalc-indexer:
+    image: alpine:latest
+    networks:
+      - traefik-public
+      - traefik-ethercalc
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - ${HOME}/ethercalc-data/do/ethercalc-roomdo-v1:/data:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    deploy:
+      restart_policy:
+        condition: any
+      placement:
+        constraints: [node.labels.type == dispatchapp]
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        apk add --no-cache tzdata curl;
+        while true; do
+          NOW=$$(date '+%H:%M:%S ET')
+          NULL_HASH=$$(ls -t /data/*.sqlite | head -n 1 | xargs basename | sed 's/.sqlite//')
+          
+          echo -n '{"command": [' > /tmp/payload
+          echo -n "\"set A1 text t Welcome to EtherCalc!\"," >> /tmp/payload
+          echo -n "\"set A2 text t To create a new sheet: https://${ETHERCALC_HOSTNAME}/your-spreadsheet-name\"," >> /tmp/payload
+          echo -n "\"set A3 text t Table of contents below lists hashed ids (refreshed every 5 minutes).\"," >> /tmp/payload
+          echo -n "\"set A4 text t Once your id appears, please manually add your-spreadsheet-name in column C.\"," >> /tmp/payload
+          
+          echo -n "\"set A:A width 600\",\"set B:B width 300\",\"set C:C width 300\"," >> /tmp/payload
+          
+          echo -n "\"set A6 text t [Spreadsheet ID]\",\"set B6 text t [Indexed At: $$NOW]\",\"set C6 text t [Spreadsheet Name]\"" >> /tmp/payload
+          
+          ROW=7
+          for f in /data/*.sqlite; do
+            ROOM_ID=$$(basename "$$f" .sqlite)
+            if [ "$$ROOM_ID" = "metadata" ] || [ "$$ROOM_ID" = "$$NULL_HASH" ]; then continue; fi
+            
+            echo -n ",\"set A$${ROW} text t $$ROOM_ID\",\"set B$${ROW} text t [$$NOW]\"" >> /tmp/payload
+            ROW=$$(($$ROW + 1))
+          done
+          echo -n ']}' >> /tmp/payload
+          
+          sleep 10
+          curl -s -X POST -H "Content-Type: application/json" --data-binary @/tmp/payload http://ethercalc:8000/_/null
+          sleep 300
+        done
 
 networks:
   traefik-public:
     external: true
+  traefik-ethercalc:
+    driver: overlay
+    attachable: true
