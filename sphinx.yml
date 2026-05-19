@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  sphinx1:
+    image: sphinxdoc/sphinx:latest
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/sphinx1:/docs
+    command:
+      - sh
+      - -c
+      - |
+        sphinx-build -b html /docs /docs/_build/html && \
+        cd /docs/_build/html && \
+        echo "Starting HTTP server..." && \
+        python3 -m http.server 80
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:80')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == dispatch13
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.sphinx1.rule=Host(`${SPHINX_1_HOSTNAME}`)
+        - traefik.http.services.sphinx1.loadbalancer.server.port=80
+        - traefik.http.routers.sphinx1.entrypoints=https
+        - traefik.http.routers.sphinx1.tls=true
+        - traefik.http.routers.sphinx1.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
