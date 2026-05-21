@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Remove browserless/chromium from rxresume [fosten]
 - Add Sphinx [fosten]
 - Add ethercalc-indexer [fosten]
 - Configure ethercalc-static router [fosten]

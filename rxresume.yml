@@ -12,12 +12,8 @@ services:
       PORT: 3000
       NODE_ENV: production
       APP_URL: https://${RXRESUME_HOSTNAME}
-      PRINTER_APP_URL: https://${RXRESUME_HOSTNAME}
-      PRINTER_ENDPOINT: ws://chrome:3000
       AUTH_SECRET: ${RXRESUME_AUTH_SECRET}
       STORAGE_URL: https://${MINIO_HOSTNAME}/api/default
-      CHROME_TOKEN: chrome_token
-      CHROME_URL: ws://chrome:3000
       DATABASE_URL: ${RXRESUME_DATABASE_URL}
       ACCESS_TOKEN_SECRET: ${RXRESUME_ACCESS_TOKEN_SECRET}
       REFRESH_TOKEN_SECRET: ${RXRESUME_REFRESH_TOKEN_SECRET}
@@ -77,26 +73,6 @@ services:
         - traefik.http.routers.minio-gui.service=minio-gui
         - traefik.http.routers.minio-gui.tls=true
         - traefik.http.routers.minio-gui.tls.certresolver=mydnschallenge
-
-  chrome:
-    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
-    networks:
-      - traefik-rxresume
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    environment:
-      TIMEOUT: 10000
-      CONCURRENT: 10
-      TOKEN: chrome_token
-      EXIT_ON_HEALTH_FAILURE: "true"
-      PRE_REQUEST_HEALTH_CHECK: "true"
-    deploy:
-      replicas: 1
-      placement:
-        constraints:
-          - node.labels.type == happyapp
-      labels:
-        - traefik.enable=false
 
 networks:
   traefik-public:
