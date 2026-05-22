@@ -16,7 +16,6 @@ services:
           - node.labels.type == happyapp
       labels:
         - traefik.enable=false
-    labels:
         - tsdproxy.enable=true
         - tsdproxy.name=pdf
         - tsdproxy.port.1=${STIRLING_SERVER_PORT}/http->http://${STIRLING_PDF_HOSTNAME}:${STIRLING_EXTERNAL_PORT}
@@ -24,6 +23,12 @@ services:
         - tsdproxy.tlsvalidate=false
         - tsdproxy.ephemeral=true
         - tsdproxy.autodetect=false
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs --max-time 10 http://localhost:${STIRLING_SERVER_PORT}${SYSTEM_ROOTURIPATH:-''}/api/v1/info/status || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 5
 
 networks:
   tailscale-public:
