@@ -29,6 +29,7 @@ A collection of Docker stacks and GHA workflows for deployment in a Docker Swarm
 - Stirling-PDF
 - Tailscale
 - Traefik
+- TSDProxy
 - Vaultwarden
 
 ## Deployment via CI/CD 🔧
