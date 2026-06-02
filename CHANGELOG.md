@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Change nextcloud PGSSLMODE from require to prefer [fosten]
 - Split TSDProxy into separate stack [fosten]
 - Configure stirling-pdf healthcheck [fosten]
 - Remove browserless/chromium from rxresume [fosten]
