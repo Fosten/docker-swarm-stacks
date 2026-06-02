@@ -11,6 +11,7 @@ services:
       - ${HOME}/nextcloud/config:/var/www/html/config:z
       - ${HOME}/nextcloud/apps:/var/www/html/custom_apps:z
       - ${HOME}/nextcloud/php-fpm-www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${HOME}/nextcloud/secrets:/var/run/secrets/postgres:ro
     environment:
       NEXTCLOUD_HOSTNAME: ${NEXTCLOUD_HOSTNAME}
       NEXTCLOUD_ADMIN_USER: ${NEXTCLOUD_ADMIN_USER}
@@ -24,6 +25,7 @@ services:
       POSTGRES_DB: ${NEXTCLOUD_POSTGRES_DB}
       POSTGRES_USER: ${NEXTCLOUD_POSTGRES_USER}
       POSTGRES_PASSWORD: ${NEXTCLOUD_POSTGRES_PASSWORD}
+      PGSSLROOTCERT: /var/run/secrets/postgres/ca.crt
       PGSSLMODE: prefer
     deploy:
       replicas: 1
