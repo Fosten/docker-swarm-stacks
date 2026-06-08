@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Reconfigure tailscale workflow to support multi-environment CI/CD [fosten]
 - Configure nextcloud CA cert mount and PGSSLROOTCERT env var
 - Change nextcloud PGSSLMODE from require to prefer [fosten]
 - Split TSDProxy into separate stack [fosten]
