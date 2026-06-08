@@ -61,7 +61,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == proxy13
+          - node.labels.type == ${STACK_PARAM}
       labels:
         # Dashboard
         - traefik.enable=true
