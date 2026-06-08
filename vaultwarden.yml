@@ -33,7 +33,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == happyapp
+          - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.enable=true
         - traefik.http.routers.vaultwarden.rule=Host(`${VAULTWARDEN_HOSTNAME}`)
