@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Reconfigure portainer workflow to support multi-environment CI/CD [fosten]
 - Reconfigure nextcloud workflow to support multi-environment CI/CD [fosten]
 - Reconfigure vaultwarden workflow to support multi-environment CI/CD [fosten]
 - Reconfigure traefik workflow to support multi-environment CI/CD [fosten]

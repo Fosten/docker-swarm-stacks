@@ -22,7 +22,7 @@ services:
       mode: replicated
       placement:
         constraints:
-          - node.labels.type == proxy13
+          - node.labels.type == ${STACK_PARAM}
 
   agent:
     image: portainer/agent:sts
