@@ -16,7 +16,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == happyapp
+          - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.enable=true
         - traefik.swarm.network=traefik-public
@@ -52,7 +52,8 @@ services:
       restart_policy:
         condition: any
       placement:
-        constraints: [node.labels.type == happyapp]
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
     entrypoint:
       - /bin/sh
       - -c

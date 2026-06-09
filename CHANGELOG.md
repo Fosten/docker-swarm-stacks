@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Reconfigure ethercalc workflow to support mulit-environment CI/CD [fosten]
 - Reconfigure mailhog workflow to cloud mulit-environment CI/CD [fosten]
 - Reconfigure stirling-pdf workflow to support mulit-environment CI/CD [fosten]
 - Reconfigure postfix workflow to support mulit-environment CI/CD [fosten]
