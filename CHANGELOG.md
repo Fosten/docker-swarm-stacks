@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Reconfigure postfix workflow to support mulit-environment CI/CD [fosten]
 - Reconfigure exim workflow to support cloud environment CI/CD [fosten]
 - Reconfigure portainer workflow to support multi-environment CI/CD [fosten]
 - Reconfigure nextcloud workflow to support multi-environment CI/CD [fosten]
