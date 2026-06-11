@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  tempo:
+    image: grafana/tempo:latest
+    networks:
+      - traefik-public
+    command: -config.file=/etc/tempo/config.yaml
+    volumes:
+      - ${HOME}/tempo/config.yaml:/etc/tempo/config.yaml:ro
+      - ${HOME}/tempo/data:/var/tempo
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.http.routers.tempo.rule=Host(`${TEMPO_HOSTNAME}`)
+        - traefik.http.services.tempo.loadbalancer.server.port=3200
+        - traefik.http.routers.tempo.entrypoints=http
+
+networks:
+  traefik-public:
+    external: true

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add Tempo [fosten]
 - Add Promtail [fosten]
 - Add Loki [fosten]
 - Add Prometheus [fosten]

@@ -33,6 +33,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Snipe-IT
 - Stirling-PDF
 - Tailscale
+- Tempo
 - Traefik
 - TSDProxy
 - Vaultwarden
