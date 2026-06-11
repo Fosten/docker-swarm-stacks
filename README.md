@@ -23,6 +23,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Nginx
 - Loki
 - Ollama
+- OpenTelemetry
 - Paperless-ngx
 - Portainer
 - Postfix
