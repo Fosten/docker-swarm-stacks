@@ -21,6 +21,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Netdata
 - Nextcloud
 - Nginx
+- Loki
 - Ollama
 - Paperless-ngx
 - Portainer
