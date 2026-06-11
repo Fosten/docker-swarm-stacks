@@ -25,6 +25,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Paperless-ngx
 - Portainer
 - Postfix
+- Prometheus
 - RxResume
 - Sphinx
 - Snipe-IT
