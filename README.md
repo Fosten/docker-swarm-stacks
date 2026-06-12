@@ -16,12 +16,13 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Jenkins
 - Keycloak
 - Listmonk
+- Loki
 - Mailhog
 - Matomo
+- Mimir
 - Netdata
 - Nextcloud
 - Nginx
-- Loki
 - Ollama
 - OpenTelemetry
 - Paperless-ngx

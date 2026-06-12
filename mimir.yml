@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  mimir:
+    image: grafana/mimir:latest
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/mimir/mimir.yaml:/etc/mimir.yaml
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.http.routers.mimir.rule=Host(`${MIMIR_HOSTNAME}`)
+        - traefik.http.services.mimir.loadbalancer.server.port=3100
+        - traefik.http.routers.mimir.entrypoints=http
+
+networks:
+  traefik-public:
+    external: true
