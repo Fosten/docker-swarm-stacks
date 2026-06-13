@@ -40,6 +40,10 @@ services:
         - traefik.http.routers.snipeit.tls=true
         - traefik.http.routers.snipeit.tls.certresolver=mydnschallenge
         - traefik.http.routers.snipeit.middlewares=add-x-forwarded-header
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Host=${SNIPEIT_HOSTNAME}
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Port=443
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-For=172.17.0.0/12
+        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Proto=https
     command: [sh, -c, "echo 'Sleep for 10 sec to wait for mariadb to come up...' && sleep 10 && /startup.sh"]
 
   snipe-it-mariadb:

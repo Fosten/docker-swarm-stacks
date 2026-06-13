@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Move snipe-it proxy headers to snipe-it stack [fosten]
 - Refactor portainer to support multi-environment deployments [fosten]
 - Refactor traefik to support multi-environment deployments [fosten]
 - Add Mimir [fosten]
