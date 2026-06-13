@@ -8,9 +8,9 @@ services:
       - --log.filePath=/var/log/traefik/traefik.log
       - --entrypoints.http.address=:80
       - --entrypoints.https.address=:443
-      - --entrypoints.https.http.tls=true
+      - --entrypoints.https.http.tls=${TRAEFIK_TLS_ENABLED}
       - --entrypoints.https.http.middlewares=gzip
-      - --entrypoints.https.forwardedHeaders.trustedIPs=${TRAEFIK_TRUSTED_PROXIES}
+      - --entrypoints.https.forwardedHeaders.trustedIPs=${TRAEFIK_TRUSTED_PROXIES:-127.0.0.1}
       - --providers.swarm=true
       - --providers.swarm.watch=true
       - --providers.swarm.network=traefik-public
@@ -20,9 +20,9 @@ services:
       - --experimental.plugins.keycloakopenid.moduleName=github.com/bcambl/keycloakopenid
       - --experimental.plugins.keycloakopenid.version=v0.1.47
       # DNS Resolver
-      - --certificatesresolvers.mydnschallenge.acme.dnschallenge=true
+      - --certificatesresolvers.mydnschallenge.acme.dnschallenge=${TRAEFIK_TLS_ENABLED}
       - --certificatesresolvers.mydnschallenge.acme.dnschallenge.provider=linodev4
-      - --certificatesresolvers.mydnschallenge.acme.email=${ACME_EMAIL}
+      - --certificatesresolvers.mydnschallenge.acme.email=${ACME_EMAIL:-dummy@local.com}
       - --certificatesresolvers.mydnschallenge.acme.storage=/le/acme.json
       # Enable the access log, with HTTP requests
       - --accesslog.bufferingsize=100
@@ -44,14 +44,12 @@ services:
     networks:
       - traefik-public
     environment:
-      ACME_EMAIL: ${ACME_EMAIL}
-      LINODE_TOKEN: ${LINODE_TOKEN}
-      TRAEFIK_KEYCLOAK_URL: ${TRAEFIK_KEYCLOAK_URL}
-      TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID}
-      TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET}
-      TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID}
-      TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET}
-      TRAEFIK_KEYCLOAK_REALM: ${TRAEFIK_KEYCLOAK_REALM}
+      TRAEFIK_KEYCLOAK_URL: ${TRAEFIK_KEYCLOAK_URL:-http://localhost}
+      TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID:-dummy}
+      TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET:-dummy}
+      TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID:-dummy}
+      TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET:-dummy}
+      TRAEFIK_KEYCLOAK_REALM: ${TRAEFIK_KEYCLOAK_REALM:-dummy}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       # Make sure the volume folder is created
@@ -63,13 +61,19 @@ services:
         constraints:
           - node.labels.type == ${STACK_PARAM}
       labels:
-        # Dashboard
         - traefik.enable=true
-        # Change the host url here
+
+        # Local Dashboard
+        - traefik.http.routers.dashboard.rule=Host(`${TRAEFIK_HOSTNAME}`)
+        - traefik.http.routers.dashboard.entrypoints=http
+        - traefik.http.routers.dashboard.service=api@internal
+        - traefik.http.routers.dashboard.priority=100
+
+        # Cloud Dashboard
         - traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOSTNAME}`)
         - traefik.http.routers.traefik.service=api@internal
         - traefik.http.services.traefik.loadbalancer.server.port=8080
-        - traefik.http.routers.traefik.tls=true
+        - traefik.http.routers.traefik.tls=${TRAEFIK_TLS_ENABLED}
         - traefik.http.routers.traefik.tls.certresolver=mydnschallenge
         - traefik.http.routers.traefik.entrypoints=https
         - traefik.http.routers.traefik.middlewares=keycloakopenid-trusted-client
@@ -79,10 +83,6 @@ services:
         - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
         - traefik.http.middlewares.gzip.compress=true
         - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png,image/jpeg,font/woff2
-        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Host=${SNIPEIT_HOSTNAME}
-        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Port=443
-        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-For=172.17.0.0/12
-        - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Proto=https
 
         # KEYCLOAK BASIC CLIENT MIDDLEWARE
         - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.KeycloakURLEnv=TRAEFIK_KEYCLOAK_URL
@@ -104,10 +104,9 @@ services:
 
         # GENERIC ROUTERS
         - traefik.http.routers.generic-https-redirect.entrypoints=http
-        - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`.*`)
+        - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`^.+$$`) && !Host(`${TRAEFIK_HOSTNAME}`)
         - traefik.http.routers.generic-https-redirect.priority=1
-        - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
-
+        - traefik.http.routers.generic-https-redirect.middlewares=${TRAEFIK_REDIRECT_MIDDLEWARE:-}
 networks:
   traefik-public:
     external: true

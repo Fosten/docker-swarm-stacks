@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Refactor traefik to support multi-environment deployments [fosten]
 - Add Mimir [fosten]
 - Add OpenTelemetry [fosten]
 - Add Tempo [fosten]
