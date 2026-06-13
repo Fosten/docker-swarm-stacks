@@ -2,16 +2,18 @@ version: '3.9'
 
 services:
   gateway:
-    build: .
-    image: nousresearch/hermes-agent
+    image: nousresearch/hermes-agent:latest
     networks:
       - traefik-public
     environment:
       - HERMES_UID=${HERMES_UID:-1000}
       - HERMES_GID=${HERMES_GID:-1000}
+      - HERMES_DASHBOARD=1
+      - HERMES_DASHBOARD_HOST=0.0.0.0
+      - HERMES_DASHBOARD_PORT=9119
+      - HERMES_DASHBOARD_INSECURE=1
     volumes:
       - ${HOME}/.hermes:/opt/data
-    command: ["/bin/sh", "-c", "gateway run & dashboard --host 0.0.0.0 --no-open"]
     deploy:
       replicas: 1
       placement:
@@ -20,8 +22,12 @@ services:
       labels:
         - traefik.enable=true
         - traefik.http.routers.hermes.rule=Host(`${HERMES_HOSTNAME}`)
-        - traefik.http.services.hermes.loadbalancer.server.port=9119
-        - traefik.http.routers.hermes.entrypoints=http
+        - traefik.http.routers.hermes.service=hermes-dashboard-service
+        - traefik.http.services.hermes-dashboard-service.loadbalancer.server.port=9119
+        - traefik.http.routers.hermes.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.hermes.tls=${TRAEFIK_TLS_ENABLED:-false}
+        - traefik.http.routers.hermes.tls.certresolver=mydnschallenge
+
 networks:
   traefik-public:
     external: true
