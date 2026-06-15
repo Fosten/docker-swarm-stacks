@@ -3,6 +3,7 @@ version: '3.9'
 services:
   mimir:
     image: grafana/mimir:latest
+    command: ["-target=all", "-auth.multitenancy-enabled=false"]
     networks:
       - traefik-public
     volumes:
@@ -14,7 +15,7 @@ services:
           - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.http.routers.mimir.rule=Host(`${MIMIR_HOSTNAME}`)
-        - traefik.http.services.mimir.loadbalancer.server.port=3100
+        - traefik.http.services.mimir.loadbalancer.server.port=8080
         - traefik.http.routers.mimir.entrypoints=${TRAEFIK_ENTRYPOINT}
         - traefik.http.routers.mimir.tls=${TRAEFIK_TLS_ENABLED}
         - traefik.http.routers.mimir.tls.certresolver=mydnschallenge

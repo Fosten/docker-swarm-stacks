@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Change mimir port, set monolithic mode, disable multitenancy [fosten]
 - Disable traefik for tempo [fosten]
 - Fix ollama, opentelemetry, promtail misconfigruation errors in traefik [fosten]
 - Reconfigure grafana stack and workflow to support multi-environment CI/CD [fosten]
