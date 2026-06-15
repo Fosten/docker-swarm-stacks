@@ -7,17 +7,15 @@ services:
       - /var/log:/var/log:ro
       - ${HOME}/promtail/promtail.yaml:/etc/promtail/promtail.yaml:ro
     command: -config.file=/etc/promtail/promtail.yaml
+    networks:
+      - traefik-public
     deploy:
       replicas: 1
       placement:
         constraints:
           - node.labels.type == ${STACK_PARAM}
       labels:
-        - traefik.enable=true
-        - traefik.http.services.justAdummyService.loadbalancer.server.port=1337
-        - traefik.http.routers.traefikRouter.rule=Host(`127.0.0.11`)
-        - traefik.http.routers.traefikRouter.service=api@internal
-        - traefik.http.routers.traefikRouter.entrypoints=http
+        - traefik.enable=false
 
 networks:
   traefik-public:

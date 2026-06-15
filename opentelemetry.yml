@@ -15,13 +15,13 @@ services:
         - traefik.enable=true
         - traefik.http.routers.otel-http.rule=Host(`${OTEL_HTTP_HOSTNAME}`)
         - traefik.http.routers.otel-http.entrypoints=http
+        - traefik.http.routers.otel-http.service=otel-http
         - traefik.http.services.otel-http.loadbalancer.server.port=4318
         - traefik.http.routers.otel-grpc.rule=Host(`${OTEL_GRPC_HOSTNAME}`)
         - traefik.http.routers.otel-grpc.entrypoints=http
-        - traefik.http.services.otel-grpc.loadbalancer.server.port=4317
         - traefik.http.routers.otel-grpc.service=otel-grpc
-        - traefik.http.services.otel-grpc-service.loadbalancer.server.scheme=h2c
-        - traefik.http.services.otel-grpc-service.loadbalancer.server.port=4317
+        - traefik.http.services.otel-grpc.loadbalancer.server.scheme=h2c
+        - traefik.http.services.otel-grpc.loadbalancer.server.port=4317
     networks:
       - traefik-public
 
