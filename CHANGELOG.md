@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Reconfigure grafana stack and workflow to support multi-environment CI/CD [fosten]
 - Add hermes-dashboard and support multi-environment deployments [fosten]
 - Create .env.local.example and rename .env.example to .env.cloud.example [fosten]
 - Move snipe-it proxy headers to snipe-it stack [fosten]
