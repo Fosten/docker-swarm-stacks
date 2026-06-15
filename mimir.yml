@@ -3,17 +3,18 @@ version: '3.9'
 services:
   mimir:
     image: grafana/mimir:latest
-    command: ["-target=all", "-auth.multitenancy-enabled=false"]
+    command: ["-target=all", "-config.file=/etc/mimir/mimir.yaml"]
     networks:
       - traefik-public
     volumes:
-      - ${HOME}/mimir/mimir.yaml:/etc/mimir.yaml
+      - ${HOME}/mimir/mimir.yaml:/etc/mimir/mimir.yaml
     deploy:
       replicas: 1
       placement:
         constraints:
           - node.labels.type == ${STACK_PARAM}
       labels:
+        - traefik.enable=true
         - traefik.http.routers.mimir.rule=Host(`${MIMIR_HOSTNAME}`)
         - traefik.http.services.mimir.loadbalancer.server.port=8080
         - traefik.http.routers.mimir.entrypoints=${TRAEFIK_ENTRYPOINT}

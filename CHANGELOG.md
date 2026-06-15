@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure single-node replication factors for Mimir stack [fosten]
 - Add Alloy [fosten]
 - Change mimir port, set monolithic mode, disable multitenancy [fosten]
 - Disable traefik for tempo [fosten]
