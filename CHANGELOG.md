@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add Alloy [fosten]
 - Change mimir port, set monolithic mode, disable multitenancy [fosten]
 - Disable traefik for tempo [fosten]
 - Fix ollama, opentelemetry, promtail misconfigruation errors in traefik [fosten]

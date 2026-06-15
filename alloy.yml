@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  alloy:
+    image: grafana/alloy:latest
+    command: ["run", "--storage.path=/var/lib/alloy/data", "/etc/alloy/config.river"]
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/alloy/config.river:/etc/alloy/config.river:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.platform.os == linux]
+      labels:
+        - traefik.enable=false
+networks:
+  traefik-public:
+    external: true
