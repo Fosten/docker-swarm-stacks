@@ -3,11 +3,15 @@ version: '3.9'
 services:
   alloy:
     image: grafana/alloy:latest
-    command: ["run", "--storage.path=/var/lib/alloy/data", "/etc/alloy/config.river"]
+    user: "10001:0"
+    command: ["run", "--storage.path=/alloy-data", "/etc/alloy/config.alloy"]
+    environment:
+      - ALLOY_DEPLOY_MODE=docker
     networks:
       - traefik-public
     volumes:
-      - ${HOME}/alloy/config.river:/etc/alloy/config.river:ro
+      - ${HOME}/alloy/config.alloy:/etc/alloy/config.alloy:ro
+      - ${HOME}/alloy/data:/alloy-data
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/log:/var/log:ro
       - /var/lib/docker/containers:/var/lib/docker/containers:ro

@@ -8,7 +8,9 @@ services:
     volumes:
       - ${HOME}/loki/local-config.yaml:/etc/loki/local-config.yaml:ro
       - ${HOME}/loki/data:/loki
-    command: -config.file=/etc/loki/local-config.yaml
+    command:
+      - "-config.file=/etc/loki/local-config.yaml"
+      - "-auth.enabled=false"
     deploy:
       replicas: 1
       placement:
