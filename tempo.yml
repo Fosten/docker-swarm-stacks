@@ -15,11 +15,7 @@ services:
         constraints:
           - node.labels.type == ${STACK_PARAM}
       labels:
-        - traefik.http.routers.tempo.rule=Host(`${TEMPO_HOSTNAME}`)
-        - traefik.http.services.tempo.loadbalancer.server.port=3200
-        - traefik.http.routers.tempo.entrypoints=${TRAEFIK_ENTRYPOINT}
-        - traefik.http.routers.tempo.tls=${TRAEFIK_TLS_ENABLED}
-        - traefik.http.routers.tempo.tls.certresolver=mydnschallenge
+        - traefik.enable=false
 
 networks:
   traefik-public:
