@@ -8,6 +8,9 @@ services:
     environment:
       - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
       - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
+      - OMP_NUM_THREADS=${OMP_NUM_THREADS}
+      - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
+
     volumes:
       - ${HOME}/ollama:/root/.ollama
     deploy:
@@ -17,6 +20,9 @@ services:
           - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.enable=false
+      resources:
+        limits:
+          memory: 7000M
 
 networks:
   traefik-public:
