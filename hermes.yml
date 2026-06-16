@@ -6,6 +6,7 @@ services:
     command: gateway run
     volumes:
       - ${HOME}/.hermes/gateway:/opt/data
+      - ${HOME}/.hermes/dashboard/profiles:/opt/data/profiles
     networks:
       - hermes-net
     deploy:
