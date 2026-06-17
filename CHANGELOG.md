@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Refactor ethercalc to support multi-environment deployments [fosten]
 - Configure ollama memory limits and OMP_NUM_THREADS, OLLAMA_NOPRUNE env vars [fosten]
 - Mount hermes shared profiles volume to sync dashboard settings with gateway [fosten]
 - Rename config.alloy, set alloy user, mountd data dir, and disable auth in loki [fosten]

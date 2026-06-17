@@ -25,13 +25,15 @@ services:
         - traefik.http.services.ethercalc.loadbalancer.passhostheader=true
         - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
         - traefik.http.routers.ethercalc-static.rule=Host(`${ETHERCALC_HOSTNAME}`) && (Path(`/manifest.json`) || PathPrefix(`/static`))
-        - traefik.http.routers.ethercalc-static.entrypoints=https
+        - traefik.http.routers.ethercalc-static.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.ethercalc-static.tls=${TRAEFIK_TLS_ENABLED}
         - traefik.http.routers.ethercalc-static.tls.certresolver=mydnschallenge
         - traefik.http.routers.ethercalc-static.service=ethercalc
         - traefik.http.routers.ethercalc-static.middlewares=sslheader
         - traefik.http.routers.ethercalc-static.priority=100
         - traefik.http.routers.ethercalc.rule=Host(`${ETHERCALC_HOSTNAME}`)
-        - traefik.http.routers.ethercalc.entrypoints=https
+        - traefik.http.routers.ethercalc.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.ethercalc.tls=${TRAEFIK_TLS_ENABLED}
         - traefik.http.routers.ethercalc.tls.certresolver=mydnschallenge
         - traefik.http.routers.ethercalc.service=ethercalc
         - traefik.http.routers.ethercalc.middlewares=keycloakopenid-basic-client,sslheader
@@ -54,6 +56,8 @@ services:
       placement:
         constraints:
           - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
     entrypoint:
       - /bin/sh
       - -c
