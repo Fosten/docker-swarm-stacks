@@ -37,6 +37,23 @@ services:
         constraints:
           - node.platform.os == linux
 
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/prometheus/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+      - ${HOME}/prometheus/alertmanager-data:/alertmanager
+    command:
+      - --config.file=/etc/alertmanager/alertmanager.yml
+      - --storage.path=/alertmanager
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+
 networks:
   traefik-public:
     external: true
