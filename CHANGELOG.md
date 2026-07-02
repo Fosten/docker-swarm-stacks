@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Bind-mount Prometheus rules.yml [fosten]
 - Add Prometheus Alert Manager [fosten]
 - Add Prometheus Node Exporter [fosten]
 - Configure Gitlab for Keycloak [fosten]

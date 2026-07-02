@@ -7,6 +7,7 @@ services:
       - traefik-public
     volumes:
       - ${HOME}/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ${HOME}/prometheus/rules.yml:/etc/prometheus/rules.yml:ro
       - ${HOME}/prometheus/data:/prometheus
     command:
       - --config.file=/etc/prometheus/prometheus.yml
