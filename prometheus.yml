@@ -23,6 +23,20 @@ services:
         - traefik.http.services.prometheus.loadbalancer.server.port=9090
         - traefik.http.routers.prometheus.entrypoints=http
 
+  node-exporter:
+    image: prom/node-exporter:latest
+    command:
+      - '--path.rootfs=/host'
+    volumes:
+      - /:/host:ro,rslave
+    networks:
+      - traefik-public
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.platform.os == linux
+
 networks:
   traefik-public:
     external: true
