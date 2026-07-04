@@ -3,8 +3,13 @@ version: '3.9'
 services:
   alloy:
     image: grafana/alloy:latest
-    user: "10001:0"
-    command: ["run", "--storage.path=/alloy-data", "/etc/alloy/config.alloy"]
+    user: "${ALLOY_APP_UID}:${ALLOY_APP_GID}:${ALLOY_HOST_DOCKER_GID}"
+    command: [
+      "run",
+      "--server.http.listen-addr=0.0.0.0:12345",
+      "--storage.path=/alloy-data",
+      "/etc/alloy/config.alloy"
+    ]
     environment:
       - ALLOY_DEPLOY_MODE=docker
     networks:
@@ -13,14 +18,18 @@ services:
       - ${HOME}/alloy/config.alloy:/etc/alloy/config.alloy:ro
       - ${HOME}/alloy/data:/alloy-data
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /var/log:/var/log:ro
-      - /var/lib/docker/containers:/var/lib/docker/containers:ro
     deploy:
       mode: global
       placement:
         constraints: [node.platform.os == linux]
       labels:
-        - traefik.enable=false
+        - traefik.enable=true
+        - traefik.http.routers.alloy.rule=Host(`${ALLOY_HOSTNAME}`)
+        - traefik.http.services.alloy.loadbalancer.server.port=12345
+        - traefik.http.routers.alloy.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.alloy.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.alloy.tls.certresolver=mydnschallenge
+
 networks:
   traefik-public:
     external: true

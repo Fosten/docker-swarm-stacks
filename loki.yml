@@ -3,6 +3,7 @@ version: '3.9'
 services:
   loki:
     image: grafana/loki:latest
+    user: "${LOKI_APP_UID}:${LOKI_APP_GID}"
     networks:
       - traefik-public
     volumes:
@@ -17,6 +18,7 @@ services:
         constraints:
           - node.labels.type == ${STACK_PARAM}
       labels:
+        - traefik.enable=true
         - traefik.http.routers.loki.rule=Host(`${LOKI_HOSTNAME}`)
         - traefik.http.services.loki.loadbalancer.server.port=3100
         - traefik.http.routers.loki.entrypoints=${TRAEFIK_ENTRYPOINT}
