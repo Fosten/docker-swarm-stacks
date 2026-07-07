@@ -1,38 +1,23 @@
 version: '3.9'
 
 services:
-  gateway:
+  hermes:
     image: nousresearch/hermes-agent:latest
     command: gateway run
     volumes:
       - ${HOME}/.hermes/gateway:/opt/data
-      - ${HOME}/.hermes/dashboard/profiles:/opt/data/profiles
-    networks:
-      - hermes-net
-    deploy:
-      replicas: 1
-      placement:
-        constraints:
-          - node.labels.type == ${STACK_PARAM}
-      labels:
-        - traefik.enable=false
-
-  dashboard:
-    image: nousresearch/hermes-agent:latest
-    command: dashboard --host 0.0.0.0 --insecure
-    volumes:
-      - ${HOME}/.hermes/dashboard:/opt/data
     networks:
       - hermes-net
       - traefik-public
-    depends_on:
-      - gateway
+    environment:
+      - HERMES_DASHBOARD=1
     deploy:
       replicas: 1
       placement:
         constraints:
           - node.labels.type == ${STACK_PARAM}
       labels:
+        - traefik.enable=true
         - traefik.http.routers.hermes.rule=Host(`${HERMES_HOSTNAME}`)
         - traefik.http.services.hermes.loadbalancer.server.port=9119
         - traefik.http.routers.hermes.entrypoints=${TRAEFIK_ENTRYPOINT}

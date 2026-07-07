@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Merge hermes-gateway and hermes-dashboard [fosten]
 - Update Alloy and Loki user, group, and hostname [fosten]
 - Deprecate Promtail [fosten]
 - Bind-mount Prometheus rules.yml [fosten]
