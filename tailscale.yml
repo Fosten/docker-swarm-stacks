@@ -21,10 +21,9 @@ services:
       - ${HOME}/tailscale/state:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
     deploy:
-      replicas: 1
+      mode: global
       placement:
-        constraints:
-          - node.labels.type == ${STACK_PARAM}
+        constraints: [node.platform.os == linux]
       labels:
         - traefik.enable=false
 
