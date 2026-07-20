@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Refactor invoiceninja to support multi-environment deployments [fosten]
 - Deploy Tailscale globally [fosten]
 - Update Ollama env vars [fosten]
 - Merge hermes-gateway and hermes-dashboard [fosten]
