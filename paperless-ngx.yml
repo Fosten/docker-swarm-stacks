@@ -28,13 +28,13 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == happyapp
+          - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.enable=true
         - traefik.http.routers.paperless-ngx.rule=Host(`${PAPERLESS_NGX_HOSTNAME}`)
         - traefik.http.services.paperless-ngx.loadbalancer.server.port=8000
-        - traefik.http.routers.paperless-ngx.entrypoints=https
-        - traefik.http.routers.paperless-ngx.tls=true
+        - traefik.http.routers.paperless-ngx.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.paperless-ngx.tls=${TRAEFIK_TLS_ENABLED}
         - traefik.http.routers.paperless-ngx.tls.certresolver=mydnschallenge
 
   redis-paperless-ngx:
@@ -47,7 +47,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == happyapp
+          - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.enable=false
 

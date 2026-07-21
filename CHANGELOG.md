@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Refactor paperless-ngx to support multi-environment deployments [fosten]
 - Refactor invoiceninja to support multi-environment deployments [fosten]
 - Deploy Tailscale globally [fosten]
 - Update Ollama env vars [fosten]

@@ -1,4 +1,4 @@
-name: Deploy Paperless-ngx CD
+name: Local Deploy Paperless-ngx CD
 
 on:
   push:
@@ -11,6 +11,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ vars.LOCAL_ENV }}
     steps:
       - name: Checkout codebase
         uses: actions/checkout@v7
@@ -20,12 +21,13 @@ jobs:
         with:
           registry: "ghcr.io"
           username: ${{ github.actor }}
-          password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN }}
-          remote_host: ${{ vars.DEPLOY_HOST }}
-          remote_port: ${{ vars.DEPLOY_PORT }}
-          remote_user: ${{ vars.DEPLOY_USER }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
           stack_file: paperless-ngx.yml
           stack_name: paperless-ngx
+          stack_param: ${{ secrets.PI4_NODE_LABEL }}
           env_file: ${{ secrets.ENV_FILE }}
           deploy_timeout: 480
