@@ -8,10 +8,10 @@ services:
       - traefik-snipe-it
     environment:
       TZ: ${SNIPEIT_TZ}
-      APP_URL: https://${SNIPEIT_HOSTNAME}
+      APP_URL: ${SNIPEIT_PROTOCOL}://${SNIPEIT_HOSTNAME}
       APP_KEY: ${SNIPEIT_APP_KEY}
       APP_TRUSTED_PROXIES: ${SNIPEIT_APP_TRUSTED_PROXIES}
-      APP_FORCE_TLS: 'true'
+      APP_FORCE_TLS: ${SNIPEIT_APP_FORCE_TLS}
       DB_HOST: snipe-it-mariadb
       DB_PORT: ${SNIPEIT_MARIADB_PORT}
       DB_DATABASE: ${SNIPEIT_MARIADB_DATABASE}
@@ -31,13 +31,13 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == happyapp
+          - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.enable=true
         - traefik.http.routers.snipeit.rule=Host(`${SNIPEIT_HOSTNAME}`)
         - traefik.http.services.snipeit.loadbalancer.server.port=80
-        - traefik.http.routers.snipeit.entrypoints=https
-        - traefik.http.routers.snipeit.tls=true
+        - traefik.http.routers.snipeit.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.snipeit.tls=${TRAEFIK_TLS_ENABLED}
         - traefik.http.routers.snipeit.tls.certresolver=mydnschallenge
         - traefik.http.routers.snipeit.middlewares=add-x-forwarded-header
         - traefik.http.middlewares.add-x-forwarded-header.headers.customrequestheaders.X-Forwarded-Host=${SNIPEIT_HOSTNAME}
@@ -62,7 +62,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == happyapp
+          - node.labels.type == ${STACK_PARAM}
       labels:
         - traefik.enable=false
 
