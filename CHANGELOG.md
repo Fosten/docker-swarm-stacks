@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Refactor sphinx to support multi-environment deployments [fosten]
 - Refactor etherpad to support multi-environment deployments [fosten]
 - Refactor snipe-it to support multi-environment deployments [fosten]
 - Refactor paperless-ngx to support multi-environment deployments [fosten]
