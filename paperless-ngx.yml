@@ -19,7 +19,7 @@ services:
       PAPERLESS_DBNAME: ${PAPERLESS_DBNAME}
       PAPERLESS_DBUSER: ${PAPERLESS_DBUSER}
       PAPERLESS_DBPASS: ${PAPERLESS_DBPASS}
-      PAPERLESS_DBSSLMODE: ${PAPERLESS_DBSSLMODE}
+      PAPERLESS_DB_OPTIONS: ${PAPERLESS_DB_OPTIONS}
     volumes:
       - ${HOME}/paperless-ngx/consume:/usr/src/paperless/consume
       - ${HOME}/paperless-ngx/data:/usr/src/paperless/data
