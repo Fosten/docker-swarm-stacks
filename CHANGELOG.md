@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Bump nextcloud from v33 to v34 [fosten]
 - Replace deprecated PAPERLESS_DBSSLMODE with PAPERLESS_DB_OPTIONS [fosten]
 - Configure PAPERLESS_SECRET_KEY env var [fosten]
 - Refactor sphinx to support multi-environment deployments [fosten]
