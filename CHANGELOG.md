@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Remove ALLOY_HOST_DOCKER_GID in Alloy stack [fosten]
 - Change stack_param for grafana, alloy, loki, mimir, tempo, and prometheus [fosten]
 - Bump nextcloud from v33 to v34 [fosten]
 - Replace deprecated PAPERLESS_DBSSLMODE with PAPERLESS_DB_OPTIONS [fosten]

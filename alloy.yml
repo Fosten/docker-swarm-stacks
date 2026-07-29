@@ -3,7 +3,7 @@ version: '3.9'
 services:
   alloy:
     image: grafana/alloy:latest
-    user: "${ALLOY_APP_UID}:${ALLOY_APP_GID}:${ALLOY_HOST_DOCKER_GID}"
+    user: ${ALLOY_APP_UID}:${ALLOY_APP_GID}
     command: [
       "run",
       "--server.http.listen-addr=0.0.0.0:12345",
