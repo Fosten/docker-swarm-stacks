@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Configure PAPERLESS_PROTOCOL env var [fosten]
-- Change local stack_param for invoiceninja, snipe-it, ethercalc, sphinx, and stirlingpdf [fosten]
+- Change local stack_param for invoiceninja, snipe-it, ethercalc, sphinx, stirlingpdf, and paperless-ngx [fosten]
 - Remove ALLOY_HOST_DOCKER_GID in Alloy stack [fosten]
 - Change local stack_param for grafana, alloy, loki, mimir, tempo, and prometheus [fosten]
 - Bump nextcloud from v33 to v34 [fosten]
