@@ -19,8 +19,8 @@ services:
       NEXTCLOUD_TRUSTED_DOMAINS: ${NEXTCLOUD_HOSTNAME}
       TRUSTED_PROXIES: ${NEXTCLOUD_TRUSTED_PROXIES}
       OVERWRITEHOST: ${NEXTCLOUD_HOSTNAME}
-      OVERWRITEPROTOCOL: https
-      OVERWRITECLIURL: "https://${NEXTCLOUD_HOSTNAME}"
+      OVERWRITEPROTOCOL: ${NEXTCLOUD_PROTOCOL}
+      OVERWRITECLIURL: ${NEXTCLOUD_PROTOCOL}://${NEXTCLOUD_HOSTNAME}
       POSTGRES_HOST: ${NEXTCLOUD_POSTGRES_HOST}
       POSTGRES_DB: ${NEXTCLOUD_POSTGRES_DB}
       POSTGRES_USER: ${NEXTCLOUD_POSTGRES_USER}
@@ -47,7 +47,7 @@ services:
         - traefik.http.middlewares.my-nextcloud-header.headers.stsIncludeSubdomains=${NEXTCLOUD_STSINCLUDESUBDOMAINS}
         - traefik.http.middlewares.my-nextcloud-header.headers.stsPreload=${NEXTCLOUD_STSPRELOAD}
         - traefik.http.middlewares.my-nextcloud-header.headers.forceSTSHeader=${NEXTCLOUD_FORCESTSHEADER}
-        - traefik.http.routers.nextcloud.middlewares=my-nextcloud-header,https-redirect
+        - traefik.http.routers.nextcloud.middlewares=my-nextcloud-header
 
 networks:
   traefik-public:
