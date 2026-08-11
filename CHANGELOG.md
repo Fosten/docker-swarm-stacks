@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add pgAdmin [fosten]
 - Configure NEXTCLOUD_PROTOCOL env var [fosten]
 - Updated nextcloud protocol related env vars [fosten]
 - Configure PAPERLESS_PROTOCOL env var [fosten]
