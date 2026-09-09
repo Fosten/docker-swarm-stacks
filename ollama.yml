@@ -13,6 +13,7 @@ services:
       - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
       - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
       - OMP_NUM_THREADS=${OMP_NUM_THREADS}
+      - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
     volumes:
       - ${HOME}/ollama:/root/.ollama
     deploy:
