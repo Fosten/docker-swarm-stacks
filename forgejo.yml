@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  server:
+    image: codeberg.org/forgejo/forgejo:16
+    networks:
+      - traefik-public
+    environment:
+      - USER_UID=${FORGEJO_USER_UID}
+      - USER_GID=${FORGEJO_USER_GID}
+      - FORGEJO__database__DB_TYPE=${FORGEJO_DB_TYPE}
+      - FORGEJO__database__HOST=${FORGEJO_DB_HOST}
+      - FORGEJO__database__NAME=${FORGEJO_DB_NAME}
+      - FORGEJO__database__USER=${FORGEJO_DB_USER}
+      - FORGEJO__database__PASSWD=${FORGEJO_DB_PASSWD}
+    volumes:
+      - ${HOME}/forgejo:/data
+      - /etc/localtime:/etc/localtime:ro
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.forgejo.rule=Host(`${FORGEJO_HOSTNAME}`)
+        - traefik.http.services.forgejo.loadbalancer.server.port=3000
+        - traefik.http.routers.forgejo.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.forgejo.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.forgejo.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
