@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure Hermes dashboard auth env vars [fosten]
 - Add new releases to CHANGELOG.md [fosten]
 - Add Forgejo [fosten]
 - Configure OLLAMA_CONTEXT_LENGTH env var [fosten]
