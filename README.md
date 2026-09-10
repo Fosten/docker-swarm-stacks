@@ -9,6 +9,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Etherpad
 - Exim
 - Fail2ban
+- Forgejo
 - GitLab
 - Grafana
 - Graylog
@@ -32,8 +33,8 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Postfix
 - Prometheus
 - RxResume
-- Sphinx
 - Snipe-IT
+- Sphinx
 - Stirling-PDF
 - Tailscale
 - Tempo

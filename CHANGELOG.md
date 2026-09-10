@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add new releases to CHANGELOG.md [fosten]
 - Add Forgejo [fosten]
 - Configure OLLAMA_CONTEXT_LENGTH env var [fosten]
 - Add pgAdmin [fosten]
@@ -27,6 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump nextcloud from v33 to v34 [fosten]
 - Replace deprecated PAPERLESS_DBSSLMODE with PAPERLESS_DB_OPTIONS [fosten]
 - Configure PAPERLESS_SECRET_KEY env var [fosten]
+
+## [2.0.0] (2026-07-22)
+
 - Refactor sphinx to support multi-environment deployments [fosten]
 - Refactor etherpad to support multi-environment deployments [fosten]
 - Refactor snipe-it to support multi-environment deployments [fosten]
@@ -76,6 +80,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reconfigure traefik workflow to support multi-environment CI/CD [fosten]
 - Reconfigure fail2ban workflow to support multi-environment CI/CD [fosten]
 - Reconfigure tailscale workflow to support multi-environment CI/CD [fosten]
+
+## [1.9.0] (2026-06-02)
+
 - Configure nextcloud CA cert mount and PGSSLROOTCERT env var [fosten]
 - Change nextcloud PGSSLMODE from require to prefer [fosten]
 - Split TSDProxy into separate stack [fosten]
@@ -86,6 +93,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Configure ethercalc-static router [fosten]
 - Set ethercalc passhostheader flag, env vars, and sslheader middleware [fosten]
 - Bump ethercalc from 0.20170704.0 to 0.20260424.0 and remove redis [fosten]
+
+## [1.8.0] (2026-05-12)
+
 - Bump keycloak from 26.3.0 to 26.6.1 [fosten]
 - Remove keycloak env var KC_FEATURES: persistent-user-sessions [fosten]
 - Set keycloak path normalization flag [fosten]
@@ -101,6 +111,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add rxresume data volume bind mount [fosten]
 - Remove rxresume healthcheck [fosten]
 - Add footer links to CHANGELOG.md [fosten]
+
+## [1.7.0] (2026-02-15)
+
 - Enable Vaultwarden SSO [fosten]
 - Use fail2ban-public tailscale-public networks [fosten]
 - Change APP_URL in rxresume to https [fosten]
@@ -225,7 +238,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial commit [fosten]
 
-[Unreleased]: https://github.com/Fosten/docker-swarm-stacks/compare/1.6.0...main
+[Unreleased]: https://github.com/Fosten/docker-swarm-stacks/compare/2.0.0...main
+[2.0.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/2.0.0
+[1.9.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.9.0
+[1.8.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.8.0
+[1.7.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.7.0
 [1.6.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.6.0
 [1.5.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.5.0
 [1.4.0]: https://github.com/Fosten/docker-swarm-stacks/releases/tag/1.4.0
