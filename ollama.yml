@@ -15,7 +15,7 @@ services:
       - OMP_NUM_THREADS=${OMP_NUM_THREADS}
       - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
     volumes:
-      - ${HOME}/ollama:/root/.ollama
+      - ${NVME:-$HOME}/ollama:/root/.ollama
     deploy:
       replicas: 1
       placement:
