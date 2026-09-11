@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:latest
+    networks:
+      - traefik-public
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - WEBUI_SECRET_KEY=${OPEN_WEBUI_SECRET_KEY}
+    volumes:
+      - ${HOME}/open-webui:/app/backend/data
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.open-webui.rule=Host(`${OPEN_WEBUI_HOSTNAME}`)
+        - traefik.http.services.open-webui.loadbalancer.server.port=8080
+        - traefik.http.routers.open-webui.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.open-webui.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.open-webui.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true

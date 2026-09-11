@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add Open WebUI [fosten]
 - Configure NVME env var for Ollama [fosten]
 - Configure Openrouter and Matrix env vars [fosten]
 - Configure Hermes dashboard auth env vars [fosten]

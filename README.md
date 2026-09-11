@@ -27,6 +27,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Nginx
 - Ollama
 - OpenTelemetry
+- OpenWebUI
 - Paperless-ngx
 - pgAdmin
 - Portainer
