@@ -25,7 +25,7 @@ services:
         - traefik.enable=false
       resources:
         limits:
-          memory: 7000M
+          memory: ${OLLAMA_MEMORY_LIMIT}
 
 networks:
   traefik-public:

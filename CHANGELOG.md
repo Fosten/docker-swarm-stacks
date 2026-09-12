@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure OLLAMA_MEMORY_LIMIT env var [fosten]
 - Add Open WebUI [fosten]
 - Configure NVME env var for Ollama [fosten]
 - Configure Openrouter and Matrix env vars [fosten]
