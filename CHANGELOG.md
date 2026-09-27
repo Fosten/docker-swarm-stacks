@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Pull alpine/minio image instead of minio/minio image [fosten]
 - Configure traefik aliasHeadersStrategy for http/https [fosten]
 - Configure OLLAMA_MEMORY_LIMIT env var [fosten]
 - Add Open WebUI [fosten]

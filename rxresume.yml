@@ -43,7 +43,7 @@ services:
         - traefik.http.routers.rxresume.tls.certresolver=mydnschallenge
 
   minio:
-    image: minio/minio:latest
+    image: alpine/minio:RELEASE.2025-10-15T17-29-55Z
     networks:
       - traefik-public
       - traefik-rxresume
