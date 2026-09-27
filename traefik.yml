@@ -7,7 +7,9 @@ services:
       - --log.level=INFO
       - --log.filePath=/var/log/traefik/traefik.log
       - --entrypoints.http.address=:80
+      - --entryPoints.http.http.aliasHeadersStrategy=reject
       - --entrypoints.https.address=:443
+      - --entryPoints.https.http.aliasHeadersStrategy=reject
       - ${TRAEFIK_TLS_SETTING:-}
       - --entrypoints.https.http.middlewares=gzip
       - --entrypoints.https.forwardedHeaders.trustedIPs=${TRAEFIK_TRUSTED_PROXIES:-127.0.0.1}
