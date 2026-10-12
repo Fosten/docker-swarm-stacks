@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add n8n [fosten]
 - Add Postiz [fosten]
 - Pull alpine/minio image instead of minio/minio image [fosten]
 - Configure traefik aliasHeadersStrategy for http/https [fosten]

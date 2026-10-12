@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: ${N8N_POSTGRES_HOST}
+      DB_POSTGRESDB_PORT: ${N8N_POSTGRES_PORT}
+      DB_POSTGRESDB_DATABASE: ${N8N_POSTGRES_DATABASE}
+      DB_POSTGRESDB_USER: ${N8N_POSTGRES_USER}
+      DB_POSTGRESDB_PASSWORD: ${N8N_POSTGRES_PASSWORD}
+      DB_POSTGRESDB_SSL_ENABLED: "true"
+      DB_POSTGRESDB_SSL_CA_FILE: /opt/custom-certificates/postgres-ca.crt
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      N8N_HOST: ${N8N_HOSTNAME}
+      N8N_PORT: ${N8N_PORT}
+      N8N_PROTOCOL: https
+      WEBHOOK_URL: https://${N8N_HOSTNAME}/
+      NODE_ENV: production
+      GENERIC_TIMEZONE: America/New_York
+      TZ: America/New_York
+    volumes:
+      - ${HOME}/n8n/data:/home/node/.n8n
+      - ${HOME}/n8n/certs/postgres-ca.crt:/opt/custom-certificates/postgres-ca.crt:ro
+    networks:
+      - traefik-public
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.n8n.rule=Host(`${N8N_HOSTNAME}`)
+        - traefik.http.services.n8n.loadbalancer.server.port=5678
+        - traefik.http.routers.n8n.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.n8n.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.n8n.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
