@@ -1,0 +1,106 @@
+version: '3.9'
+
+services:
+  mixpost:
+    image: inovector/mixpost:latest
+    depends_on:
+        - mixpost-db
+        - mixpost-redis 
+    environment:
+      APP_NAME: ${MIXPOST_APP_NAME}
+      APP_KEY: ${MIXPOST_APP_KEY}
+      APP_DEBUG: ${MIXPOST_APP_DEBUG}
+      APP_DOMAIN: ${MIXPOST_APP_DOMAIN}
+      APP_URL: https://${MIXPOST_APP_DOMAIN}
+      DB_HOST: mixpost-db
+      DB_DATABASE: ${MIXPOST_DB_DATABASE}
+      DB_USERNAME: ${MIXPOST_DB_USERNAME}
+      DB_PASSWORD: ${MIXPOST_DB_PASSWORD}
+      MAIL_HOST: ${MIXPOST_MAIL_HOST}
+      MAIL_PORT: ${MIXPOST_MAIL_PORT}
+      MAIL_ENCRYPTION: ${MIXPOST_MAIL_ENCRYPTION}
+      MAIL_FROM_ADDRESS: ${MIXPOST_MAIL_FROM_ADDRESS}
+      MAIL_FROM_NAME: ${MIXPOST_APP_NAME}
+      SSL_EMAIL: ${MIXPOST_SSL_EMAIL}
+      REDIS_HOST: mixpost-redis
+      REDIS_PORT: ${MIXPOST_REDIS_PORT}
+    volumes:
+      - ${HOME}/mixpost/storage:/var/www/html/storage/app
+      - ${HOME}/mixpost/logs:/var/www/html/storage/logs
+    networks:
+      - traefik-public
+      - traefik-mixpost
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.mixpost.rule=Host(`${MIXPOST_APP_DOMAIN}`)
+        - traefik.http.services.mixpost.loadbalancer.server.port=80
+        - traefik.http.routers.mixpost.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.mixpost.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.mixpost.tls.certresolver=mydnschallenge
+        - traefik.http.middlewares.mixpost-headers.headers.SSLRedirect=true
+        - traefik.http.middlewares.mixpost-headers.headers.STSSeconds=315360000
+        - traefik.http.middlewares.mixpost-headers.headers.browserXSSFilter=true
+        - traefik.http.middlewares.mixpost-headers.headers.contentTypeNosniff=true
+        - traefik.http.middlewares.mixpost-headers.headers.forceSTSHeader=true
+        - traefik.http.middlewares.mixpost-headers.headers.SSLHost=${MIXPOST_APP_DOMAIN}
+        - traefik.http.middlewares.mixpost-headers.headers.STSIncludeSubdomains=true
+        - traefik.http.middlewares.mixpost-headers.headers.STSPreload=true
+        - traefik.http.routers.mixpost.middlewares=mixpost-headers
+
+  mixpost-db:
+    image: mariadb:13.0.2
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MIXPOST_DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MIXPOST_DB_DATABASE}
+      MARIADB_USER: ${MIXPOST_DB_USERNAME}
+      MARIADB_PASSWORD: ${MIXPOST_DB_PASSWORD}
+    volumes:
+      - mixpost-data:/var/lib/mysql
+    networks:
+      - traefik-mixpost
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      retries: 3
+      timeout: 5s
+      start_period: 30s
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+
+  mixpost-redis:
+    image: redis:8.10.2
+    command: redis-server --appendonly yes --replica-read-only no
+    volumes:
+      - mixpost-redis:/data
+    networks:
+      - traefik-mixpost
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      retries: 3
+      timeout: 5s
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+
+volumes:
+  mixpost-data:
+  mixpost-redis:
+
+networks:
+  traefik-public:
+    external: true
+  traefik-mixpost:
+    driver: overlay
