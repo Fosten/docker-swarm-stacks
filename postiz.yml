@@ -4,20 +4,20 @@ services:
   postiz:
     image: ghcr.io/gitroomhq/postiz-app:latest
     environment:
-      MAIN_URL: "https://${POSTIZ_HOSTNAME}"
-      FRONTEND_URL: "https://${POSTIZ_HOSTNAME}"
-      NEXT_PUBLIC_BACKEND_URL: "https://${POSTIZ_HOSTNAME}/api"
-      BACKEND_INTERNAL_URL: "http://localhost:3000"
-      JWT_SECRET: "${POSTIZ_JWT_SECRET}"
-      DATABASE_URL: "${POSTIZ_DATABASE_URL}"
-      REDIS_URL: "${POSTIZ_REDIS_URL}"
-      TEMPORAL_ADDRESS: "postiz-temporal:7233"
-      IS_GENERAL: "true"
-      DISABLE_REGISTRATION: "false"
-      RUN_CRON: "true"
-      STORAGE_PROVIDER: "local"
-      UPLOAD_DIRECTORY: "/uploads"
-      NEXT_PUBLIC_UPLOAD_DIRECTORY: "/uploads"
+      MAIN_URL: https://${POSTIZ_HOSTNAME}
+      FRONTEND_URL: https://${POSTIZ_HOSTNAME}
+      NEXT_PUBLIC_BACKEND_URL: https://${POSTIZ_HOSTNAME}/api
+      BACKEND_INTERNAL_URL: http://localhost:3000
+      JWT_SECRET: ${POSTIZ_JWT_SECRET}
+      DATABASE_URL: ${POSTIZ_DATABASE_URL}
+      REDIS_URL: ${POSTIZ_REDIS_URL}
+      TEMPORAL_ADDRESS: postiz-temporal:7233
+      IS_GENERAL: true
+      DISABLE_REGISTRATION: false
+      RUN_CRON: true
+      STORAGE_PROVIDER: local
+      UPLOAD_DIRECTORY: /uploads
+      NEXT_PUBLIC_UPLOAD_DIRECTORY: /uploads
     volumes:
       - ${HOME}/postiz/config:/config
       - ${HOME}/postiz/uploads:/uploads
@@ -40,11 +40,11 @@ services:
     image: temporalio/auto-setup:1.28.1
     environment:
       DB: postgres12
-      DB_PORT: "${TEMPORAL_POSTGRES_PORT}"
-      POSTGRES_SEEDS: "${TEMPORAL_POSTGRES_HOST}"
-      POSTGRES_USER: "${TEMPORAL_POSTGRES_USER}"
-      POSTGRES_PWD: "${TEMPORAL_POSTGRES_PASSWORD}"
-      DBNAME: "${TEMPORAL_DATABASE}"
+      DB_PORT: ${TEMPORAL_POSTGRES_PORT}
+      POSTGRES_SEEDS: ${TEMPORAL_POSTGRES_HOST}
+      POSTGRES_USER: ${TEMPORAL_POSTGRES_USER}
+      POSTGRES_PWD: ${TEMPORAL_POSTGRES_PASSWORD}
+      DBNAME: ${TEMPORAL_DATABASE}
     networks:
       - traefik-postiz
     deploy:
