@@ -28,6 +28,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Nextcloud
 - Nginx
 - Ollama
+- OpenCode
 - OpenTelemetry
 - OpenWebUI
 - Paperless-ngx

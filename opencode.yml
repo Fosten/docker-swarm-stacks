@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  opencode:
+    image: ghcr.io/anomalyco/opencode:latest
+    command: ["web", "--hostname", "0.0.0.0", "--port", "3000"]
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/opencode/workspace:/workspace
+    working_dir: /workspace
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.opencode.rule=Host(`${OPENCODE_HOSTNAME}`)
+        - traefik.http.services.opencode.loadbalancer.server.port=3000
+        - traefik.http.routers.opencode.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.opencode.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.opencode.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
