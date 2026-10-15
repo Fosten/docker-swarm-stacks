@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Disable traefik for prom/node-exporter and prom/alertmanager [fosten]
 - Add Mixpost [fosten]
 - Add n8n [fosten]
 - Add Postiz [fosten]

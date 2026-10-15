@@ -37,6 +37,8 @@ services:
       placement:
         constraints:
           - node.platform.os == linux
+      labels:
+        - traefik.enable=false
 
   alertmanager:
     image: prom/alertmanager:latest
@@ -53,6 +55,8 @@ services:
       placement:
         constraints:
           - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
 
 networks:
   traefik-public:
