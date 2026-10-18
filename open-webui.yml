@@ -6,8 +6,8 @@ services:
     networks:
       - traefik-public
     environment:
-      - OLLAMA_BASE_URL=http://ollama:11434
-      - WEBUI_SECRET_KEY=${OPEN_WEBUI_SECRET_KEY}
+      OLLAMA_BASE_URL: http://ollama:11434
+      WEBUI_SECRET_KEY: ${OPEN_WEBUI_SECRET_KEY}
     volumes:
       - ${HOME}/open-webui:/app/backend/data
     deploy:

@@ -12,9 +12,9 @@ services:
       DATABASE_URL: ${POSTIZ_DATABASE_URL}
       REDIS_URL: ${POSTIZ_REDIS_URL}
       TEMPORAL_ADDRESS: postiz-temporal:7233
-      IS_GENERAL: true
-      DISABLE_REGISTRATION: false
-      RUN_CRON: true
+      IS_GENERAL: "true"
+      DISABLE_REGISTRATION: "false"
+      RUN_CRON: "true"
       STORAGE_PROVIDER: local
       UPLOAD_DIRECTORY: /uploads
       NEXT_PUBLIC_UPLOAD_DIRECTORY: /uploads

@@ -6,13 +6,13 @@ services:
     networks:
       - traefik-public
     environment:
-      - USER_UID=${FORGEJO_USER_UID}
-      - USER_GID=${FORGEJO_USER_GID}
-      - FORGEJO__database__DB_TYPE=${FORGEJO_DB_TYPE}
-      - FORGEJO__database__HOST=${FORGEJO_DB_HOST}
-      - FORGEJO__database__NAME=${FORGEJO_DB_NAME}
-      - FORGEJO__database__USER=${FORGEJO_DB_USER}
-      - FORGEJO__database__PASSWD=${FORGEJO_DB_PASSWD}
+      USER_UID: ${FORGEJO_USER_UID}
+      USER_GID: ${FORGEJO_USER_GID}
+      FORGEJO__database__DB_TYPE: ${FORGEJO_DB_TYPE}
+      FORGEJO__database__HOST: ${FORGEJO_DB_HOST}
+      FORGEJO__database__NAME: ${FORGEJO_DB_NAME}
+      FORGEJO__database__USER: ${FORGEJO_DB_USER}
+      FORGEJO__database__PASSWD: ${FORGEJO_DB_PASSWD}
     volumes:
       - ${HOME}/forgejo:/data
       - /etc/localtime:/etc/localtime:ro

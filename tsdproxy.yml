@@ -11,9 +11,9 @@ services:
       - ${HOME}/tsdproxy/data:/data
       - ${HOME}/tsdproxy/config:/config
     environment:
-      - TSDPROXY_AUTHKEY=${TSDPROXY_AUTHKEY}
-      - TSDPROXY_HOSTNAME=${TSDPROXY_HOSTNAME}
-      - DOCKER_HOST=unix:///var/run/docker.sock
+      TSDPROXY_AUTHKEY: ${TSDPROXY_AUTHKEY}
+      TSDPROXY_HOSTNAME: ${TSDPROXY_HOSTNAME}
+      DOCKER_HOST: unix:///var/run/docker.sock
     deploy:
       replicas: 1
       placement:

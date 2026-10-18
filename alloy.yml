@@ -11,7 +11,7 @@ services:
       "/etc/alloy/config.alloy"
     ]
     environment:
-      - ALLOY_DEPLOY_MODE=docker
+      ALLOY_DEPLOY_MODE: docker
     networks:
       - traefik-public
     volumes:

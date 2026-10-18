@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Use Key-Value (Dictionary) Format for docker-compose environment [fosten]
 - Add Focalboard [fosten]
 - Add Audiobookshelf [fosten]
 - Add Calibre Web [fosten]

@@ -45,7 +45,7 @@ services:
       - traefik-public
       - traefik-ethercalc
     environment:
-      - TZ=America/New_York
+      TZ: America/New_York
     volumes:
       - ${HOME}/ethercalc-data/do/ethercalc-roomdo-v1:/data:ro
       - /etc/localtime:/etc/localtime:ro

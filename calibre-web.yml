@@ -7,10 +7,10 @@ services:
     networks:
       - traefik-public
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-      - DOCKER_MODS=linuxserver/mods:universal-calibre
+      PUID: 1000
+      PGID: 1000
+      TZ: UTC
+      DOCKER_MODS: linuxserver/mods:universal-calibre
     volumes:
       - ${HOME}/calibre-web/config:/config
       - ${HOME}/calibre-web/books:/books

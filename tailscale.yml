@@ -13,10 +13,10 @@ services:
       - net.ipv4.ip_forward=1
       - net.ipv6.conf.all.forwarding=1
     environment:
-      - TS_AUTHKEY=${TS_AUTHKEY}
-      - TS_EXTRA_ARGS=${TS_EXTRA_ARGS1} ${TS_EXTRA_ARGS2} ${TS_EXTRA_ARGS3}
-      - TS_STATE_DIR=/var/lib/tailscale
-      - TS_USERSPACE=false
+      TS_AUTHKEY: ${TS_AUTHKEY}
+      TS_EXTRA_ARGS: ${TS_EXTRA_ARGS1} ${TS_EXTRA_ARGS2} ${TS_EXTRA_ARGS3}
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_USERSPACE: "false"
     volumes:
       - ${HOME}/tailscale/state:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
