@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  focalboard:
+    image: mattermost/focalboard:latest
+    networks:
+      - traefik-public
+    environment:
+      FOCALBOARD_SERVERROOT: https://${FOCALBOARD_HOSTNAME}
+      FOCALBOARD_DBTYPE: ${FOCALBOARD_DBTYPE}
+      FOCALBOARD_DBCONFIG: ${FOCALBOARD_DBCONFIG}
+      FOCALBOARD_FILESPATH: /opt/focalboard/data/files
+      FOCALBOARD_TELEMETRY: "false"
+      FOCALBOARD_LOCALONLY: "false"
+      FOCALBOARD_ENABLELOCALMODE: "false"
+    volumes:
+      - ${HOME}/focalboard/data:/opt/focalboard/data
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.focalboard.rule=Host(`${FOCALBOARD_HOSTNAME}`)
+        - traefik.http.services.focalboard.loadbalancer.server.port=8000
+        - traefik.http.routers.focalboard.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.focalboard.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.focalboard.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
