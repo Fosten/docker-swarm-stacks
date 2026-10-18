@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  kiwix:
+    image: ghcr.io/kiwix/kiwix-serve:latest
+    container_name: kiwix
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/kiwix/data:/data
+    command: "*.zim"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.kiwix.rule=Host(`${KIWIX_HOSTNAME}`)
+        - traefik.http.services.kiwix.loadbalancer.server.port=8080
+        - traefik.http.routers.kiwix.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.kiwix.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.kiwix.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
