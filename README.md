@@ -5,6 +5,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 ## Stacks
 
 - Alloy
+- Audiobookshelf
 - Calibre Web
 - Ethercalc
 - Etherpad
