@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add Calibre Web [fosten]
 - Add Kiwix [fosten]
 - Add OpenCode [fosten]
 - Disable traefik for prom/node-exporter and prom/alertmanager [fosten]

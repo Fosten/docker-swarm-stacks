@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:latest
+    container_name: calibre-web
+    networks:
+      - traefik-public
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - DOCKER_MODS=linuxserver/mods:universal-calibre
+    volumes:
+      - ${HOME}/calibre-web/config:/config
+      - ${HOME}/calibre-web/books:/books
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.calibre-web.rule=Host(`${CALIBRE_WEB_HOSTNAME}`)
+        - traefik.http.services.calibre-web.loadbalancer.server.port=8083
+        - traefik.http.routers.calibre-web.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.calibre-web.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.calibre-web.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
