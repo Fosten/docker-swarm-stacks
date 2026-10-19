@@ -37,7 +37,7 @@ services:
         - traefik.http.routers.postiz.tls.certresolver=mydnschallenge
 
   postiz-temporal:
-    image: temporalio/auto-setup:1.28.1
+    image: temporalio/auto-setup:1.29.7
     environment:
       DB: postgres12
       DB_PORT: ${TEMPORAL_POSTGRES_PORT}
