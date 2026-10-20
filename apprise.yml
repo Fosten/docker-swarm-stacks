@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  apprise:
+    image: caronc/apprise:latest
+    networks:
+      - traefik-public
+    environment:
+      APPRISE_STATEFUL_MODE: simple
+      APPRISE_WORKER_COUNT: "1"
+      APPRISE_DEFAULT_FORMAT: text
+      TZ: Etc/UTC
+      APPRISE_AUTH_REQUIRED: yes
+      APPRISE_USER: ${APPRISE_USER}
+      APPRISE_PASSWORD: ${APPRISE_PASSWORD}
+      APPRISE_TRUSTED_ORIGINS: https://${APPRISE_HOSTNAME}
+    volumes:
+      - ${HOME}/apprise/config:/config
+      - ${HOME}/apprise/plugin:/plugin
+      - ${HOME}/apprise/attach:/attach
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.apprise.rule=Host(`${APPRISE_HOSTNAME}`)
+        - traefik.http.services.apprise.loadbalancer.server.port=8000
+        - traefik.http.routers.apprise.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.apprise.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.apprise.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
