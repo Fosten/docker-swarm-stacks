@@ -14,6 +14,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Focalboard
 - Forgejo
 - GitLab
+- Gotify
 - Grafana
 - Graylog
 - Hermes Agent

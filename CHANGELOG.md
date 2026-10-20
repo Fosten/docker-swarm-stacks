@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add Gotify [fosten]
 - Add ntfy [fosten]
 - Bump temporalio/auto-setup from 1.28.1 to 1.29.7 [fosten]
 - Use Key-Value (Dictionary) Format for docker-compose environment [fosten]
