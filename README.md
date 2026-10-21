@@ -4,6 +4,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 
 ## Stacks
 
+- Actual Budget
 - Alloy
 - Apprise
 - Audiobookshelf

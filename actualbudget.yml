@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  actual-budget:
+    image: actualbudget/actual-server:latest
+    container_name: actual-budget
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/actual-budget/data:/data
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - 'traefik.http.routers.actual-budget.rule=Host(`${ACTUAL_BUDGET_HOSTNAME}`)'
+        - traefik.http.services.actual-budget.loadbalancer.server.port=5006
+        - traefik.http.routers.actual-budget.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.actual-budget.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.actual-budget.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true
