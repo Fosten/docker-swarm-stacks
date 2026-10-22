@@ -1,0 +1,81 @@
+
+version: '3.9'
+
+services:
+  penpot-frontend:
+    image: penpotapp/frontend:latest
+    networks:
+      - traefik-public
+      - penpot
+    environment:
+      PENPOT_PUBLIC_URI: https://${PENPOT_HOSTNAME}
+    volumes:
+      - ${HOME}/penpot/assets:/opt/data/assets
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.penpot.rule=Host(`${PENPOT_HOSTNAME}`)
+        - traefik.http.services.penpot.loadbalancer.server.port=8080
+        - traefik.http.routers.penpot.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.penpot.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.penpot.tls.certresolver=mydnschallenge
+
+  penpot-backend:
+    image: penpotapp/backend:latest
+    networks:
+      - penpot
+    environment:
+      PENPOT_PUBLIC_URI: https://${PENPOT_HOSTNAME}
+      PENPOT_SECRET_KEY: ${PENPOT_SECRET_KEY}
+      PENPOT_DATABASE_URI: postgresql://${PENPOT_DB_HOST}:${PENPOT_DB_PORT}/${PENPOT_DB_NAME}
+      PENPOT_DATABASE_USERNAME: ${PENPOT_DB_USER}
+      PENPOT_DATABASE_PASSWORD: ${PENPOT_DB_PASSWORD}
+      PENPOT_REDIS_URI: redis://penpot-valkey/0
+    volumes:
+      - ${HOME}/penpot/assets:/opt/data/assets
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+  
+  penpot-exporter:
+    image: penpotapp/exporter:latest
+    networks:
+      - penpot
+    environment:
+      PENPOT_PUBLIC_URI: https://${PENPOT_HOSTNAME}
+      PENPOT_SECRET_KEY: ${PENPOT_SECRET_KEY}
+      PENPOT_INTERNAL_URI: http://penpot-frontend:8080
+      PENPOT_REDIS_URI: redis://penpot-valkey/0
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+
+  penpot-valkey:
+    image: valkey/valkey:8.1
+    networks:
+      - penpot
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+
+networks:
+  traefik-public:
+    external: true
+  penpot:
+    driver: overlay
