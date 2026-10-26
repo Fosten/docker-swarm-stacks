@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure Penpot for Keycloak [fosten]
 - Add Penpot [fosten]
 - Add Actual Budget [fosten]
 - Add Dozzle [fosten]

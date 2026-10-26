@@ -9,6 +9,9 @@ services:
       - penpot
     environment:
       PENPOT_PUBLIC_URI: https://${PENPOT_HOSTNAME}
+      PENPOT_FLAGS: enable-login-with-oidc enable-oidc-registration
+      PENPOT_OIDC_CLIENT_ID: ${PENPOT_OIDC_CLIENT_ID}
+      PENPOT_OIDC_NAME: Keycloak
     volumes:
       - ${HOME}/penpot/assets:/opt/data/assets
     deploy:
@@ -35,6 +38,10 @@ services:
       PENPOT_DATABASE_USERNAME: ${PENPOT_DB_USER}
       PENPOT_DATABASE_PASSWORD: ${PENPOT_DB_PASSWORD}
       PENPOT_REDIS_URI: redis://penpot-valkey/0
+      PENPOT_FLAGS: enable-login-with-oidc enable-oidc-registration
+      PENPOT_OIDC_CLIENT_ID: ${PENPOT_OIDC_CLIENT_ID}
+      PENPOT_OIDC_CLIENT_SECRET: ${PENPOT_OIDC_CLIENT_SECRET}
+      PENPOT_OIDC_BASE_URI: ${PENPOT_OIDC_BASE_URI}
     volumes:
       - ${HOME}/penpot/assets:/opt/data/assets
     deploy:
