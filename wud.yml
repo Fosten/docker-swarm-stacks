@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  whatsupdocker:
+    image: getwud/wud:latest
+    networks:
+      - traefik-public
+    environment:
+      WUD_AUTH_ADMIN_USER: ${WUD_AUTH_ADMIN_USER}
+      WUD_AUTH_ADMIN_PASSWORD: ${WUD_AUTH_ADMIN_PASSWORD}
+      WUD_WATCHER_SWARM_LOCAL_SOCKET: /var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+          - node.role == manager
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.http.routers.wud.rule=Host(`${WUD_HOSTNAME}`)
+        - traefik.http.services.wud.loadbalancer.server.port=3000
+        - traefik.http.routers.wud.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.wud.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.wud.tls.certresolver=mydnschallenge
+
+networks:
+  traefik-public:
+    external: true

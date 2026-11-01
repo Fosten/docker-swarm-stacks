@@ -56,6 +56,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 - Traefik
 - TSDProxy
 - Vaultwarden
+- WUD
 
 ## Deployment via CI/CD 🔧
 
