@@ -25,7 +25,7 @@ services:
         - traefik.http.routers.prometheus.entrypoints=http
 
   node-exporter:
-    image: prom/node-exporter:latest
+    image: prom/node-exporter:v1
     command:
       - '--path.rootfs=/host'
     volumes:
@@ -41,7 +41,7 @@ services:
         - traefik.enable=false
 
   alertmanager:
-    image: prom/alertmanager:latest
+    image: prom/alertmanager:v0
     command:
       - --config.file=/etc/alertmanager/alertmanager.yml
       - --storage.path=/alertmanager
