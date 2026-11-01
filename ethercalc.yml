@@ -40,7 +40,7 @@ services:
         - traefik.http.routers.ethercalc.priority=1
 
   ethercalc-indexer:
-    image: alpine:latest
+    image: alpine:3
     networks:
       - traefik-public
       - traefik-ethercalc

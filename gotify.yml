@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   gotify:
-    image: gotify/server:latest
+    image: gotify/server:3
     networks:
       - traefik-public
     volumes:

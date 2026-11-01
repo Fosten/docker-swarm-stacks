@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   etherpad:
-    image: etherpad/etherpad:latest
+    image: etherpad/etherpad:3
     networks:
       - traefik-public
     environment:

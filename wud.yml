@@ -1,8 +1,8 @@
 version: '3.9'
 
 services:
-  whatsupdocker:
-    image: getwud/wud:latest
+  wud:
+    image: getwud/wud:9
     networks:
       - traefik-public
     environment:
