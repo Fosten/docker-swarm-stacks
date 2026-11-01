@@ -2,18 +2,18 @@ version: '3.9'
 
 services:
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:v3
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=2d
+      - --web.listen-address=:9090
     networks:
       - traefik-public
     volumes:
       - ${HOME}/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ${HOME}/prometheus/rules.yml:/etc/prometheus/rules.yml:ro
       - ${HOME}/prometheus/data:/prometheus
-    command:
-      - --config.file=/etc/prometheus/prometheus.yml
-      - --storage.tsdb.path=/prometheus
-      - --storage.tsdb.retention.time=2d
-      - --web.listen-address=:9090
     deploy:
       replicas: 1
       placement:
@@ -42,14 +42,14 @@ services:
 
   alertmanager:
     image: prom/alertmanager:latest
+    command:
+      - --config.file=/etc/alertmanager/alertmanager.yml
+      - --storage.path=/alertmanager
     networks:
       - traefik-public
     volumes:
       - ${HOME}/prometheus/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
       - ${HOME}/prometheus/alertmanager-data:/alertmanager
-    command:
-      - --config.file=/etc/alertmanager/alertmanager.yml
-      - --storage.path=/alertmanager
     deploy:
       replicas: 1
       placement:

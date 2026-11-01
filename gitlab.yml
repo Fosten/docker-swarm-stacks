@@ -3,10 +3,10 @@ version: '3.9'
 services:
   gitlab:
     image: gitlab/gitlab-ce:latest
+    hostname: '${GITLAB_HOSTNAME}'
     networks:
       - traefik-public
       - traefik-gitlab
-    hostname: '${GITLAB_HOSTNAME}'
     environment:
       GITLAB_ROOT_EMAIL: ${GITLAB_ROOT_EMAIL}
       GITLAB_ROOT_PASSWORD: ${GITLAB_ROOT_PASSWORD}

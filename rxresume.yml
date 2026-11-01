@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   rxresume:
-    image: amruthpillai/reactive-resume:latest
+    image: amruthpillai/reactive-resume:v5
     networks:
       - traefik-public
       - traefik-rxresume
@@ -44,10 +44,10 @@ services:
 
   minio:
     image: alpine/minio:RELEASE.2025-10-15T17-29-55Z
+    command: server /data --console-address :9001
     networks:
       - traefik-public
       - traefik-rxresume
-    command: server /data --console-address :9001
     volumes:
       - ${HOME}/minio/data:/data
     environment:

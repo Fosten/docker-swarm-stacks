@@ -3,11 +3,11 @@ version: '3.9'
 services:
   kiwix:
     image: ghcr.io/kiwix/kiwix-serve:latest
+    command: "*.zim"
     networks:
       - traefik-public
     volumes:
       - ${HOME}/kiwix/data:/data
-    command: "*.zim"
     deploy:
       replicas: 1
       placement:

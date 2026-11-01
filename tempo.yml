@@ -3,9 +3,9 @@ version: '3.9'
 services:
   tempo:
     image: grafana/tempo:latest
+    command: -config.file=/etc/tempo/config.yaml
     networks:
       - traefik-public
-    command: -config.file=/etc/tempo/config.yaml
     volumes:
       - ${HOME}/tempo/config.yaml:/etc/tempo/config.yaml:ro
       - ${HOME}/tempo/data:/var/tempo

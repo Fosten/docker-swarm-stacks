@@ -4,14 +4,14 @@ services:
   loki:
     image: grafana/loki:latest
     user: "${LOKI_APP_UID}:${LOKI_APP_GID}"
+    command:
+      - "-config.file=/etc/loki/local-config.yaml"
+      - "-auth.enabled=false"
     networks:
       - traefik-public
     volumes:
       - ${HOME}/loki/local-config.yaml:/etc/loki/local-config.yaml:ro
       - ${HOME}/loki/data:/loki
-    command:
-      - "-config.file=/etc/loki/local-config.yaml"
-      - "-auth.enabled=false"
     deploy:
       replicas: 1
       placement:

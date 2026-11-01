@@ -2,10 +2,10 @@ version: '3.9'
 
 services:
   ntfy:
-    image: binwiederhier/ntfy:latest
+    image: binwiederhier/ntfy:v2
+    command: serve
     networks:
       - traefik-public
-    command: serve
     volumes:
       - ${HOME}/ntfy/ntfy_cache:/var/cache/ntfy
     deploy:

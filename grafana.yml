@@ -3,6 +3,7 @@ version: '3.9'
 services:
   grafana:
     image: grafana/grafana:latest
+    user: "0"
     networks:
       - traefik-public
     environment:
@@ -17,7 +18,6 @@ services:
       - ${HOME}/grafana/data:/var/lib/grafana
       - ${HOME}/grafana/provisioning/:/etc/grafana/provisioning
       - ${HOME}/grafana/grafana.ini:/etc/grafana/grafana.ini
-    user: "0"
     deploy:
       replicas: 1
       placement:

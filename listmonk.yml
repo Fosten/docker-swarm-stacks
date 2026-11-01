@@ -3,9 +3,10 @@ version: '3.9'
 services:
   listmonk:
     image: listmonk/listmonk:latest
+    hostname: ${LISTMONK_FQDN}
+    command: [sh, -c, "./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''"]
     networks:
       - traefik-public
-    hostname: ${LISTMONK_FQDN}
     environment:
       TZ: "US/Eastern"
       LISTMONK_app__address: ${LISTMONK_ADDRESS}
@@ -33,7 +34,6 @@ services:
         - traefik.http.routers.listmonk.entrypoints=https
         - traefik.http.routers.listmonk.tls=true
         - traefik.http.routers.listmonk.tls.certresolver=mydnschallenge
-    command: [sh, -c, "./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''"]
 
 networks:
   traefik-public:

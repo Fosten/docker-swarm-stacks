@@ -3,6 +3,12 @@ version: '3.9'
 services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.6.1
+    command: ["start",
+      "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true",
+      "--spi-theme-static-max-age=-1",
+      "--spi-theme-cache-themes=false",
+      "--spi-theme-cache-templates=false",
+      "--http-accept-non-normalized-paths=true"]
     networks:
       - traefik-public
     environment:
@@ -18,12 +24,6 @@ services:
       KC_DB_URL: ${KC_DB_URL}
       KC_DB_USERNAME: ${KC_DB_USERNAME}
       KC_DB_PASSWORD: ${KC_DB_PASSWORD}
-    command: ["start",
-      "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true",
-      "--spi-theme-static-max-age=-1",
-      "--spi-theme-cache-themes=false",
-      "--spi-theme-cache-templates=false",
-      "--http-accept-non-normalized-paths=true"]
     volumes:
       - ${HOME}/keycloak/providers:/opt/keycloak/providers
       - ${HOME}/keycloak/themes:/opt/keycloak/themes

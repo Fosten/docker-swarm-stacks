@@ -3,10 +3,6 @@ version: '3.9'
 services:
   sphinx1:
     image: sphinxdoc/sphinx:latest
-    networks:
-      - traefik-public
-    volumes:
-      - ${HOME}/sphinx1:/docs
     command:
       - sh
       - -c
@@ -15,6 +11,10 @@ services:
         cd /docs/_build/html && \
         echo "Starting HTTP server..." && \
         python3 -m http.server 80
+    networks:
+      - traefik-public
+    volumes:
+      - ${HOME}/sphinx1:/docs
     healthcheck:
       test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:80')"]
       interval: 30s

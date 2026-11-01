@@ -3,12 +3,12 @@ version: '3.9'
 services:
   opencode:
     image: ghcr.io/anomalyco/opencode:latest
+    working_dir: /workspace
     command: ["web", "--hostname", "0.0.0.0", "--port", "3000"]
     networks:
       - traefik-public
     volumes:
       - ${HOME}/opencode/workspace:/workspace
-    working_dir: /workspace
     deploy:
       replicas: 1
       placement:

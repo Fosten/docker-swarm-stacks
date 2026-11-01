@@ -3,9 +3,9 @@ version: '3.9'
 services:
   otel-collector:
     image: otel/opentelemetry-collector-contrib:latest
+    command: ["--config=/etc/otel-collector-config.yaml"]
     volumes:
       - ${HOME}/otel/otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro
-    command: ["--config=/etc/otel-collector-config.yaml"]
     deploy:
       replicas: 1
       placement:
