@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   nginx1:
-    image: nginx:latest
+    image: nginx:1
     networks:
       - traefik-public
     volumes:
@@ -22,7 +22,7 @@ services:
         - traefik.http.routers.nginx1.tls.certresolver=mydnschallenge
 
   nginx2:
-    image: nginx:latest
+    image: nginx:1
     networks:
       - traefik-public
     volumes:

@@ -61,7 +61,7 @@ services:
         - traefik.enable=false
 
   invoiceninja-nginx:
-    image: nginx:latest
+    image: nginx:1
     volumes:
       - ${HOME}/invoiceninja/nginx:/etc/nginx/conf.d:ro
       - ${HOME}/invoiceninja/public:/var/www/html/public:ro
