@@ -3,7 +3,6 @@ version: '3.9'
 services:
   calibre-web:
     image: lscr.io/linuxserver/calibre-web:latest
-    container_name: calibre-web
     networks:
       - traefik-public
     environment:

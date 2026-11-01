@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 
 services:
   gotify:
@@ -6,9 +6,9 @@ services:
     networks:
       - traefik-public
     volumes:
-      - "${HOME}/gotify/gotify_data:/app/data"
+      - ${HOME}/gotify/gotify_data:/app/data
     environment:
-      GOTIFY_DEFAULTUSER_PASS: "${GOTIFY_DEFAULTUSER_PASS}"
+      GOTIFY_DEFAULTUSER_PASS: ${GOTIFY_DEFAULTUSER_PASS}
     deploy:
       replicas: 1
       placement:

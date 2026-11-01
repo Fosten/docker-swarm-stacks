@@ -3,7 +3,6 @@ version: '3.9'
 services:
   actual-budget:
     image: actualbudget/actual-server:latest
-    container_name: actual-budget
     networks:
       - traefik-public
     volumes:

@@ -7,8 +7,8 @@ services:
       - traefik-public
       - traefik-ethercalc
     environment:
-      ETHERCALC_BASEPATH: "https://${ETHERCALC_HOSTNAME}/"
-      ETHERCALC_HOSTNAME: "${ETHERCALC_HOSTNAME}"
+      ETHERCALC_BASEPATH: https://${ETHERCALC_HOSTNAME}
+      ETHERCALC_HOSTNAME: ${ETHERCALC_HOSTNAME}
       NODE_ENV: production
     volumes:
       - ${HOME}/ethercalc-data:/data

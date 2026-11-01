@@ -3,7 +3,6 @@ version: '3.9'
 services:
   kiwix:
     image: ghcr.io/kiwix/kiwix-serve:latest
-    container_name: kiwix
     networks:
       - traefik-public
     volumes:
