@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Update Shields.io table with reference definitions, image badges, and tag badges [fosten]
 - Update Shields.io table with postgres column [fosten]
 - Update Shields.io table with deployment status column [fosten]
 - Create Shields.io table of docker images, latest version numbers, release dates [fosten]
