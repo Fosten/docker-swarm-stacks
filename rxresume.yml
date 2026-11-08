@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   rxresume:
-    image: amruthpillai/reactive-resume:v5
+    image: amruthpillai/reactive-resume:v6
     networks:
       - traefik-public
       - traefik-rxresume
