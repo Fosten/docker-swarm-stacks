@@ -70,9 +70,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 
 
 <!-- ACTUAL BUDGET -->
-[actual-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Factualbudget.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[actual-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Factualbudget.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [actual-repo]: https://hub.docker.com/r/actualbudget/actual-server
-[actual-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Factualbudget.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[actual-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Factualbudget.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [actual-tags]: https://hub.docker.com/r/actualbudget/actual-server/tags
 [actual-version]: https://img.shields.io/github/v/release/actualbudget/actual
 [actual-date]: https://img.shields.io/github/release-date/actualbudget/actual?display_date=published_at
@@ -82,15 +82,15 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [actual-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-actualbudget.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- ALPINE -->
-[alpine-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20ethercalc-indexer%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
+[alpine-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20ethercalc-indexer%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
 [alpine-repo]: https://hub.docker.com/_/alpine
-[alpine-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20ethercalc-indexer%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
+[alpine-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20ethercalc-indexer%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
 [alpine-tags]: https://hub.docker.com/_/alpine/tags
 
 <!-- APPRISE -->
-[apprise-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fapprise.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[apprise-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fapprise.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [apprise-repo]: https://hub.docker.com/r/caronc/apprise
-[apprise-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fapprise.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[apprise-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fapprise.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [apprise-tags]: https://hub.docker.com/r/caronc/apprise/tags
 [apprise-version]: https://img.shields.io/github/v/release/caronc/apprise
 [apprise-date]: https://img.shields.io/github/release-date/caronc/apprise?display_date=published_at
@@ -100,9 +100,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [apprise-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-apprise.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- AUDIOBOOKSHELF -->
-[audiobookshelf-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Faudiobookshelf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[audiobookshelf-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Faudiobookshelf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [audiobookshelf-repo]: https://github.com/advplyr/audiobookshelf/pkgs/container/audiobookshelf
-[audiobookshelf-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Faudiobookshelf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[audiobookshelf-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Faudiobookshelf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [audiobookshelf-tags]: https://github.com/advplyr/audiobookshelf/pkgs/container/audiobookshelf
 [audiobookshelf-version]: https://img.shields.io/github/v/release/advplyr/audiobookshelf
 [audiobookshelf-date]: https://img.shields.io/github/release-date/advplyr/audiobookshelf?display_date=published_at
@@ -112,9 +112,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [audiobookshelf-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-audiobookshelf.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- CALIBRE WEB -->
-[calibre-web-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fcalibre-web.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[calibre-web-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fcalibre-web.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [calibre-web-repo]: https://lscr.io/linuxserver/calibre-web
-[calibre-web-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fcalibre-web.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[calibre-web-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fcalibre-web.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [calibre-web-tags]: https://lscr.io/linuxserver/calibre-web
 [calibre-web-version]: https://img.shields.io/github/v/release/linuxserver/docker-calibre-web
 [calibre-web-date]: https://img.shields.io/github/release-date/linuxserver/docker-calibre-web?display_date=published_at
@@ -124,9 +124,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [calibre-web-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-calibre-web.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- DOZZLE -->
-[dozzle-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fdozzle.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[dozzle-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fdozzle.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [dozzle-repo]: https://hub.docker.com/r/amir20/dozzle
-[dozzle-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fdozzle.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[dozzle-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fdozzle.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [dozzle-tags]: https://hub.docker.com/r/amir20/dozzle/tags
 [dozzle-version]: https://img.shields.io/github/v/release/amir20/dozzle
 [dozzle-date]: https://img.shields.io/github/release-date/amir20/dozzle?display_date=published_at
@@ -139,9 +139,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [dozzle-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-dozzle.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- ETHERCALC -->
-[ethercalc-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[ethercalc-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [ethercalc-repo]: https://hub.docker.com/r/audreyt/ethercalc
-[ethercalc-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[ethercalc-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fethercalc.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [ethercalc-tags]: https://hub.docker.com/r/audreyt/ethercalc/tags
 [ethercalc-version]: https://img.shields.io/github/v/release/audreyt/ethercalc
 [ethercalc-date]: https://img.shields.io/github/release-date/audreyt/ethercalc?display_date=published_at
@@ -154,9 +154,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [ethercalc-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-ethercalc.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- ETHERPAD -->
-[etherpad-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fetherpad.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[etherpad-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fetherpad.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [etherpad-repo]: https://hub.docker.com/r/etherpad/etherpad
-[etherpad-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fetherpad.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[etherpad-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fetherpad.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [etherpad-tags]: https://hub.docker.com/r/etherpad/etherpad/tags
 [etherpad-version]: https://img.shields.io/github/v/release/ether/etherpad
 [etherpad-date]: https://img.shields.io/github/release-date/ether/etherpad?display_date=published_at
@@ -169,7 +169,7 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [etherpad-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-etherpad.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- EXIM -->
-[exim-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fexim.yml&search=%28%3Fm%29%5E%20%20mail%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[exim-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fexim.yml&search=%28%3Fm%29%5E%20%20mail%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [exim-repo]: https://hub.docker.com/r/bytemark/smtp
 [exim-tag]: https://img.shields.io/badge/no%20tag-latest-green?style=flat-square
 [exim-tags]: https://hub.docker.com/r/bytemark/smtp/tags
@@ -178,9 +178,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [exim-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-exim.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- FAIL2BAN -->
-[fail2ban-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ffail2ban.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[fail2ban-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ffail2ban.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [fail2ban-repo]: https://hub.docker.com/r/linuxserver/fail2ban
-[fail2ban-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ffail2ban.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[fail2ban-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ffail2ban.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [fail2ban-tags]: https://hub.docker.com/r/linuxserver/fail2ban/tags
 [fail2ban-version]: https://img.shields.io/github/v/release/linuxserver/docker-fail2ban
 [fail2ban-date]: https://img.shields.io/github/release-date/linuxserver/docker-fail2ban?display_date=published_at
@@ -193,9 +193,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [fail2ban-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-fail2ban.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- FOCALBOARD -->
-[focalboard-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ffocalboard.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[focalboard-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ffocalboard.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [focalboard-repo]: https://hub.docker.com/r/mattermost/focalboard
-[focalboard-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ffocalboard.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[focalboard-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ffocalboard.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [focalboard-tags]: https://hub.docker.com/r/mattermost/focalboard/tags
 [focalboard-version]: https://img.shields.io/github/v/release/mattermost/focalboard
 [focalboard-date]: https://img.shields.io/github/release-date/mattermost/focalboard?display_date=published_at
@@ -205,9 +205,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [focalboard-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-focalboard.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- FORGEJO -->
-[forgejo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fforgejo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[forgejo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fforgejo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [forgejo-repo]: https://codeberg.org/forgejo/-/packages/container/forgejo
-[forgejo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fforgejo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[forgejo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fforgejo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [forgejo-tags]: https://codeberg.org/forgejo/forgejo/packages/container/forgejo
 [forgejo-release]: https://badgen.net/codeberg/release/forgejo/forgejo
 [forgejo-releases]: https://codeberg.org/forgejo/forgejo/releases
@@ -216,24 +216,24 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [forgejo-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-forgejo.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- GITLAB CE -->
-[gitlab-ce-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[gitlab-ce-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [gitlab-ce-repo]: https://hub.docker.com/r/gitlab/gitlab-ce
-[gitlab-ce-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[gitlab-ce-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [gitlab-ce-tags]: https://hub.docker.com/r/gitlab/gitlab-ce/tags
 [gitlab-ce-cloud]: https://github.com/Fosten/docker-swarm-stacks/actions/workflows/deploy-gitlab.yml/badge.svg
 [gitlab-ce-workflow]: https://github.com/Fosten/docker-swarm-stacks/actions/workflows/deploy-gitlab.yml
 [gitlab-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-gitlab.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- GITLAB RUNNER -->
-[gitlab-runner-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20gitlab-runner%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
+[gitlab-runner-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20gitlab-runner%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
 [gitlab-runner-repo]: https://hub.docker.com/r/gitlab/gitlab-runner
-[gitlab-runner-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20gitlab-runner%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
+[gitlab-runner-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgitlab.yml&search=%28%3Fm%29%5E%20%20gitlab-runner%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
 [gitlab-runner-tags]: https://hub.docker.com/r/gitlab/gitlab-runner/tags
 
 <!-- GOTIFY -->
-[gotify-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgotify.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[gotify-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgotify.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [gotify-repo]: https://hub.docker.com/r/gotify/server
-[gotify-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgotify.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[gotify-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgotify.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [gotify-tags]: https://hub.docker.com/r/gotify/server/tags
 [gotify-version]: https://img.shields.io/github/v/release/gotify/server
 [gotify-date]: https://img.shields.io/github/release-date/gotify/server?display_date=published_at
@@ -243,9 +243,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [gotify-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-gotify.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- GRAFANA -->
-[grafana-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[grafana-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [grafana-repo]: https://hub.docker.com/r/grafana/grafana
-[grafana-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[grafana-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [grafana-tags]: https://hub.docker.com/r/grafana/grafana/tags
 [grafana-version]: https://img.shields.io/github/v/release/grafana/grafana
 [grafana-date]: https://img.shields.io/github/release-date/grafana/grafana?display_date=published_at
@@ -258,9 +258,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [grafana-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-grafana.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- GRAFANA ALLOY -->
-[alloy-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Falloy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[alloy-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Falloy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [alloy-repo]: https://hub.docker.com/r/grafana/alloy
-[alloy-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Falloy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[alloy-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Falloy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [alloy-tags]: https://hub.docker.com/r/grafana/alloy/tags
 [alloy-version]: https://img.shields.io/github/v/release/grafana/alloy
 [alloy-date]: https://img.shields.io/github/release-date/grafana/alloy?display_date=published_at
@@ -273,9 +273,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [alloy-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-alloy.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- GRAFANA LOKI -->
-[loki-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Floki.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[loki-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Floki.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [loki-repo]: https://hub.docker.com/r/grafana/loki
-[loki-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Floki.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[loki-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Floki.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [loki-tags]: https://hub.docker.com/r/grafana/loki/tags
 [loki-version]: https://img.shields.io/github/v/release/grafana/loki
 [loki-date]: https://img.shields.io/github/release-date/grafana/loki?display_date=published_at
@@ -288,9 +288,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [loki-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-loki.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- GRAFANA MIMIR -->
-[mimir-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmimir.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[mimir-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmimir.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [mimir-repo]: https://hub.docker.com/r/grafana/mimir
-[mimir-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmimir.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[mimir-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmimir.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [mimir-tags]: https://hub.docker.com/r/grafana/mimir/tags
 [mimir-version]: https://img.shields.io/github/v/release/grafana/mimir
 [mimir-date]: https://img.shields.io/github/release-date/grafana/mimir?display_date=published_at
@@ -303,9 +303,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [mimir-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-mimir.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- GRAFANA TEMPO -->
-[tempo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[tempo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [tempo-repo]: https://hub.docker.com/r/grafana/tempo
-[tempo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[tempo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgrafana.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [tempo-tags]: https://hub.docker.com/r/grafana/tempo/tags
 [tempo-version]: https://img.shields.io/github/v/release/grafana/tempo
 [tempo-date]: https://img.shields.io/github/release-date/grafana/tempo?display_date=published_at
@@ -318,24 +318,24 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [tempo-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-tempo.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- GRAYLOG -->
-[graylog-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[graylog-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [graylog-repo]: https://hub.docker.com/r/graylog/graylog
-[graylog-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[graylog-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [graylog-tags]: https://hub.docker.com/r/graylog/graylog/tags
 [graylog-cloud]: https://github.com/Fosten/docker-swarm-stacks/actions/workflows/deploy-graylog.yml/badge.svg
 [graylog-workflow]: https://github.com/Fosten/docker-swarm-stacks/actions/workflows/deploy-graylog.yml
 [graylog-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-graylog.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- GRAYLOG DATA NODE -->
-[graylog-datanode-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20datanode%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[graylog-datanode-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20datanode%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
 [graylog-datanode-repo]: https://hub.docker.com/r/graylog/graylog-datanode
-[graylog-datanode-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20datanode%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[graylog-datanode-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20datanode%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
 [graylog-datanode-tags]: https://hub.docker.com/r/graylog/graylog-datanode/tags
 
 <!-- HERMES AGENT -->
-[hermes-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fhermes.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[hermes-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fhermes.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [hermes-repo]: https://hub.docker.com/r/nousresearch/hermes-agent
-[hermes-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fhermes.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[hermes-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fhermes.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [hermes-tags]: https://hub.docker.com/r/nousresearch/hermes-agent/tags
 [hermes-version]: https://img.shields.io/github/v/release/NousResearch/hermes-agent
 [hermes-date]: https://img.shields.io/github/release-date/NousResearch/hermes-agent?display_date=published_at
@@ -345,9 +345,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [hermes-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-hermes.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- INVOICE NINJA -->
-[invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [invoiceninja-repo]: https://hub.docker.com/r/invoiceninja/invoiceninja-debian
-[invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [invoiceninja-tags]: https://hub.docker.com/r/invoiceninja/invoiceninja-debian/tags
 [invoiceninja-version]: https://img.shields.io/github/v/release/invoiceninja/invoiceninja
 [invoiceninja-date]: https://img.shields.io/github/release-date/invoiceninja/invoiceninja?display_date=published_at
@@ -360,9 +360,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [invoiceninja-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-invoiceninja.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- JENKINS -->
-[jenkins-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[jenkins-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [jenkins-repo]: https://hub.docker.com/r/jenkins/jenkins
-[jenkins-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[jenkins-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [jenkins-tags]: https://hub.docker.com/r/jenkins/jenkins/tags
 [jenkins-version]: https://img.shields.io/github/v/release/jenkinsci/jenkins
 [jenkins-date]: https://img.shields.io/github/release-date/jenkinsci/jenkins?display_date=published_at
@@ -372,18 +372,18 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [jenkins-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-jenkins.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- JENKINS SSH AGENT -->
-[jenkins-ssh-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20agent%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
+[jenkins-ssh-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20agent%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
 [jenkins-ssh-repo]: https://hub.docker.com/r/jenkins/ssh-agent
-[jenkins-ssh-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20agent%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
+[jenkins-ssh-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fjenkins.yml&search=%28%3Fm%29%5E%20%20agent%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
 [jenkins-ssh-tags]: https://hub.docker.com/r/jenkins/ssh-agent/tags
 [jenkins-ssh-version]: https://img.shields.io/github/v/release/jenkinsci/docker-ssh-agent
 [jenkins-ssh-date]: https://img.shields.io/github/release-date/jenkinsci/docker-ssh-agent?display_date=published_at
 [jenkins-ssh-releases]: https://github.com/jenkinsci/docker-ssh-agent/releases
 
 <!-- KEYCLOAK -->
-[keycloak-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fkeycloak.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[keycloak-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fkeycloak.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [keycloak-repo]: https://quay.io/repository/keycloak/keycloak
-[keycloak-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fkeycloak.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[keycloak-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fkeycloak.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [keycloak-tags]: https://quay.io/repository/keycloak/keycloak?tab=tags
 [keycloak-version]: https://img.shields.io/github/v/release/keycloak/keycloak
 [keycloak-date]: https://img.shields.io/github/release-date/keycloak/keycloak?display_date=published_at
@@ -393,9 +393,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [keycloak-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-keycloak.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- KIWIX -->
-[kiwix-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fkiwix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[kiwix-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fkiwix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [kiwix-repo]: https://github.com/kiwix/kiwix-tools/pkgs/container/kiwix-serve
-[kiwix-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fkiwix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[kiwix-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fkiwix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [kiwix-tags]: https://github.com/kiwix/kiwix-tools/pkgs/container/kiwix-serve
 [kiwix-version]: https://img.shields.io/github/v/release/kiwix/kiwix-tools
 [kiwix-date]: https://img.shields.io/github/release-date/kiwix/kiwix-tools?display_date=published_at
@@ -405,9 +405,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [kiwix-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-kiwix.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- LISTMONK -->
-[listmonk-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Flistmonk.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[listmonk-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Flistmonk.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [listmonk-repo]: https://hub.docker.com/r/listmonk/listmonk
-[listmonk-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Flistmonk.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[listmonk-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Flistmonk.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [listmonk-tags]: https://hub.docker.com/r/listmonk/listmonk/tags
 [listmonk-version]: https://img.shields.io/github/v/release/knadh/listmonk
 [listmonk-date]: https://img.shields.io/github/release-date/knadh/listmonk?display_date=published_at
@@ -417,9 +417,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [listmonk-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-listmonk.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- MAILHOG -->
-[mailhog-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmailhog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[mailhog-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmailhog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [mailhog-repo]: https://hub.docker.com/r/mailhog/mailhog
-[mailhog-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmailhog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[mailhog-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmailhog.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [mailhog-tags]: https://hub.docker.com/r/mailhog/mailhog/tags
 [mailhog-version]: https://img.shields.io/github/v/release/mailhog/MailHog
 [mailhog-date]: https://img.shields.io/github/release-date/mailhog/MailHog?display_date=published_at
@@ -429,14 +429,14 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [mailhog-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-mailhog.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- MARIADB -->
-[mariadb-snipeit-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20snipe-it-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[mariadb-snipeit-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20snipe-it-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
-[mariadb-invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[mariadb-invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
-[mariadb-matomo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20matomo-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[mariadb-matomo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20matomo-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
-[mariadb-mixpost-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[mariadb-mixpost-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[mariadb-snipeit-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20snipe-it-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[mariadb-snipeit-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20snipe-it-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[mariadb-invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[mariadb-invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-mariadb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[mariadb-matomo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20matomo-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[mariadb-matomo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20matomo-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[mariadb-mixpost-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[mariadb-mixpost-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-db%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
 <!-- MARIADB -->
 [mariadb-repo]: https://hub.docker.com/_/mariadb
 [mariadb-tags]: https://hub.docker.com/_/mariadb/tags
@@ -445,9 +445,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [mariadb-releases]: https://github.com/MariaDB/server/releases
 
 <!-- MATOMO -->
-[matomo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[matomo-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [matomo-repo]: https://hub.docker.com/_/matomo
-[matomo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[matomo-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmatomo.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [matomo-tags]: https://hub.docker.com/_/matomo/tags
 [matomo-version]: https://img.shields.io/github/v/release/matomo-org/matomo
 [matomo-date]: https://img.shields.io/github/release-date/matomo-org/matomo?display_date=published_at
@@ -457,18 +457,18 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [matomo-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-matomo.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- MINIO -->
-[minio-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Frxresume.yml&search=%28%3Fm%29%5E%20%20minio%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
+[minio-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Frxresume.yml&search=%28%3Fm%29%5E%20%20minio%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
 [minio-repo]: https://hub.docker.com/r/alpine/minio
-[minio-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Frxresume.yml&search=%28%3Fm%29%5E%20%20minio%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
+[minio-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Frxresume.yml&search=%28%3Fm%29%5E%20%20minio%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
 [minio-tags]: https://hub.docker.com/r/alpine/minio/tags
 [minio-version]: https://img.shields.io/github/v/release/minio/minio
 [minio-date]: https://img.shields.io/github/release-date/minio/minio?display_date=published_at
 [minio-releases]: https://github.com/minio/minio/releases
 
 <!-- MIXPOST -->
-[mixpost-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[mixpost-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [mixpost-repo]: https://hub.docker.com/r/inovector/mixpost
-[mixpost-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[mixpost-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [mixpost-tags]: https://hub.docker.com/r/inovector/mixpost/tags
 [mixpost-version]: https://img.shields.io/github/v/release/inovector/mixpost
 [mixpost-date]: https://img.shields.io/github/release-date/inovector/mixpost?display_date=published_at
@@ -478,17 +478,17 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [mixpost-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-mixpost.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- MONGODB -->
-[mongodb-graylog-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2F5db061171f67a62d041598f86ba8500567be2f2d%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20graylog-mongodb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[mongodb-graylog-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2F5db061171f67a62d041598f86ba8500567be2f2d%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20graylog-mongodb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[mongodb-graylog-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20graylog-mongodb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[mongodb-graylog-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fgraylog.yml&search=%28%3Fm%29%5E%20%20graylog-mongodb%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
 [mongodb-graylog-tags]: https://hub.docker.com/_/mongo/tags
 [mongodb-repo]: https://hub.docker.com/_/mongo
 [mongodb-version]: https://img.shields.io/github/v/tag/mongodb/mongo
 [mongodb-releases]: https://github.com/n8n-io/n8n/tags
 
 <!-- N8N -->
-[n8n-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fn8n.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[n8n-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fn8n.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [n8n-repo]: https://docs.n8n.io/hosting/installation/docker/
-[n8n-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fn8n.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[n8n-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fn8n.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [n8n-tags]: https://docs.n8n.io/hosting/installation/docker/
 [n8n-version]: https://img.shields.io/github/v/release/n8n-io/n8n
 [n8n-date]: https://img.shields.io/github/release-date/n8n-io/n8n?display_date=published_at
@@ -498,10 +498,10 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [n8n-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-n8n.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- NETDATA -->
-[netdata-central-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-central%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
-[netdata-central-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-central%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
-[netdata-client-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-client%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
-[netdata-client-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-client%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[netdata-central-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-central%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[netdata-central-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-central%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[netdata-client-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-client%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[netdata-client-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnetdata.yml&search=%28%3Fm%29%5E%20%20netdata-client%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [netdata-repo]: https://hub.docker.com/r/netdata/netdata
 [netdata-tags]: https://hub.docker.com/r/netdata/netdata/tags
 [netdata-version]: https://img.shields.io/github/v/release/netdata/netdata
@@ -512,9 +512,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [netdata-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-netdata.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- NEXTCLOUD -->
-[nextcloud-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnextcloud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[nextcloud-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnextcloud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [nextcloud-repo]: https://hub.docker.com/_/nextcloud
-[nextcloud-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnextcloud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[nextcloud-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnextcloud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [nextcloud-tags]: https://hub.docker.com/_/nextcloud/tags
 [nextcloud-version]: https://img.shields.io/github/v/release/nextcloud/server
 [nextcloud-date]: https://img.shields.io/github/release-date/nextcloud/server?display_date=published_at
@@ -527,13 +527,13 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [nextcloud-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-nextcloud.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- NGINX -->
-[nginx-invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2F5db061171f67a62d041598f86ba8500567be2f2d%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-nginx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[nginx-invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2F5db061171f67a62d041598f86ba8500567be2f2d%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-nginx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[nginx-invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-nginx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[nginx-invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-nginx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
 <!-- NGINX -->
-[nginx1-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx1%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[nginx1-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx1%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
-[nginx2-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx2%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[nginx2-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx2%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[nginx1-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx1%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[nginx1-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx1%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[nginx2-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx2%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[nginx2-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fnginx.yml&search=%28%3Fm%29%5E%20%20nginx2%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
 [nginx-repo]: https://hub.docker.com/_/nginx
 [nginx-tags]: https://hub.docker.com/_/nginx/tags
 [nginx-version]: https://img.shields.io/github/v/release/nginx/nginx
@@ -544,9 +544,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [nginx-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-nginx.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- NTFY -->
-[ntfy-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fntfy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[ntfy-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fntfy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [ntfy-repo]: https://hub.docker.com/r/binwiederhier/ntfy
-[ntfy-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fntfy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[ntfy-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fntfy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [ntfy-tags]: https://hub.docker.com/r/binwiederhier/ntfy/tags
 [ntfy-version]: https://img.shields.io/github/v/release/binwiederhier/ntfy
 [ntfy-date]: https://img.shields.io/github/release-date/binwiederhier/ntfy?display_date=published_at
@@ -556,9 +556,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [ntfy-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-ntfy.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- OLLAMA -->
-[ollama-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Follama.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[ollama-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Follama.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [ollama-repo]: https://hub.docker.com/r/ollama/ollama
-[ollama-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Follama.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[ollama-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Follama.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [ollama-tags]: https://hub.docker.com/r/ollama/ollama/tags
 [ollama-version]: https://img.shields.io/github/v/release/ollama/ollama
 [ollama-date]: https://img.shields.io/github/release-date/ollama/ollama?display_date=published_at
@@ -568,9 +568,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [ollama-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-ollama.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- OPEN WEBUI -->
-[open-webui-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fopen-webui.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[open-webui-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fopen-webui.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [open-webui-repo]: https://github.com/open-webui/open-webui/pkgs/container/open-webui
-[open-webui-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fopen-webui.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[open-webui-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fopen-webui.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [open-webui-tags]: https://github.com/open-webui/open-webui/pkgs/container/open-webui
 [open-webui-version]: https://img.shields.io/github/v/release/open-webui/open-webui
 [open-webui-date]: https://img.shields.io/github/release-date/open-webui/open-webui?display_date=published_at
@@ -580,9 +580,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [open-webui-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-open-webui.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- OPENCODE -->
-[opencode-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fopencode.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[opencode-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fopencode.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [opencode-repo]: https://github.com/anomalyco/opencode/pkgs/container/opencode
-[opencode-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fopencode.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[opencode-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fopencode.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [opencode-tags]: https://github.com/anomalyco/opencode/pkgs/container/opencode
 [opencode-version]: https://img.shields.io/github/v/release/anomalyco/opencode
 [opencode-date]: https://img.shields.io/github/release-date/anomalyco/opencode?display_date=published_at
@@ -592,9 +592,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [opencode-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-opencode.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- OPENTELEMETRY -->
-[opentelemetry-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fopentelemetry.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[opentelemetry-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fopentelemetry.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [opentelemetry-repo]: https://hub.docker.com/r/otel/opentelemetry-collector-contrib
-[opentelemetry-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fopentelemetry.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[opentelemetry-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fopentelemetry.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [opentelemetry-tags]: https://hub.docker.com/r/otel/opentelemetry-collector-contrib/tags
 [opentelemetry-version]: https://img.shields.io/github/v/release/open-telemetry/opentelemetry-collector-contrib
 [opentelemetry-date]: https://img.shields.io/github/release-date/open-telemetry/opentelemetry-collector-contrib?display_date=published_at
@@ -607,9 +607,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [opentelemetry-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-opentelemetry.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- PAPERLESS-NGX -->
-[paperless-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[paperless-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [paperless-repo]: https://hub.docker.com/r/paperlessngx/paperless-ngx
-[paperless-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[paperless-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [paperless-tags]: https://hub.docker.com/r/paperlessngx/paperless-ngx/tags
 [paperless-version]: https://img.shields.io/github/v/release/paperless-ngx/paperless-ngx
 [paperless-date]: https://img.shields.io/github/release-date/paperless-ngx/paperless-ngx?display_date=published_at
@@ -622,17 +622,17 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [paperless-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-paperless-ngx.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- PENPOT -->
-[penpot-backend-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-backend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[penpot-backend-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-backend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [penpot-backend-repo]: https://hub.docker.com/r/penpotapp/backend
-[penpot-backend-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-backend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[penpot-backend-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-backend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [penpot-backend-tags]: https://hub.docker.com/r/penpotapp/backend/tags
-[penpot-exporter-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[penpot-exporter-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [penpot-exporter-repo]: https://hub.docker.com/r/penpotapp/exporter
-[penpot-exporter-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[penpot-exporter-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [penpot-exporter-tags]: https://hub.docker.com/r/penpotapp/exporter/tags
-[penpot-frontend-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-frontend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[penpot-frontend-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-frontend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [penpot-frontend-repo]: https://hub.docker.com/r/penpotapp/frontend
-[penpot-frontend-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-frontend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[penpot-frontend-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-frontend%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [penpot-frontend-tags]: https://hub.docker.com/r/penpotapp/frontend/tags
 [penpot-version]: https://img.shields.io/github/v/release/penpot/penpot
 [penpot-date]: https://img.shields.io/github/release-date/penpot/penpot?display_date=published_at
@@ -642,9 +642,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [penpot-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-penpot.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- PGADMIN -->
-[pgadmin-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpgadmin.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[pgadmin-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpgadmin.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [pgadmin-repo]: https://hub.docker.com/r/dpage/pgadmin4
-[pgadmin-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpgadmin.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[pgadmin-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpgadmin.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [pgadmin-tags]: https://hub.docker.com/r/dpage/pgadmin4/tags
 [pgadmin-version]: https://img.shields.io/github/v/tag/pgadmin-org/pgadmin4
 [pgadmin-local]: https://github.com/Fosten/docker-swarm-stacks/actions/workflows/local-deploy-pgadmin.yml/badge.svg
@@ -652,13 +652,13 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [pgadmin-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-pgadmin.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- PORTAINER -->
-[portainer-agent-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fportainer.yml&search=%28%3Fm%29%5E%20%20agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[portainer-agent-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [portainer-agent-repo]: https://hub.docker.com/r/portainer/agent
-[portainer-agent-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fportainer.yml&search=%28%3Fm%29%5E%20%20agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[portainer-agent-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [portainer-agent-tags]: https://hub.docker.com/r/portainer/agent/tags
-[portainer-ce-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fportainer.yml&search=%28%3Fm%29%5E%20%20portainer%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[portainer-ce-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20portainer%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [portainer-ce-repo]: https://hub.docker.com/r/portainer/portainer-ce
-[portainer-ce-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fportainer.yml&search=%28%3Fm%29%5E%20%20portainer%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[portainer-ce-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20portainer%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [portainer-ce-tags]: https://hub.docker.com/r/portainer/portainer-ce/tags
 [portainer-version]: https://img.shields.io/github/v/release/portainer/portainer
 [portainer-date]: https://img.shields.io/github/release-date/portainer/portainer?display_date=published_at
@@ -671,9 +671,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [portainer-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-portainer.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- POSTFIX -->
-[postfix-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostfix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[postfix-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostfix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [postfix-repo]: https://hub.docker.com/r/boky/postfix
-[postfix-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostfix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[postfix-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostfix.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [postfix-tags]: https://hub.docker.com/r/boky/postfix/tags
 [postfix-version]: https://img.shields.io/github/v/release/bokysan/docker-postfix
 [postfix-date]: https://img.shields.io/github/release-date/bokysan/docker-postfix?display_date=published_at
@@ -686,17 +686,17 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [postfix-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-postfix.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- POSTIZ -->
-[postiz-temporal-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-temporal%3A%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%20%5D%2B%29%3A%28%5B%5E%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[postiz-temporal-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-temporal%3A%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%20%5D%2B%29%3A%28%5B%5E%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [postiz-temporal-repo]: https://hub.docker.com/r/temporalio/auto-setup
-[postiz-temporal-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-temporal%3A%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%20%5D%2B%29%3A%28%5B%5E%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[postiz-temporal-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-temporal%3A%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%20%5D%2B%29%3A%28%5B%5E%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [postiz-temporal-tags]: https://hub.docker.com/r/temporalio/auto-setup/tags
 [temporal-version]: https://img.shields.io/github/v/release/temporalio/temporal
 [temporal-date]: https://img.shields.io/github/release-date/temporalio/temporal?display_date=published_at
 [temporal-releases]: https://github.com/temporalio/temporal/releases
 <!-- POSTIZ -->
-[postiz-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[postiz-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [postiz-repo]: https://github.com/gitroomhq/postiz-app/pkgs/container/postiz-app
-[postiz-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[postiz-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [postiz-tags]: https://github.com/gitroomhq/postiz-app/pkgs/container/postiz-app
 [postiz-version]: https://img.shields.io/github/v/release/gitroomhq/postiz-app
 [postiz-date]: https://img.shields.io/github/release-date/gitroomhq/postiz-app?display_date=published_at
@@ -706,9 +706,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [postiz-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fcloud-deploy-postiz.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- PROMETHEUS -->
-[prometheus-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[prometheus-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [prometheus-repo]: https://hub.docker.com/r/prom/prometheus
-[prometheus-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[prometheus-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [prometheus-tags]: https://hub.docker.com/r/prom/prometheus/tags
 [prometheus-version]: https://img.shields.io/github/v/release/prometheus/prometheus
 [prometheus-date]: https://img.shields.io/github/release-date/prometheus/prometheus?display_date=published_at
@@ -721,32 +721,32 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [prometheus-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-prometheus.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- PROMETHEUS ALERTMANAGER -->
-[alertmanager-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20alertmanager%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
+[alertmanager-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20alertmanager%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
 [alertmanager-repo]: https://hub.docker.com/r/prom/alertmanager
-[alertmanager-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20alertmanager%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
+[alertmanager-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20alertmanager%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
 [alertmanager-tags]: https://hub.docker.com/r/prom/alertmanager/tags
 [alertmanager-version]: https://img.shields.io/github/v/release/prometheus/alertmanager
 [alertmanager-date]: https://img.shields.io/github/release-date/prometheus/alertmanager?display_date=published_at
 [alertmanager-releases]: https://github.com/prometheus/alertmanager/releases
 
 <!-- PROMETHEUS NODE EXPORTER -->
-[node-exporter-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20node-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
+[node-exporter-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20node-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
 [node-exporter-repo]: https://hub.docker.com/r/prom/node-exporter
-[node-exporter-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20node-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
+[node-exporter-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fprometheus.yml&search=%28%3Fm%29%5E%20%20node-exporter%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
 [node-exporter-tags]: https://hub.docker.com/r/prom/node-exporter/tags
 [node-exporter-version]: https://img.shields.io/github/v/release/prometheus/node_exporter
 [node-exporter-date]: https://img.shields.io/github/release-date/prometheus/node_exporter?display_date=published_at
 [node-exporter-releases]: https://github.com/prometheus/node_exporter/releases
 
 <!-- REDIS -->
-[redis-postiz-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[redis-postiz-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
-[redis-invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[redis-invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
-[redis-paperless-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20redis-paperless-ngx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[redis-paperless-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20redis-paperless-ngx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
-[redis-mixpost-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
-[redis-mixpost-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[redis-postiz-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[redis-postiz-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpostiz.yml&search=%28%3Fm%29%5E%20%20postiz-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[redis-invoiceninja-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[redis-invoiceninja-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Finvoiceninja.yml&search=%28%3Fm%29%5E%20%20invoiceninja-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[redis-paperless-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20redis-paperless-ngx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[redis-paperless-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpaperless-ngx.yml&search=%28%3Fm%29%5E%20%20redis-paperless-ngx%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
+[redis-mixpost-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%241&label=&color=blue&style=flat-square
+[redis-mixpost-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fmixpost.yml&search=%28%3Fm%29%5E%20%20mixpost-redis%3A%5B%5Cs%5CS%5D%2A%3F%5E%20%20%20%20image%3A%5Cs%2A%28%5B%5E%3A%5Cs%5D%2B%29%3A%28%5B%5E%3A%5Cs%5D%2B%29&replace=%242&label=&color=green&style=flat-square
 <!-- REDIS -->
 [redis-repo]: https://hub.docker.com/_/redis
 [redis-tags]: https://hub.docker.com/_/redis/tags
@@ -755,9 +755,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [redis-releases]: https://github.com/redis/redis/releases
 
 <!-- RXRESUME -->
-[rxresume-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Frxresume.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[rxresume-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Frxresume.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [rxresume-repo]: https://github.com/AmruthPillai/Reactive-Resume/pkgs/container/reactive-resume
-[rxresume-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Frxresume.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[rxresume-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Frxresume.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [rxresume-tags]: https://github.com/AmruthPillai/Reactive-Resume/pkgs/container/reactive-resume
 [rxresume-version]: https://img.shields.io/github/v/release/AmruthPillai/Reactive-Resume
 [rxresume-date]: https://img.shields.io/github/release-date/AmruthPillai/Reactive-Resume?display_date=published_at
@@ -767,9 +767,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [rxresume-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-rxresume.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- SNIPE-IT -->
-[snipeit-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[snipeit-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [snipeit-repo]: https://hub.docker.com/r/snipe/snipe-it
-[snipeit-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[snipeit-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fsnipe-it.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [snipeit-tags]: https://hub.docker.com/r/snipe/snipe-it/tags
 [snipeit-version]: https://img.shields.io/github/v/release/snipe/snipe-it
 [snipeit-date]: https://img.shields.io/github/release-date/snipe/snipe-it?display_date=published_at
@@ -782,9 +782,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [snipeit-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-snipe-it.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- SPHINX -->
-[sphinx-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fsphinx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[sphinx-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fsphinx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [sphinx-repo]: https://hub.docker.com/r/sphinxdoc/sphinx
-[sphinx-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fsphinx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[sphinx-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fsphinx.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [sphinx-tags]: https://hub.docker.com/r/sphinxdoc/sphinx/tags
 [sphinx-version]: https://img.shields.io/github/v/release/sphinx-doc/sphinx
 [sphinx-date]: https://img.shields.io/github/release-date/sphinx-doc/sphinx?display_date=published_at
@@ -797,9 +797,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [sphinx-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-sphinx.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- STIRLING PDF -->
-[stirling-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstirling-pdf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[stirling-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fstirling-pdf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [stirling-repo]: https://hub.docker.com/r/stirlingtools/stirling-pdf
-[stirling-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstirling-pdf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[stirling-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fstirling-pdf.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [stirling-tags]: https://hub.docker.com/r/stirlingtools/stirling-pdf/tags
 [stirling-version]: https://img.shields.io/github/v/release/Stirling-Tools/Stirling-PDF
 [stirling-date]: https://img.shields.io/github/release-date/Stirling-Tools/Stirling-PDF?display_date=published_at
@@ -812,9 +812,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [stirling-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-stirling-pdf.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- TAILSCALE -->
-[tailscale-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ftailscale.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[tailscale-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ftailscale.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [tailscale-repo]: https://hub.docker.com/r/tailscale/tailscale
-[tailscale-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ftailscale.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[tailscale-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ftailscale.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [tailscale-tags]: https://hub.docker.com/r/tailscale/tailscale/tags
 [tailscale-version]: https://img.shields.io/github/v/release/tailscale/tailscale
 [tailscale-date]: https://img.shields.io/github/release-date/tailscale/tailscale?display_date=published_at
@@ -827,9 +827,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [tailscale-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-tailscale.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- TRAEFIK -->
-[traefik-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ftraefik.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[traefik-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ftraefik.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [traefik-repo]: https://hub.docker.com/_/traefik
-[traefik-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ftraefik.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[traefik-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ftraefik.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [traefik-tags]: https://hub.docker.com/_/traefik/tags
 [traefik-version]: https://img.shields.io/github/v/release/traefik/traefik
 [traefik-date]: https://img.shields.io/github/release-date/traefik/traefik?display_date=published_at
@@ -842,9 +842,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [traefik-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-traefik.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- TSDPROXY -->
-[tsdproxy-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ftsdproxy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[tsdproxy-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ftsdproxy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [tsdproxy-repo]: https://github.com/almeidapaulopt/tsdproxy/pkgs/container/tsdproxy
-[tsdproxy-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Ftsdproxy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[tsdproxy-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Ftsdproxy.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [tsdproxy-tags]: https://github.com/almeidapaulopt/tsdproxy/pkgs/container/tsdproxy
 [tsdproxy-version]: https://img.shields.io/github/v/release/almeidapaulopt/tsdproxy
 [tsdproxy-date]: https://img.shields.io/github/release-date/almeidapaulopt/tsdproxy?display_date=published_at
@@ -854,18 +854,18 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [tsdproxy-cloud-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Fdeploy-tsdproxy.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=6F42C1
 
 <!-- VALKEY -->
-[valkey-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-valkey%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
+[valkey-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-valkey%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%28%5B%5E%3A%5Cn%5D%2B%29%3A%5B%5E%5Cn%5D%2B&replace=%241&label=&color=blue&style=flat-square
 [valkey-repo]: https://hub.docker.com/r/valkey/valkey
-[valkey-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-valkey%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
+[valkey-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fpenpot.yml&search=%28%3Fm%29%5E%20%20penpot-valkey%3A%5B%5Cs%5CS%5D%2A%3F%5Cn%20%20%20%20image%3A%20%5B%5E%3A%5Cn%5D%2B%3A%28%5B%5E%5Cn%5D%2B%29&replace=%241&label=&color=green&style=flat-square
 [valkey-tags]: https://hub.docker.com/r/valkey/valkey/tags
 [valkey-version]: https://img.shields.io/github/v/release/valkey-io/valkey
 [valkey-date]: https://img.shields.io/github/release-date/valkey-io/valkey?display_date=published_at
 [valkey-releases]: https://github.com/valkey-io/valkey/releases
 
 <!-- VAULTWARDEN -->
-[vaultwarden-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fvaultwarden.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[vaultwarden-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fvaultwarden.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [vaultwarden-repo]: https://hub.docker.com/r/vaultwarden/server
-[vaultwarden-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fvaultwarden.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[vaultwarden-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fvaultwarden.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [vaultwarden-tags]: https://hub.docker.com/r/vaultwarden/server/tags
 [vaultwarden-version]: https://img.shields.io/github/v/release/dani-garcia/vaultwarden
 [vaultwarden-date]: https://img.shields.io/github/release-date/dani-garcia/vaultwarden?display_date=published_at
@@ -878,9 +878,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [vaultwarden-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-vaultwarden.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- WUD -->
-[wud-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fwud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[wud-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fwud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [wud-repo]: https://hub.docker.com/r/getwud/wud
-[wud-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fwud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[wud-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fwud.yml&search=%28%3Fm%29%5E%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [wud-tags]: https://hub.docker.com/r/getwud/wud/tags
 [wud-version]: https://img.shields.io/github/v/release/getwud/wud
 [wud-date]: https://img.shields.io/github/release-date/getwud/wud?display_date=published_at
