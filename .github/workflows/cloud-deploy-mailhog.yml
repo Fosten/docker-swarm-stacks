@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "mailhog.yml"
+      - "stacks/mailhog.yml"
   workflow_dispatch:
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
           remote_port: ${{ secrets.DEPLOY_PORT }}
           remote_user: ${{ secrets.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: mailhog.yml
+          stack_file: stacks/mailhog.yml
           stack_name: mailhog
           stack_param: ${{ secrets.DISPATCH_NODE_LABEL }}
           env_file: ${{ secrets.ENV_FILE }}

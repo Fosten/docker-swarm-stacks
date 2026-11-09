@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "rxresume.yml"
+      - "stacks/rxresume.yml"
   workflow_dispatch:
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
           remote_port: ${{ vars.DEPLOY_PORT }}
           remote_user: ${{ vars.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: rxresume.yml
+          stack_file: stacks/rxresume.yml
           stack_name: rxresume
           env_file: ${{ secrets.ENV_FILE }}
           deploy_timeout: 480

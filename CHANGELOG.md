@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add stacks folder and update workflow paths [fosten]
 - Add docs and envs folders [fosten]
 - Bump rxresume from v5 to v6 [fosten]
 - Update Shields.io table with deploy date, display all images within a stack [fosten]
