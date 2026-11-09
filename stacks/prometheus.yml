@@ -20,9 +20,12 @@ services:
         constraints:
           - node.labels.type == ${STACK_PARAM}
       labels:
+        - traefik.enable=true
         - traefik.http.routers.prometheus.rule=Host(`${PROMETHEUS_HOSTNAME}`)
         - traefik.http.services.prometheus.loadbalancer.server.port=9090
-        - traefik.http.routers.prometheus.entrypoints=http
+        - traefik.http.routers.prometheus.entrypoints=${TRAEFIK_ENTRYPOINT}
+        - traefik.http.routers.prometheus.tls=${TRAEFIK_TLS_ENABLED}
+        - traefik.http.routers.prometheus.tls.certresolver=mydnschallenge
 
   node-exporter:
     image: prom/node-exporter:v1

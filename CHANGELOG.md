@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Refactor prometheus to support multi-environment deployments [fosten]
 - Fix new stacks path in README.md resource links [fosten]
 - Add stacks folder and update workflow paths [fosten]
 - Add docs and envs folders [fosten]
