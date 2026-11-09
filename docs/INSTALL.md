@@ -14,7 +14,7 @@
 3. cat github-actions.pub >> ~/.ssh/authorized_keys
 4. nano github-actions and copy everything into DEPLOY_SSH environment secrets below
 
-### Step 3: Populate .env.cloud.example and .env.local.example templates
+### Step 3: Populate envs/.env.cloud.example and envs/.env.local.example templates
 1. Copy both template files to a secure local location for editing
 2. Fill in the values with your personal settings
 3. Copy everything into ENV_FILE environment secrets below
@@ -44,7 +44,7 @@ After setting up the environment, it's time to add secrets. These are sensitive 
 | DEPLOY_PORT | your-port | The SSHD Port. |
 | DEPLOY_USER | your-user | The user to connect to the deploy host, with permissions to run Docker commands. |
 | DEPLOY_SSH  | Contents of `github-actions` | The private SSH key used for connection. The corresponding public key should be in the `~/.ssh/authorized_keys` file of the deployment user. |
-| ENV_FILE    | Contents of `.env.cloud.example` or `.env.local.example` in the root of this project | The file containing environment variables used by the stack
+| ENV_FILE    | Contents of `envs/.env.cloud.example` or `envs/.env.local.example` | The file containing environment variables used by the stack
 | HOST1_NODE_LABEL    | your-1st-label | The labels given to nodes used by the stack
 | HOST2_NODE_LABEL    | your-2nd-label | The labels given to nodes used by the stack
 

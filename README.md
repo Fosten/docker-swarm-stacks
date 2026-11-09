@@ -6,7 +6,7 @@ A collection of Docker stacks and GHA workflows for deployment in Docker Swarms 
 
 Docker Swarm Stacks lets you deploy from GitHub Actions directly to Docker Swarm, using multi-environment workflows to target two separate Swarm clusters: Cloud and Local.
 
-Simply fork this repository and follow the [Installation guide](INSTALL.md).
+Simply fork this repository and follow the [Installation guide](docs/INSTALL.md).
 
 And... Voila! Your new applications should be live and kicking! 🎉
 
