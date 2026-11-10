@@ -12,9 +12,9 @@ services:
       LISTMONK_app__address: ${LISTMONK_ADDRESS}
       LISTMONK_db__host: ${LISTMONK_DB_HOST}
       LISTMONK_db__port: ${LISTMONK_DB_PORT}
-      LISTMONK_db__user: ${LISTMONK_DB_USER}
-      LISTMONK_db__password: ${LISTMONK_DB_PASSWORD}
-      LISTMONK_db__database: ${LISTMONK_DB_NAME}
+      LISTMONK_db__database: ${LISTMONK_POSTGRES_DB}
+      LISTMONK_db__user: ${LISTMONK_POSTGRES_USER}
+      LISTMONK_db__password: ${LISTMONK_POSTGRES_PASSWORD}
       LISTMONK_db__ssl_mode: require
       LISTMONK_db__max_open: 25
       LISTMONK_db__max_idle: 25

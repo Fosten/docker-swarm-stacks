@@ -42,9 +42,9 @@ services:
       DB: postgres12
       DB_PORT: ${TEMPORAL_POSTGRES_PORT}
       POSTGRES_SEEDS: ${TEMPORAL_POSTGRES_HOST}
+      DBNAME: ${TEMPORAL_POSTGRES_DB}
       POSTGRES_USER: ${TEMPORAL_POSTGRES_USER}
       POSTGRES_PWD: ${TEMPORAL_POSTGRES_PASSWORD}
-      DBNAME: ${TEMPORAL_DATABASE}
     networks:
       - traefik-postiz
     deploy:

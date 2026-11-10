@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Standardize env vars _POSTGRES_DB, _POSTGRES_USER, _POSTGRES_PASSWORD [fosten]
 - Refactor prometheus to support multi-environment deployments [fosten]
 - Fix new stacks path in README.md resource links [fosten]
 - Add stacks folder and update workflow paths [fosten]

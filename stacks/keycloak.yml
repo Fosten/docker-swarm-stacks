@@ -22,8 +22,8 @@ services:
       KC_METRICS_ENABLED: "false"
       KC_DB: ${KC_DB_TYPE}
       KC_DB_URL: ${KC_DB_URL}
-      KC_DB_USERNAME: ${KC_DB_USERNAME}
-      KC_DB_PASSWORD: ${KC_DB_PASSWORD}
+      KC_DB_USERNAME: ${KC_POSTGRES_USER}
+      KC_DB_PASSWORD: ${KC_POSTGRES_PASSWORD}
     volumes:
       - ${HOME}/keycloak/providers:/opt/keycloak/providers
       - ${HOME}/keycloak/themes:/opt/keycloak/themes
