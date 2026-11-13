@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:26.6.1
+    image: quay.io/keycloak/keycloak:26.8
     command: ["start",
       "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true",
       "--spi-theme-static-max-age=-1",
