@@ -1,0 +1,56 @@
+version: '3.9'
+
+services:
+  llama-server:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    networks:
+      - traefik-public
+    environment:
+      LLAMA_ARG_HF_REPO: ${PI8_LLAMA_HF_REPO:-unsloth/Qwen3-4B-Instruct-2507-GGUF}
+      LLAMA_ARG_HF_FILE: ${PI8_LLAMA_MODEL_FILE:-Qwen3-4B-Instruct-2507-Q4_K_M.gguf}
+      LLAMA_ARG_HOST: 0.0.0.0
+      LLAMA_ARG_PORT: 8080
+      LLAMA_ARG_TIMEOUT: 300
+      LLAMA_ARG_THREADS: ${LLAMA_THREADS:-4}
+      LLAMA_ARG_THREADS_BATCH: ${LLAMA_THREADS_BATCH:-4}
+      LLAMA_ARG_CTX_SIZE: ${PI8_LLAMA_CONTEXT_LENGTH:-32768}
+      LLAMA_ARG_N_PARALLEL: 1
+      LLAMA_ARG_BATCH: ${LLAMA_BATCH_SIZE:-2048}
+      LLAMA_ARG_UBATCH: ${LLAMA_UBATCH_SIZE:-512}
+      LLAMA_ARG_FLASH_ATTN: ${LLAMA_FLASH_ATTENTION:-on}
+      LLAMA_ARG_CACHE_TYPE_K: ${LLAMA_CACHE_TYPE:-q8_0}
+      LLAMA_ARG_CACHE_TYPE_V: ${LLAMA_CACHE_TYPE:-q8_0}
+      LLAMA_ARG_CACHE_REUSE: ${LLAMA_CACHE_REUSE:-256}
+      LLAMA_ARG_CONT_BATCHING: "true"
+      LLAMA_ARG_JINJA: "true"
+      LLAMA_ARG_NO_WARMUP: "true"
+      LLAMA_ARG_NUMA: "isolate"
+      LLAMA_ARG_MLOCK: ${LLAMA_MLOCK:-false}
+      LLAMA_ARG_SLOT_SAVE_PATH: /cache
+      LLAMA_CACHE: /models
+    volumes:
+      - ${PI8_NVME:-$HOME}/llama-models:/models
+      - ${PI8_NVME:-$HOME}/llama-cache:/cache
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 300s
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+      resources:
+        limits:
+          memory: ${PI8_LLAMA_MEMORY_LIMIT:-6G}
+        reservations:
+          memory: ${PI8_LLAMA_MEMORY_RESERVATION:-3G}
+
+networks:
+  traefik-public:
+    external: true
+
