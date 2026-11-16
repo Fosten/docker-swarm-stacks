@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add Penpot Admin Console [fosten]
 - Add llama.cpp [fosten]
 - Change tailscale network, remove sysctls [fosten]
 - Bump keycloak from 26.6.1 to 26.8 [fosten]

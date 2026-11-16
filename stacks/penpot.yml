@@ -11,6 +11,9 @@ services:
       PENPOT_FLAGS: enable-login-with-oidc enable-oidc-registration
       PENPOT_OIDC_CLIENT_ID: ${PENPOT_OIDC_CLIENT_ID}
       PENPOT_OIDC_NAME: Keycloak
+      # Don't touch it; this uses an internal docker network to
+      # communicate with the admin-console.
+      PENPOT_ADMIN_CONSOLE_URI: http://penpot-admin-console:3000
     volumes:
       - ${HOME}/penpot/assets:/opt/data/assets
     deploy:
@@ -41,6 +44,9 @@ services:
       PENPOT_OIDC_CLIENT_ID: ${PENPOT_OIDC_CLIENT_ID}
       PENPOT_OIDC_CLIENT_SECRET: ${PENPOT_OIDC_CLIENT_SECRET}
       PENPOT_OIDC_BASE_URI: ${PENPOT_OIDC_BASE_URI}
+      # Don't touch it; this uses an internal docker network to
+      # communicate with the admin-console.
+      PENPOT_ADMIN_CONSOLE_URI: http://penpot-admin-console:3000
     volumes:
       - ${HOME}/penpot/assets:/opt/data/assets
     deploy:
@@ -51,6 +57,30 @@ services:
       labels:
         - traefik.enable=false
   
+  penpot-admin-console:
+    image: penpotapp/admin-console:2.19
+    networks:
+      - penpot
+    environment:
+      PENPOT_PUBLIC_URI: https://${PENPOT_HOSTNAME}
+      PENPOT_SECRET_KEY: ${PENPOT_SECRET_KEY}
+      PENPOT_DATABASE_URI: postgresql://${PENPOT_DB_HOST}:${PENPOT_DB_PORT}/${PENPOT_POSTGRES_DB}?sslmode=verify-full
+      PENPOT_DATABASE_USERNAME: ${PENPOT_POSTGRES_USER}
+      PENPOT_DATABASE_PASSWORD: ${PENPOT_POSTGRES_PASSWORD}
+      NODE_EXTRA_CA_CERTS: /etc/ssl/certs/postgres-ca.crt
+      # Don't touch it; this uses an internal docker network to
+      # communicate with the frontend.
+      PENPOT_INTERNAL_URI: http://penpot-frontend:8080
+    volumes:
+      - ${HOME}/penpot/certs/postgres-ca.crt:/etc/ssl/certs/postgres-ca.crt:ro
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+
   penpot-exporter:
     image: penpotapp/exporter:latest
     networks:
