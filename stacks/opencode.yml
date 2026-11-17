@@ -8,6 +8,7 @@ services:
       - ai-net
     volumes:
       - ${HOME}/opencode/workspace:/workspace
+      - ${HOME}/opencode/config/opencode.jsonc:/root/.config/opencode/opencode.jsonc:ro
     deploy:
       replicas: 1
       placement:

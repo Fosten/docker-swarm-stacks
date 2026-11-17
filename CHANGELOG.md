@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure OpenCode JSONC bind mount [fosten]
 - Configure ai-net for AI stacks [fosten]
 - Configure portainer-net and AGENT_CLUSTER_ADDR [fosten]
 - Add Penpot Admin Console [fosten]
