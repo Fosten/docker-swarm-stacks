@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   hermes:
     image: nousresearch/hermes-agent:latest
@@ -7,8 +5,8 @@ services:
     volumes:
       - ${HOME}/.hermes/gateway:/opt/data
     networks:
-      - hermes-net
       - traefik-public
+      - ai-net
     environment:
       HERMES_DASHBOARD: 1
       HERMES_DASHBOARD_BASIC_AUTH_USERNAME: ${HERMES_DASHBOARD_BASIC_AUTH_USERNAME}
@@ -37,7 +35,7 @@ services:
         - traefik.http.routers.hermes.tls.certresolver=mydnschallenge
 
 networks:
-  hermes-net:
-    driver: overlay
   traefik-public:
+    external: true
+  ai-net:
     external: true

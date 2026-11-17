@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   opencode:
     image: ghcr.io/anomalyco/opencode:latest
@@ -7,6 +5,7 @@ services:
     command: ["web", "--hostname", "0.0.0.0", "--port", "3000"]
     networks:
       - traefik-public
+      - ai-net
     volumes:
       - ${HOME}/opencode/workspace:/workspace
     deploy:
@@ -24,4 +23,6 @@ services:
 
 networks:
   traefik-public:
+    external: true
+  ai-net:
     external: true

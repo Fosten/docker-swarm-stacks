@@ -1,10 +1,8 @@
-version: '3.9'
-
 services:
-  llama-server:
+  llama-cpp-8gb:
     image: ghcr.io/ggml-org/llama.cpp:server
     networks:
-      - traefik-public
+      - ai-net
     environment:
       LLAMA_ARG_HF_REPO: ${PI8_LLAMA_HF_REPO:-unsloth/Qwen3-4B-Instruct-2507-GGUF}
       LLAMA_ARG_HF_FILE: ${PI8_LLAMA_MODEL_FILE:-Qwen3-4B-Instruct-2507-Q4_K_M.gguf}
@@ -53,4 +51,5 @@ services:
 networks:
   traefik-public:
     external: true
-
+  ai-net:
+    external: true

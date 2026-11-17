@@ -1,10 +1,8 @@
-version: '3.9'
-
 services:
   ollama:
     image: ollama/ollama:latest
     networks:
-      - traefik-public
+      - ai-net
     environment:
       OLLAMA_MAX_LOADED_MODELS: ${OLLAMA_MAX_LOADED_MODELS}
       OLLAMA_NUM_PARALLEL: ${OLLAMA_NUM_PARALLEL}
@@ -29,4 +27,6 @@ services:
 
 networks:
   traefik-public:
+    external: true
+  ai-net:
     external: true
