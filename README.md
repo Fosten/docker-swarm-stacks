@@ -674,9 +674,9 @@ And... Voila! Your new applications should be live and kicking! 🎉
 [pgadmin-local-deploy-date]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FFosten%2Fdocker-swarm-stacks%2Factions%2Fworkflows%2Flocal-deploy-pgadmin.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&label=&color=yellow
 
 <!-- PORTAINER -->
-[portainer-agent-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
+[portainer-agent-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20portainer-agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [portainer-agent-repo]: https://hub.docker.com/r/portainer/agent
-[portainer-agent-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
+[portainer-agent-tag]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20portainer-agent%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%242&label=&color=green&style=flat-square
 [portainer-agent-tags]: https://hub.docker.com/r/portainer/agent/tags
 [portainer-ce-image]: https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FFosten%2Fdocker-swarm-stacks%2Fmain%2Fstacks%2Fportainer.yml&search=%28%3Fm%29%5E%20%20portainer%3A%5Cn%20%20%20%20image%3A%20%28.%2B%29%3A%28%5B%5E%3A%20%5D%2B%29%24&replace=%241&label=&color=blue&style=flat-square
 [portainer-ce-repo]: https://hub.docker.com/r/portainer/portainer-ce

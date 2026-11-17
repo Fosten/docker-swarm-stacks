@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure portainer-net and AGENT_CLUSTER_ADDR [fosten]
 - Add Penpot Admin Console [fosten]
 - Add llama.cpp [fosten]
 - Change tailscale network, remove sysctls [fosten]
