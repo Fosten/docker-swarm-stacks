@@ -17,6 +17,17 @@ services:
       ENABLE_SIGNUP: "false"
       WEBUI_SECRET_KEY: ${OPEN_WEBUI_SECRET_KEY}
       ENABLE_PERSISTENT_CONFIG: "false"
+      ENABLE_AUTOCOMPLETE_GENERATION: "false"
+      ENABLE_FOLLOW_UP_GENERATION: "false"
+      ENABLE_TITLE_GENERATION: "false"
+      ENABLE_TAGS_GENERATION: "false"
+      ENABLE_RETRIEVAL_QUERY_GENERATION: "false"
+      ENABLE_TOOLS: "false"
+      ENABLE_PLUGINS: "false"
+      ENABLE_WEB_SEARCH: "false"
+      ENABLE_FUNCTIONS: "false"
+      ENABLE_TOOL_SERVERS: "false"
+      RAG_TOP_K: 2
     volumes:
       - ${HOME}/open-webui:/app/backend/data
     deploy:

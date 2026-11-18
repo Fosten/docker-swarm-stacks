@@ -26,6 +26,7 @@ services:
       LLAMA_ARG_MLOCK: ${LLAMA_MLOCK:-false}
       LLAMA_ARG_SLOT_SAVE_PATH: /cache
       LLAMA_CACHE: /models
+      LLAMA_CHAT_TEMPLATE_KWARGS: '{"enable_thinking": false}'
     volumes:
       - ${PI16_NVME:-$HOME}/llama-models:/models
       - ${PI16_NVME:-$HOME}/llama-cache:/cache

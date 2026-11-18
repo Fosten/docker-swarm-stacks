@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Disable llama.cpp thinking, disable Open WebUI generation and tools, configure OPENCODE_SERVER_PASSWORD [fosten]
 - Configure Open WebUI admin account env vars and providers [fosten]
 - Configure OpenCode JSONC bind mount [fosten]
 - Configure ai-net for AI stacks [fosten]

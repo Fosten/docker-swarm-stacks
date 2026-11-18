@@ -3,6 +3,8 @@ services:
     image: ghcr.io/anomalyco/opencode:latest
     working_dir: /workspace
     command: ["web", "--hostname", "0.0.0.0", "--port", "3000"]
+    environment:
+      OPENCODE_SERVER_PASSWORD: ${OPENCODE_SERVER_PASSWORD}
     networks:
       - traefik-public
       - ai-net
