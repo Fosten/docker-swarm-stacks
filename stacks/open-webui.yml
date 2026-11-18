@@ -29,6 +29,11 @@ services:
       ENABLE_FUNCTIONS: "false"
       ENABLE_TOOL_SERVERS: "false"
       RAG_TOP_K: 2
+      ENABLE_TOOL_SEARCH: "true"
+      TOOL_SEARCH_ENGINE: bm25
+      TOOL_SEARCH_DEFER_THRESHOLD: 400
+      TOOL_SEARCH_DEFER_BUILTIN_TOOLS: "true"
+      TOOL_SEARCH_ALWAYS_LOADED: get_current_timestamp
     volumes:
       - ${HOME}/open-webui:/app/backend/data
     deploy:
