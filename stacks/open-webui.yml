@@ -5,8 +5,18 @@ services:
       - traefik-public
       - ai-net
     environment:
+      DEFAULT_MODELS: ${OPEN_WEBUI_DEFAULT_MODELS}
+      ENABLE_OLLAMA_API: "true"
       OLLAMA_BASE_URL: http://ollama:11434
+      ENABLE_OPENAI_API: "true"
+      OPENAI_API_BASE_URLS: "http://llama-cpp-8gb:8080/v1;http://llama-cpp-16gb:8080/v1"
+      OPENAI_API_CONFIGS: '{"0":{"enable":true,"prefix_id":"llama-cpp-8gb","provider":"llama.cpp","auth_type":"none"},"1":{"enable":true,"prefix_id":"llama-cpp-16gb","provider":"llama.cpp","auth_type":"none"}}'
+      WEBUI_ADMIN_EMAIL: ${OPEN_WEBUI_ADMIN_EMAIL}
+      WEBUI_ADMIN_PASSWORD: ${OPEN_WEBUI_ADMIN_PASSWORD}
+      WEBUI_ADMIN_NAME: ${OPEN_WEBUI_ADMIN_NAME}
+      ENABLE_SIGNUP: "false"
       WEBUI_SECRET_KEY: ${OPEN_WEBUI_SECRET_KEY}
+      ENABLE_PERSISTENT_CONFIG: "false"
     volumes:
       - ${HOME}/open-webui:/app/backend/data
     deploy:
