@@ -1,7 +1,42 @@
 services:
   hermes:
     image: nousresearch/hermes-agent:latest
-    command: gateway run
+    command:
+      - sh
+      - -lc
+      - |
+        set -eu
+
+        for profile in manager worker; do
+          dir="/opt/data/profiles/$$profile"
+          mkdir -p "$$dir"
+          umask 077
+
+          if [ "$$profile" = "manager" ]; then
+            access_token="$${MANAGER_MATRIX_ACCESS_TOKEN}"
+            allowed_users="$${MANAGER_MATRIX_ALLOWED_USERS}"
+            device_id="$${MANAGER_MATRIX_DEVICE_ID}"
+            home_room="$${MANAGER_MATRIX_HOME_ROOM}"
+          else
+            access_token="$${WORKER_MATRIX_ACCESS_TOKEN}"
+            allowed_users="$${WORKER_MATRIX_ALLOWED_USERS}"
+            device_id="$${WORKER_MATRIX_DEVICE_ID}"
+            home_room="$${WORKER_MATRIX_HOME_ROOM}"
+          fi
+
+          {
+            printf 'MATRIX_HOMESERVER=%s\n' "$$MATRIX_HOMESERVER"
+            printf 'MATRIX_ACCESS_TOKEN=%s\n' "$$access_token"
+            printf 'MATRIX_ALLOWED_USERS=%s\n' "$$allowed_users"
+            printf 'MATRIX_DEVICE_ID=%s\n' "$$device_id"
+            printf 'MATRIX_HOME_ROOM=%s\n' "$$home_room"
+          } > "$$dir/.env"
+
+          chmod 600 "$$dir/.env"
+        done
+
+        exec hermes gateway
+
     volumes:
       - ${HOME}/.hermes/gateway:/opt/data
     networks:
@@ -18,10 +53,14 @@ services:
       HERMES_DASHBOARD_PUBLIC_URL: http://${HERMES_HOSTNAME}
       OPENROUTER_API_KEY: ${HERMES_OPENROUTER_API_KEY}
       MATRIX_HOMESERVER: ${HERMES_MATRIX_HOMESERVER}
-      MATRIX_ACCESS_TOKEN: ${HERMES_MATRIX_ACCESS_TOKEN}
-      MATRIX_ALLOWED_USERS: ${HERMES_MATRIX_ALLOWED_USERS}
-      MATRIX_DEVICE_ID: ${HERMES_MATRIX_DEVICE_ID}
-      MATRIX_HOME_ROOM: ${HERMES_MATRIX_HOME_ROOM}
+      MANAGER_MATRIX_ACCESS_TOKEN: ${MANAGER_MATRIX_ACCESS_TOKEN}
+      MANAGER_MATRIX_ALLOWED_USERS: ${MANAGER_MATRIX_ALLOWED_USERS}
+      MANAGER_MATRIX_DEVICE_ID: ${MANAGER_MATRIX_DEVICE_ID}
+      MANAGER_MATRIX_HOME_ROOM: ${MANAGER_MATRIX_HOME_ROOM}
+      WORKER_MATRIX_ACCESS_TOKEN: ${WORKER_MATRIX_ACCESS_TOKEN}
+      WORKER_MATRIX_ALLOWED_USERS: ${WORKER_MATRIX_ALLOWED_USERS}
+      WORKER_MATRIX_DEVICE_ID: ${WORKER_MATRIX_DEVICE_ID}
+      WORKER_MATRIX_HOME_ROOM: ${WORKER_MATRIX_HOME_ROOM}
     deploy:
       replicas: 1
       placement:

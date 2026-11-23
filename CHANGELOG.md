@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure MANAGER_MATRIX and WORKER_MATRIX env vars [fosten]
 - Configure HERMES_UID and HERMES_GID env vars [fosten]
 - Enable OpenWebUI Tool Search and defer tools [fosten]
 - Configure Open WebUI and llama.cpp CORS, disable LLAMA_ARG_NO_WARMUP [fosten]
