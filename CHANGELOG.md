@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Configure plugin.keycloakopenid.CallbackURL and .TokenCookieName [fosten]
+- Bump keycloakopenid traefik pluginfrom v0.1.47 to v0.2.0 [fosten]
 - Bump Matomo from 5 to 6 [fosten]
 - Bump traefik from v3.7 to v3.8 [fosten]
 - Configure MANAGER_MATRIX and WORKER_MATRIX env vars [fosten]

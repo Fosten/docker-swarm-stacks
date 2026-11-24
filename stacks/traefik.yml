@@ -49,8 +49,10 @@ services:
       TRAEFIK_KEYCLOAK_URL: ${TRAEFIK_KEYCLOAK_URL:-http://localhost}
       TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_ID:-dummy}
       TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_BASIC_CLIENT_SECRET:-dummy}
+      TRAEFIK_KEYCLOAK_BASIC_CALLBACK_URL: ${TRAEFIK_KEYCLOAK_BASIC_CALLBACK_URL:-http://localhost/oauth/basic/callback}
       TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_ID:-dummy}
       TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET: ${TRAEFIK_KEYCLOAK_TRUSTED_CLIENT_SECRET:-dummy}
+      TRAEFIK_KEYCLOAK_TRUSTED_CALLBACK_URL: ${TRAEFIK_KEYCLOAK_TRUSTED_CALLBACK_URL:-http://localhost/oauth/trusted/callback}
       TRAEFIK_KEYCLOAK_REALM: ${TRAEFIK_KEYCLOAK_REALM:-dummy}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -94,6 +96,8 @@ services:
         - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.KeycloakRealmEnv=TRAEFIK_KEYCLOAK_REALM
         - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.Scope=openid
         - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.UseAuthHeader=false
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.CallbackURL=${TRAEFIK_KEYCLOAK_BASIC_CALLBACK_URL}
+        - traefik.http.middlewares.keycloakopenid-basic-client.plugin.keycloakopenid.TokenCookieName=AUTH_TOKEN_BASIC
 
         # Keycloak Trusted Client Middleware
         - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.KeycloakURLEnv=TRAEFIK_KEYCLOAK_URL
@@ -103,6 +107,24 @@ services:
         - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.KeycloakRealmEnv=TRAEFIK_KEYCLOAK_REALM
         - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.Scope=openid
         - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.UseAuthHeader=false
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.CallbackURL=${TRAEFIK_KEYCLOAK_TRUSTED_CALLBACK_URL}
+        - traefik.http.middlewares.keycloakopenid-trusted-client.plugin.keycloakopenid.TokenCookieName=AUTH_TOKEN_TRUSTED
+
+        # Basic OAuth Callback Router
+        - traefik.http.routers.keycloak-basic-callback.rule=Host(`${TRAEFIK_CLOUD_HOSTNAME}`) && Path(`/oauth/basic/callback`)
+        - traefik.http.routers.keycloak-basic-callback.entrypoints=https
+        - traefik.http.routers.keycloak-basic-callback.tls=true
+        - traefik.http.routers.keycloak-basic-callback.service=noop@internal
+        - traefik.http.routers.keycloak-basic-callback.middlewares=keycloakopenid-basic-client
+        - traefik.http.routers.keycloak-basic-callback.priority=200
+
+        # Trusted OAuth Callback Router
+        - traefik.http.routers.keycloak-trusted-callback.rule=Host(`${TRAEFIK_CLOUD_HOSTNAME}`) && Path(`/oauth/trusted/callback`)
+        - traefik.http.routers.keycloak-trusted-callback.entrypoints=https
+        - traefik.http.routers.keycloak-trusted-callback.tls=true
+        - traefik.http.routers.keycloak-trusted-callback.service=noop@internal
+        - traefik.http.routers.keycloak-trusted-callback.middlewares=keycloakopenid-trusted-client
+        - traefik.http.routers.keycloak-trusted-callback.priority=200
 
         # Generic Routers
         - traefik.http.routers.generic-https-redirect.entrypoints=http
