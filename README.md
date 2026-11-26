@@ -10,6 +10,8 @@ Simply fork this repository and follow the [Installation guide](docs/INSTALL.md)
 
 And... Voila! Your new applications should be live and kicking! 🎉
 
+Database backup functionality is included. See the [Backup Guide](docs/BACKUP.md) for configuration and usage.
+
 ## Stacks
 
 | Project | Image | Tag | GitHub Version | Deployment | Database |

@@ -1,0 +1,89 @@
+services:
+  backup-local-db:
+    image: alpine:3.21
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+
+        apk add --no-cache \
+          bash \
+          postgresql17-client \
+          coreutils \
+          mailx \
+          msmtp \
+          ca-certificates
+
+        # Configure msmtp
+        cat > /etc/msmtprc <<EOF
+        defaults
+        auth off
+        tls off
+
+        account default
+        host mail
+        port 25
+        from $LOCAL_PG_BACKUP_MAIL_FROM
+        EOF
+
+        chmod 600 /etc/msmtprc
+
+        # Configure mailx
+        echo 'set sendmail="/usr/bin/msmtp"' > /etc/mail.rc
+
+        apk add --no-cache su-exec
+        exec su-exec "$PUID:$PGID" /bin/bash /scripts/backup.sh
+
+    environment:
+      # PG Backup
+      PG_BACKUP_SYNC_DIR: ${PG_BACKUP_SYNC_DIR}
+      PG_BACKUP_SCRIPT_DIR: ${PG_BACKUP_SCRIPT_DIR}
+      # PG Mail
+      LOCAL_PG_BACKUP_MAIL_FROM: ${LOCAL_PG_BACKUP_MAIL_FROM}
+      LOCAL_PG_BACKUP_MAIL_TO: ${LOCAL_PG_BACKUP_MAIL_TO}
+      # PG Server
+      LOCAL_PG_BACKUP_HOST: ${LOCAL_PG_BACKUP_HOST}
+      LOCAL_PG_BACKUP_PORT: ${LOCAL_PG_BACKUP_PORT}
+      # PG Admin
+      LOCAL_PG_BACKUP_ADMIN_DB: ${LOCAL_PG_BACKUP_ADMIN_DB}
+      LOCAL_PG_BACKUP_ADMIN_USER: ${LOCAL_PG_BACKUP_ADMIN_USER}
+      LOCAL_PG_BACKUP_ADMIN_PASSWORD: ${LOCAL_PG_BACKUP_ADMIN_PASSWORD}
+      # Etherpad Cloud
+      ETHERPAD_LOCAL_POSTGRES_DB: ${ETHERPAD_LOCAL_POSTGRES_DB}
+      ETHERPAD_POSTGRES_USER: ${ETHERPAD_POSTGRES_USER}
+      ETHERPAD_POSTGRES_PASSWORD: ${ETHERPAD_POSTGRES_PASSWORD}
+      # Grafana Cloud
+      GF_LOCAL_POSTGRES_DB: ${GF_LOCAL_POSTGRES_DB}
+      GF_POSTGRES_USER: ${GF_POSTGRES_USER}
+      GF_POSTGRES_PASSWORD: ${GF_POSTGRES_PASSWORD}
+      # Nextcloud Cloud
+      NEXTCLOUD_LOCAL_POSTGRES_DB: ${NEXTCLOUD_LOCAL_POSTGRES_DB}
+      NEXTCLOUD_POSTGRES_USER: ${NEXTCLOUD_POSTGRES_USER}
+      NEXTCLOUD_POSTGRES_PASSWORD: ${NEXTCLOUD_POSTGRES_PASSWORD}
+      # Paperless
+      PAPERLESS_LOCAL_POSTGRES_DB: ${PAPERLESS_LOCAL_POSTGRES_DB}
+      PAPERLESS_POSTGRES_USER: ${PAPERLESS_POSTGRES_USER}
+      PAPERLESS_POSTGRES_PASSWORD: ${PAPERLESS_POSTGRES_PASSWORD}
+      # Vaultwarden
+      VAULTWARDEN_LOCAL_POSTGRES_DB: ${VAULTWARDEN_LOCAL_POSTGRES_DB}
+      VAULTWARDEN_POSTGRES_USER: ${VAULTWARDEN_POSTGRES_USER}
+      VAULTWARDEN_POSTGRES_PASSWORD: ${VAULTWARDEN_POSTGRES_PASSWORD}
+
+    volumes:
+      - ${PG_BACKUP_SYNC_DIR}:/backups
+      - ${PG_BACKUP_SCRIPT_DIR}/pg-backup-local-db.sh:/scripts/backup.sh:ro
+    networks:
+      - traefik-public
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: none
+      placement:
+        constraints:
+          - node.labels.type == ${STACK_PARAM}
+      labels:
+        - traefik.enable=false
+
+networks:
+  traefik-public:
+    external: true
